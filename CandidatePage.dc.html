@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  :root, [data-dir="editorial"]{
+    --paper:#EFEAE0; --paper-deep:#E6DFD0; --card:#FFF8EE;
+    --ink:#20242B; --ink-soft:#565C68; --rule:#C9C0AA;
+    --blue:#2D4A75; --blue-soft:#DEE6EF; --blue-line:#b9c8da;
+    --red:#8A3B2E; --red-soft:#F1E1DC; --red-line:#d9bdb3;
+    --brass:#A9823C; --check:#2F6F4E; --cross:#8A3B2E; --radius:2px;
+    --tab-dem-bg:var(--blue-soft); --tab-dem-fg:var(--blue);
+    --tab-rep-bg:var(--red-soft); --tab-rep-fg:var(--red);
+  }
+  [data-theme="dark"]{
+    --paper:#1B1D22; --paper-deep:#25272F; --card:#24262D;
+    --ink:#EAE6DA; --ink-soft:#9CA1AC; --rule:#3A3D47;
+    --blue:#82A4D4; --blue-soft:#20293A; --blue-line:#314158;
+    --red:#D89685; --red-soft:#332019; --red-line:#4a2c23;
+    --brass:#D6B26C; --check:#6FBB8E; --cross:#D89685;
+  }
+  [data-dir="civic"]{
+    --paper:#EDF1F6; --paper-deep:#DFE6EF; --card:#FFFFFF;
+    --ink:#15202E; --ink-soft:#586577; --rule:#D3DBE6;
+    --blue:#1F3A5F; --blue-soft:#E3EAF4; --blue-line:#bccbe0;
+    --red:#9B2D20; --red-soft:#F6E5E2; --red-line:#e2bdb6;
+    --brass:#2C6E8C; --check:#1F7A4D; --cross:#9B2D20; --radius:7px;
+    --tab-dem-bg:var(--blue); --tab-dem-fg:#FFFFFF;
+    --tab-rep-bg:var(--red); --tab-rep-fg:#FFFFFF;
+  }
+  [data-dir="civic"][data-theme="dark"]{
+    --paper:#0E141C; --paper-deep:#172230; --card:#141D29;
+    --ink:#E7EDF5; --ink-soft:#93A1B3; --rule:#26323F;
+    --blue:#7FA8DA; --blue-soft:#16263A; --blue-line:#2a3d54;
+    --red:#E09A8A; --red-soft:#2c1a16; --red-line:#43261f;
+    --brass:#5BB8D6; --check:#5FBE8C; --cross:#E09A8A;
+    --tab-dem-fg:#0E141C; --tab-rep-fg:#0E141C;
+  }
+  summary{list-style:none;}
+  summary::-webkit-details-marker{display:none;}
+  details[open] .tri{ transform:rotate(180deg); }
+  @keyframes barGrow{ from{transform:scaleX(0);} to{transform:scaleX(1);} }
+  [data-vf="agree"] .voteRow[data-cat="differ"]{ display:none !important; }
+  [data-vf="differ"] .voteRow[data-cat="agree"]{ display:none !important; }
+  @media (max-width:800px){
+    .heroGrid{ grid-template-columns:1fr 1fr !important; grid-template-areas:'dem rep' 'poll poll' !important; column-gap:14px !important; row-gap:18px !important; }
+    .pollCol{ justify-self:stretch !important; max-width:none !important; margin-top:2px !important; }
+    .portraitDem, .portraitRep{ align-items:center !important; }
+    .splitGrid{ grid-template-columns:1fr !important; gap:6px !important; }
+    .splitGrid .colDem{ border-bottom:1px solid var(--rule); padding-right:0 !important; padding-bottom:16px; margin-bottom:16px; }
+    .divider{ display:none !important; }
+    .voteRow{ grid-template-columns:1fr !important; gap:6px !important; text-align:center; padding:14px 0 !important; }
+    .voteRow .voteDem, .voteRow .voteRep{ text-align:center !important; }
+  }
+</style>
+</helmet>
+
+<div data-dir="{{ dirKey }}" data-theme="{{ theme }}" style="position:relative; background:var(--paper); color:var(--ink); font-family:'IBM Plex Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .25s ease, color .25s ease; min-height:100%; padding-bottom:2px;">
+
+  <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="position:absolute; top:14px; right:14px; z-index:60; width:36px; height:36px; border-radius:50%; border:1.5px solid var(--ink); background:var(--paper); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:0 2px 8px -3px rgba(0,0,0,.35);">
+    <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
+      <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path></svg>
+    </sc-if>
+    <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}">
+      <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="4.5"></line><line x1="12" y1="19.5" x2="12" y2="22"></line><line x1="2" y1="12" x2="4.5" y2="12"></line><line x1="19.5" y1="12" x2="22" y2="12"></line><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"></line><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"></line><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"></line><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"></line></svg>
+    </sc-if>
+  </button>
+
+  <div style="text-align:center; padding:28px 16px 18px; border-bottom:1px solid var(--rule); background:repeating-linear-gradient(90deg, var(--paper-deep) 0 6px, transparent 6px 14px) top/100% 5px no-repeat, var(--paper);">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--brass); margin-bottom:10px;">2026 MIDTERMS</div>
+    <h1 style="font-family:'Fraunces',serif; font-weight:600; font-size:clamp(26px,4.4vw,44px); margin:0 0 6px; letter-spacing:-0.01em;">Texas - United States Senate Election</h1>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ink-soft);">November 3, 2026</div>
+    <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.04em; color:var(--brass); text-decoration:none; border-bottom:1px solid var(--brass); padding-bottom:1px;">See how to vote →</a>
+  </div>
+
+  <div style="position:sticky; top:0; z-index:50; display:grid; grid-template-columns:1fr 1fr; background:var(--paper); border-bottom:2px solid var(--ink); box-shadow:0 4px 10px -6px rgba(0,0,0,.25);">
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; min-width:0; background:var(--tab-dem-bg);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/US_Democratic_Party_Logo.svg" alt="Democratic Party" style="flex:0 0 auto; width:26px; height:26px; display:block; object-fit:contain;">
+      <span style="font-family:'Fraunces',serif; font-weight:600; font-size:clamp(14px,2.4vw,19px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:var(--tab-dem-fg);">James Talarico</span>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; min-width:0; background:var(--tab-rep-bg);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Republican_Disc.svg/250px-Republican_Disc.svg.png" alt="Republican Party" style="flex:0 0 auto; width:26px; height:26px; display:block; object-fit:contain;">
+      <span style="font-family:'Fraunces',serif; font-weight:600; font-size:clamp(14px,2.4vw,19px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:var(--tab-rep-fg);">Ken Paxton</span>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr minmax(250px,310px) 1fr; grid-template-areas:'dem poll rep'; column-gap:22px; row-gap:24px; padding:30px 18px 16px; max-width:1080px; margin:0 auto; align-items:start;" class="heroGrid">
+    <div style="grid-area:dem; display:flex; flex-direction:column; align-items:flex-start; gap:10px;" class="portraitDem">
+      <div style="width:100%; max-width:250px; aspect-ratio:4/5; border:1.5px dashed var(--ink-soft); background:var(--paper-deep); position:relative; overflow:hidden; border-radius:var(--radius);">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/James_Talarico_Press_Conference_%28cropped%29.jpg" alt="James Talarico — replace with photo" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:1.55; color:var(--ink-soft); max-width:250px; text-align:center;">Texas state representative for District 50 since 2018. Former middle school teacher with degrees from UT Austin and Harvard.</div>
+      <div style="width:100%; max-width:250px; text-align:center;"><a href="https://talaricofortexas.com" target="_blank" rel="noopener noreferrer" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em; color:var(--blue); text-decoration:none; border-bottom:1px solid var(--blue-line); padding-bottom:1px;">Campaign website →</a></div>
+    </div>
+
+    <div style="grid-area:poll; display:flex; flex-direction:column; gap:18px; width:100%;" class="pollCol">
+      <div style="border:1px solid var(--rule); background:var(--card); padding:14px 16px 16px; border-radius:var(--radius);">
+        <h3 style="margin:0 0 8px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); text-align:center;">Recent Polling</h3>
+        <a href="https://www.nytimes.com" target="_blank" rel="noopener noreferrer" style="display:block; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:10.5px; line-height:1.5; color:var(--ink-soft); text-decoration:none; border-bottom:1px dotted var(--rule); padding-bottom:10px; margin-bottom:12px;">The New York Times/Siena poll<br>June 19-27</a>
+        <div style="display:flex; justify-content:center; margin-bottom:16px;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--blue); background:var(--blue-soft); border:1px solid var(--blue-line); padding:4px 11px; border-radius:999px;">Talarico leads · +2</span>
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:7px;">
+            <span style="font-size:14px; font-weight:600; color:var(--blue);">James Talarico</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:27px; font-weight:600; line-height:1; color:var(--blue);">48<span style="font-size:15px; font-weight:500;">%</span></span>
+          </div>
+          <div style="position:relative; height:15px; background:var(--rule); border-radius:999px; overflow:hidden;">
+            <div style="position:absolute; top:0; left:0; height:100%; width:48%; background:var(--blue); border-radius:999px; transform-origin:left; animation:barGrow .8s ease;"></div>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:7px;">
+            <span style="font-size:14px; font-weight:600; color:var(--red);">Ken Paxton</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:27px; font-weight:600; line-height:1; color:var(--red);">46<span style="font-size:15px; font-weight:500;">%</span></span>
+          </div>
+          <div style="position:relative; height:15px; background:var(--rule); border-radius:999px; overflow:hidden;">
+            <div style="position:absolute; top:0; left:0; height:100%; width:46%; background:var(--red); border-radius:999px; transform-origin:left; animation:barGrow .8s ease;"></div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:15px; padding-top:11px; border-top:1px dotted var(--rule); font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; color:var(--ink-soft);">
+          <span>Undecided&nbsp; 6%</span>
+          <span>± 3.5 pts · 812 likely voters</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="grid-area:rep; display:flex; flex-direction:column; align-items:flex-end; gap:10px;" class="portraitRep">
+      <div style="width:100%; max-width:250px; aspect-ratio:4/5; border:1.5px dashed var(--ink-soft); background:var(--paper-deep); position:relative; overflow:hidden; border-radius:var(--radius);">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/K_Paxton.jpg/960px-K_Paxton.jpg" alt="Ken Paxton — replace with photo" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:1.55; color:var(--ink-soft); max-width:250px; text-align:center;">Attorney General of Texas since 2015, after earlier serving in the Texas House and Senate. Baylor and UVA Law graduate.</div>
+      <div style="width:100%; max-width:250px; text-align:center;"><a href="https://kenpaxton.com" target="_blank" rel="noopener noreferrer" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em; color:var(--red); text-decoration:none; border-bottom:1px solid var(--red-line); padding-bottom:1px;">Campaign website →</a></div>
+    </div>
+  </div>
+
+  <div style="max-width:1080px; margin:0 auto; padding:8px 18px;">
+    <details open="open">
+      <summary style="cursor:pointer; display:flex; align-items:center; gap:10px; padding:14px 0; font-family:'Fraunces',serif; font-weight:600; font-size:clamp(19px,2.6vw,26px); color:var(--ink);"><span class="tri" style="width: 0px; height: 0px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid var(--brass); transition: transform 0.2s; flex: 0 0 auto;"></span> Their Agendas</summary>
+      <div style="position:relative;">
+        <div style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:var(--rule);" class="divider"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding:6px 0 22px;" class="splitGrid">
+          <div style="padding-right:28px;" class="colDem">
+            <div style="margin-bottom:20px;">
+              <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--blue);">Corruption &amp; Democracy</h4>
+              <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has campaigned on stronger ethics rules, transparency for officeholders, and protecting Texans' access to the ballot.</p>
+            </div>
+            <div style="margin-bottom:20px;">
+              <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--blue);">Taxes &amp; Cost of Living</h4>
+              <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Backs property-tax relief for homeowners and capping rising grocery, housing, and healthcare costs.</p>
+            </div>
+            <div style="margin-bottom:0;">
+              <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--blue);">Public Education</h4>
+              <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">A former public-school teacher; supports raising teacher pay and increasing per-student funding.</p>
+            </div>
+          </div>
+          <div class="colRep">
+            <div style="margin-bottom:20px;">
+              <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--red);">Supporting Trump's Agenda</h4>
+              <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has aligned with the administration's priorities on border security, energy production, and federal spending cuts.</p>
+            </div>
+            <div style="margin-bottom:20px;">
+              <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--red);">Taking on Big Food and Big Pharma</h4>
+              <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has pushed measures to lower prescription-drug costs and curb harmful additives in the food supply.</p>
+            </div>
+            <div style="margin-bottom:0;">
+              <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--red);">Border Security</h4>
+              <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Supports continued state and federal funding for border-enforcement operations.</p>
+            </div>
+          </div>
+        </div>
+        <sc-if value="{{ showMoreIssues }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding:0 0 22px;" class="splitGrid">
+            <div style="padding-right:28px;" class="colDem">
+              <div style="margin-bottom:20px;">
+                <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--blue);">Healthcare</h4>
+                <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Supports expanding access to affordable coverage for rural and uninsured Texans.</p>
+              </div>
+              <div style="margin-bottom:20px;">
+                <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--blue);">Freedom, Family &amp; Faith</h4>
+                <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Frames personal freedom and strong families as shared Texas values that cross party lines.</p>
+              </div>
+              <div style="margin-bottom:0;">
+                <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--blue);">Immigration &amp; Border Security</h4>
+                <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Backs orderly, humane enforcement paired with a workable path to legal status.</p>
+              </div>
+            </div>
+            <div class="colRep">
+              <div style="margin-bottom:20px;">
+                <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--red);">Conservative Principles</h4>
+                <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Champions limited government, individual liberty, and traditional Texas values.</p>
+              </div>
+              <div style="margin-bottom:20px;">
+                <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--red);">America First Foreign Policy</h4>
+                <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Prioritizes American interests, secure borders, and restraint on open-ended foreign commitments.</p>
+              </div>
+              <div style="margin-bottom:0;">
+                <h4 style="margin:0 0 8px; font-family:'Fraunces',serif; font-size:17px; font-weight:600; color:var(--red);">Fiscal Conservatism</h4>
+                <p style="margin:0; font-size:14px; line-height:1.6; color:var(--ink-soft);">Calls for lower taxes, reduced spending, and a balanced budget.</p>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      <button type="button" onClick="{{ toggleMoreIssues }}" style="display:block; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--brass); cursor:pointer; border:none; background:none; width:100%; padding:6px 0 14px;">{{ moreIssuesLabel }}</button>
+    </details>
+  </div>
+
+  <div style="max-width:1080px; margin:0 auto; padding:8px 18px; border-top:1px solid var(--rule);">
+    <details open="open">
+      <summary style="cursor:pointer; display:flex; align-items:center; gap:10px; padding:14px 0; font-family:'Fraunces',serif; font-weight:600; font-size:clamp(19px,2.6vw,26px); color:var(--ink);"><span class="tri" style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--brass);transition:transform .2s ease;flex:0 0 auto;"></span> Finances</summary>
+      <div style="padding:4px 0 22px;">
+        <div class="finRow" style="display:grid; grid-template-columns:40px 1fr 40px; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <span style="width:30px; height:30px; margin:0 auto; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; border:1.5px solid currentColor; color:var(--check);">✓</span>
+          <span style="font-size:14.5px; text-align:center; color:var(--ink);">Supports congressional stock trading ban</span>
+          <span style="width:30px; height:30px; margin:0 auto; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; border:1.5px solid currentColor; color:var(--cross);">✕</span>
+        </div>
+        <div class="finRow" style="display:grid; grid-template-columns:40px 1fr 40px; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <span style="width:30px; height:30px; margin:0 auto; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; border:1.5px solid currentColor; color:var(--cross);">✕</span>
+          <span style="font-size:14.5px; text-align:center; color:var(--ink);">Accepts corporate PAC money</span>
+          <span style="width:30px; height:30px; margin:0 auto; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; border:1.5px solid currentColor; color:var(--check);">✓</span>
+        </div>
+        <div class="finRow" style="display:grid; grid-template-columns:40px 1fr 40px; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <span style="width:30px; height:30px; margin:0 auto; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; border:1.5px solid currentColor; color:var(--check);">✓</span>
+          <span style="font-size:14.5px; text-align:center; color:var(--ink);">Supports overturning Citizens United</span>
+          <span style="width:30px; height:30px; margin:0 auto; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; border:1.5px solid currentColor; color:var(--cross);">✕</span>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div style="max-width:1080px; margin:0 auto; padding:8px 18px; border-top:1px solid var(--rule);">
+    <details>
+      <summary style="cursor:pointer; display:flex; align-items:center; gap:10px; padding:14px 0; font-family:'Fraunces',serif; font-weight:600; font-size:clamp(19px,2.6vw,26px); color:var(--ink);"><span class="tri" style="width: 0px; height: 0px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid var(--brass); transition: transform 0.2s; flex: 0 0 auto;"></span>Today's Issues</summary>
+      <div class="topicBlock" style="padding:14px 0 8px; border-top:1px solid var(--rule);">
+        <h4 style="text-align:center; font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 14px;">The Iran War</h4>
+        <div style="position:relative;">
+          <div class="divider" style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:var(--rule);"></div>
+          <div class="splitGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding-bottom:8px;">
+            <div class="colDem" style="padding-right:28px;">
+              <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has called for congressional approval before further military action in the region.</p>
+              <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Favors renewed diplomatic engagement over an open-ended military commitment.</p>
+            </div>
+            <div class="colRep">
+              <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has backed the administration's posture and emphasized deterrence against Iran's nuclear program.</p>
+              <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Supports continued military readiness in the region as a check on Iranian influence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="topicBlock" style="padding:14px 0 8px; border-top:1px solid var(--rule);">
+        <h4 style="text-align:center; font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 14px;">Climate Change</h4>
+        <div style="position:relative;">
+          <div class="divider" style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:var(--rule);"></div>
+          <div class="splitGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding-bottom:8px;">
+            <div class="colDem" style="padding-right:28px;">
+              <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Supports expanding renewable-energy investment and stronger emissions standards.</p>
+            </div>
+            <div class="colRep">
+              <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has prioritized continued oil and gas production and opposed new federal emissions mandates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="topicBlock" style="padding:14px 0 8px; border-top:1px solid var(--rule);">
+        <h4 style="text-align:center; font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 14px;">Cost of Living</h4>
+        <div style="position:relative;">
+          <div class="divider" style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:var(--rule);"></div>
+          <div class="splitGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding-bottom:8px;">
+            <div class="colDem" style="padding-right:28px;">
+              <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has focused on housing affordability and capping rising grocery and healthcare costs.</p>
+            </div>
+            <div class="colRep">
+              <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has pointed to tax relief and reduced regulation as the path to lowering costs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <sc-if value="{{ showMoreLeading }}" hint-placeholder-val="{{ false }}">
+        <div class="topicBlock" style="padding:14px 0 8px; border-top:1px solid var(--rule);">
+          <h4 style="text-align:center; font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 14px;">Healthcare</h4>
+          <div style="position:relative;">
+            <div class="divider" style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:var(--rule);"></div>
+            <div class="splitGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding-bottom:8px;">
+              <div class="colDem" style="padding-right:28px;">
+                <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Supports expanding access to affordable coverage for rural and uninsured Texans.</p>
+              </div>
+              <div class="colRep">
+                <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Has pushed for greater price transparency and more private-market competition.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="topicBlock" style="padding:14px 0 8px; border-top:1px solid var(--rule);">
+          <h4 style="text-align:center; font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 14px;">Immigration</h4>
+          <div style="position:relative;">
+            <div class="divider" style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:var(--rule);"></div>
+            <div class="splitGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding-bottom:8px;">
+              <div class="colDem" style="padding-right:28px;">
+                <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Backs orderly, humane enforcement paired with a path to legal status for long-time residents.</p>
+              </div>
+              <div class="colRep">
+                <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Prioritizes border security and stricter limits on unlawful crossings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="topicBlock" style="padding:14px 0 8px; border-top:1px solid var(--rule);">
+          <h4 style="text-align:center; font-family:'Fraunces',serif; font-weight:600; font-size:18px; margin:0 0 14px;">Guns &amp; Public Safety</h4>
+          <div style="position:relative;">
+            <div class="divider" style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:var(--rule);"></div>
+            <div class="splitGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding-bottom:8px;">
+              <div class="colDem" style="padding-right:28px;">
+                <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Supports universal background checks and red-flag protections.</p>
+              </div>
+              <div class="colRep">
+                <p style="margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--ink-soft);">Defends Second Amendment rights and opposes new firearm restrictions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+      <button type="button" onClick="{{ toggleMoreLeading }}" style="display:block; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--brass); cursor:pointer; border:none; background:none; width:100%; padding:6px 0 14px;">{{ moreLeadingLabel }}</button>
+    </details>
+  </div>
+
+  <div style="max-width:1080px; margin:0 auto; padding:8px 18px; border-top:1px solid var(--rule);">
+    <details open="open">
+      <summary style="cursor:pointer; display:flex; align-items:center; gap:10px; padding:14px 0; font-family:'Fraunces',serif; font-weight:600; font-size:clamp(19px,2.6vw,26px); color:var(--ink);"><span class="tri" style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--brass);transition:transform .2s ease;flex:0 0 auto;"></span> Key Votes &amp; Positions</summary>
+
+      <div style="display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; padding:2px 0 16px;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-right:2px;">Show</span>
+        <button type="button" onClick="{{ setAll }}" style="{{ chipAll }}">All</button>
+        <button type="button" onClick="{{ setAgree }}" style="{{ chipAgree }}">Where they agree</button>
+        <button type="button" onClick="{{ setDiffer }}" style="{{ chipDiffer }}">Where they differ</button>
+      </div>
+
+      <div style="padding:0 0 18px;" data-vf="{{ voteFilter }}">
+        <div class="voteRow" data-cat="differ" style="display:grid; grid-template-columns:1fr minmax(120px,1.4fr) 1fr; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <div class="voteDem" style="text-align:right; font-size:13.5px; font-weight:600; color:var(--blue); font-family:'IBM Plex Mono',monospace;">● Supports</div>
+          <div style="text-align:center;">
+            <div style="font-size:14.5px; color:var(--ink); line-height:1.4;">Ban congressional stock trading</div>
+            <div style="margin-top:5px; display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); color:var(--brass);">Differ</div>
+          </div>
+          <div class="voteRep" style="text-align:left; font-size:13.5px; font-weight:600; color:var(--red); font-family:'IBM Plex Mono',monospace;">○ Opposes</div>
+        </div>
+        <div class="voteRow" data-cat="differ" style="display:grid; grid-template-columns:1fr minmax(120px,1.4fr) 1fr; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <div class="voteDem" style="text-align:right; font-size:13.5px; font-weight:600; color:var(--blue); font-family:'IBM Plex Mono',monospace;">◐ Mixed</div>
+          <div style="text-align:center;">
+            <div style="font-size:14.5px; color:var(--ink); line-height:1.4;">Increase border enforcement funding</div>
+            <div style="margin-top:5px; display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); color:var(--brass);">Differ</div>
+          </div>
+          <div class="voteRep" style="text-align:left; font-size:13.5px; font-weight:600; color:var(--red); font-family:'IBM Plex Mono',monospace;">● Supports</div>
+        </div>
+        <div class="voteRow" data-cat="agree" style="display:grid; grid-template-columns:1fr minmax(120px,1.4fr) 1fr; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <div class="voteDem" style="text-align:right; font-size:13.5px; font-weight:600; color:var(--blue); font-family:'IBM Plex Mono',monospace;">● Supports</div>
+          <div style="text-align:center;">
+            <div style="font-size:14.5px; color:var(--ink); line-height:1.4;">Lower prescription drug prices</div>
+            <div style="margin-top:5px; display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); color:var(--check);">Agree</div>
+          </div>
+          <div class="voteRep" style="text-align:left; font-size:13.5px; font-weight:600; color:var(--red); font-family:'IBM Plex Mono',monospace;">● Supports</div>
+        </div>
+        <div class="voteRow" data-cat="differ" style="display:grid; grid-template-columns:1fr minmax(120px,1.4fr) 1fr; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <div class="voteDem" style="text-align:right; font-size:13.5px; font-weight:600; color:var(--blue); font-family:'IBM Plex Mono',monospace;">● Supports</div>
+          <div style="text-align:center;">
+            <div style="font-size:14.5px; color:var(--ink); line-height:1.4;">Expand Medicaid in Texas</div>
+            <div style="margin-top:5px; display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); color:var(--brass);">Differ</div>
+          </div>
+          <div class="voteRep" style="text-align:left; font-size:13.5px; font-weight:600; color:var(--red); font-family:'IBM Plex Mono',monospace;">○ Opposes</div>
+        </div>
+        <div class="voteRow" data-cat="differ" style="display:grid; grid-template-columns:1fr minmax(120px,1.4fr) 1fr; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <div class="voteDem" style="text-align:right; font-size:13.5px; font-weight:600; color:var(--blue); font-family:'IBM Plex Mono',monospace;">● Supports</div>
+          <div style="text-align:center;">
+            <div style="font-size:14.5px; color:var(--ink); line-height:1.4;">New federal emissions mandates</div>
+            <div style="margin-top:5px; display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); color:var(--brass);">Differ</div>
+          </div>
+          <div class="voteRep" style="text-align:left; font-size:13.5px; font-weight:600; color:var(--red); font-family:'IBM Plex Mono',monospace;">○ Opposes</div>
+        </div>
+        <div class="voteRow" data-cat="agree" style="display:grid; grid-template-columns:1fr minmax(120px,1.4fr) 1fr; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--rule);">
+          <div class="voteDem" style="text-align:right; font-size:13.5px; font-weight:600; color:var(--blue); font-family:'IBM Plex Mono',monospace;">● Supports</div>
+          <div style="text-align:center;">
+            <div style="font-size:14.5px; color:var(--ink); line-height:1.4;">Property tax relief for homeowners</div>
+            <div style="margin-top:5px; display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--rule); color:var(--check);">Agree</div>
+          </div>
+          <div class="voteRep" style="text-align:left; font-size:13.5px; font-weight:600; color:var(--red); font-family:'IBM Plex Mono',monospace;">● Supports</div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div style="max-width:1080px; margin:0 auto; padding:8px 18px; border-top:1px solid var(--rule);">
+    <details>
+      <summary style="cursor:pointer; display:flex; align-items:center; gap:10px; padding:14px 0; font-family:'Fraunces',serif; font-weight:600; font-size:clamp(19px,2.6vw,26px); color:var(--ink);"><span class="tri" style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--brass);transition:transform .2s ease;flex:0 0 auto;"></span> Biography &amp; Record</summary>
+      <p style="text-align:center; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em; color:var(--ink-soft); margin:0 0 4px;">Selected policy accomplishments</p>
+      <div style="position:relative;">
+        <div style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:var(--rule);" class="divider"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; padding:8px 0 20px;" class="splitGrid">
+          <div style="padding-right:28px;" class="colDem">
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--blue); text-align:right;">2018</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--blue-line); padding-left:12px;">Elected to the Texas House of Representatives.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--blue); text-align:right;">2019</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--blue-line); padding-left:12px;">Helped pass the school-finance overhaul raising teacher pay and per-student funding.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--blue); text-align:right;">2021</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--blue-line); padding-left:12px;">Authored measures expanding mental-health support and counselors in public schools.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--blue); text-align:right;">2023</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--blue-line); padding-left:12px;">Advanced property-tax relief for homeowners and tougher ethics rules for officials.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--blue); text-align:right;">2025</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--blue-line); padding-left:12px;">Backed legislation to lower prescription-drug costs for Texas families.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--blue); text-align:right;">2026</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--blue-line); padding-left:12px;">Launches campaign for the United States Senate.</div></div>
+          </div>
+          <div class="colRep">
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--red); text-align:right;">2015</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--red-line); padding-left:12px;">Elected Attorney General of Texas.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--red); text-align:right;">2017</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--red-line); padding-left:12px;">Secured opioid-settlement funds directed to Texas treatment programs.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--red); text-align:right;">2019</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--red-line); padding-left:12px;">Expanded consumer-protection and anti–human-trafficking enforcement.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--red); text-align:right;">2021</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--red-line); padding-left:12px;">Led multistate litigation challenging federal regulations and immigration policy.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--red); text-align:right;">2023</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--red-line); padding-left:12px;">Strengthened election-integrity and data-privacy enforcement efforts.</div></div>
+            <div style="display:grid; grid-template-columns:54px 1fr; gap:12px; padding:8px 0; align-items:start;"><div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--red); text-align:right;">2026</div><div style="font-size:13.5px; line-height:1.5; color:var(--ink-soft); border-left:2px solid var(--red-line); padding-left:12px;">Launches campaign for the United States Senate.</div></div>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div style="text-align:center; padding:30px 18px 50px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; color:var(--ink-soft);">
+    Sample layout · Replace placeholder copy with verified candidate positions before publishing
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1400},&quot;direction&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Editorial&quot;,&quot;Civic&quot;],&quot;default&quot;:&quot;Civic&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Style&quot;}}">
+class Component extends DCLogic {
+  state = { theme: 'light', voteFilter: 'all', moreIssues: false, moreLeading: false };
+
+  get isCivic(){ return (this.props.direction || 'Civic') === 'Civic'; }
+
+  renderVals(){
+    const isCivic = this.isCivic;
+    const theme = this.state.theme;
+
+    const f = this.state.voteFilter;
+
+    const chipBase = "font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; padding:6px 11px; border-radius:999px; cursor:pointer;";
+    const chipOn = chipBase + " background:var(--brass); color:var(--paper); border:1px solid var(--brass);";
+    const chipOff = chipBase + " background:transparent; color:var(--ink-soft); border:1px solid var(--rule);";
+
+    return {
+      dirKey: isCivic ? 'civic' : 'editorial',
+      theme,
+      isDark: theme === 'dark',
+      isLight: theme !== 'dark',
+      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+
+      showMoreIssues: this.state.moreIssues,
+      moreIssuesLabel: this.state.moreIssues ? 'See less ▴' : 'See more ▾',
+      toggleMoreIssues: () => this.setState(s => ({ moreIssues: !s.moreIssues })),
+
+      voteFilter: f,
+      chipAll: f === 'all' ? chipOn : chipOff,
+      chipAgree: f === 'agree' ? chipOn : chipOff,
+      chipDiffer: f === 'differ' ? chipOn : chipOff,
+      setAll: () => this.setState({ voteFilter: 'all' }),
+      setAgree: () => this.setState({ voteFilter: 'agree' }),
+      setDiffer: () => this.setState({ voteFilter: 'differ' }),
+
+      showMoreLeading: this.state.moreLeading,
+      moreLeadingLabel: this.state.moreLeading ? 'See less ▴' : 'See more ▾',
+      toggleMoreLeading: () => this.setState(s => ({ moreLeading: !s.moreLeading })),
+    };
+  }
+}
+</script>
+</body>
+</html>
