@@ -303,9 +303,9 @@ class Component extends DCLogic {
         const bg = s.race === 'D' ? 'var(--bluebg)' : 'var(--redbg)';
         const fg = s.race === 'D' ? 'var(--blue)' : 'var(--red)';
         style = base + ' background:' + bg + '; color:' + fg + '; cursor:pointer;' + (s.hot ? ' box-shadow:inset 0 0 0 2px var(--gold);' : '');
-        // Every state page follows the same "Senate {State}.dc.html" naming
+        // Every state page follows the same "senate-{state}.html" naming
         // convention, so a newly-dropped-in file is linked automatically.
-        const href = 'Senate%20' + encodeURIComponent(s.name) + '.dc.html';
+        const href = 'senate-' + s.name.toLowerCase().replace(/ /g, '-') + '.html';
         tip = s.name + ' — view the race';
         click = () => { window.location.href = href; };
       }
