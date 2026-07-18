@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  a{color:#B4832E;}
+  a:hover{color:#8F6620;}
+  :root{
+    --bg:#F6F4EF; --card:#FFFFFF; --ink:#23201A; --soft:#6B6455; --faint:#A39B89;
+    --chipbg:#E8E3D8; --track:#EFEBE2; --line:#ECE7DC;
+    --blue:#33569E; --bluebg:#DCE7FB; --blue2:#5B82D6;
+    --red:#9E3333; --redbg:#FADCDC; --red2:#D66A5B;
+    --gold:#B4832E; --goldbg:#F7ECD7;
+    --green:#2F6F4E; --greenbg:#EDF5EE; --bad:#B04A38;
+    --shadow:0 6px 18px -12px rgba(35,32,26,.3);
+  }
+  [data-theme="dark"]{
+    --bg:#15171C; --card:#212429; --ink:#F0EDE6; --soft:#A6AAB4; --faint:#6E7280;
+    --chipbg:#2B2E35; --track:#2B2E35; --line:#2E323A;
+    --blue:#9DB8EF; --bluebg:#273349; --blue2:#5B82D6;
+    --red:#E59B8F; --redbg:#3E2A2B; --red2:#C96A57;
+    --gold:#D9B26A; --goldbg:#37301F;
+    --green:#7FD6A4; --greenbg:#1E2F26; --bad:#E28B7B;
+    --shadow:0 8px 22px -12px rgba(0,0,0,.6);
+  }
+  @keyframes barGrow{ from{transform:scaleX(0);} to{transform:scaleX(1);} }
+  image-slot{ display:block; width:104px; height:104px; }
+</style>
+</helmet>
+
+<div data-theme="{{ theme }}" style="min-height:100vh; background:var(--bg); color:var(--ink); font-family:'Plus Jakarta Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .25s ease, color .25s ease;">
+
+  <div style="max-width:720px; margin:0 auto; padding:18px 20px 0; display:flex; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <a href="governor-hub.html" style="font-size:12.5px; font-weight:700; color:var(--soft); text-decoration:none; background:var(--card); padding:9px 16px; border-radius:999px; box-shadow:var(--shadow);">← All governor's races</a>
+      <span style="font-size:10px; font-weight:800; letter-spacing:.06em; color:var(--gold); background:var(--goldbg); padding:4px 8px; border-radius:999px;">BETA</span>
+    </div>
+    <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
+      <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="4.5"></line><line x1="12" y1="19.5" x2="12" y2="22"></line><line x1="2" y1="12" x2="4.5" y2="12"></line><line x1="19.5" y1="12" x2="22" y2="12"></line><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"></line><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"></line><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"></line><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"></line></svg>
+      </sc-if>
+      <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path></svg>
+      </sc-if>
+    </button>
+  </div>
+
+  <div data-screen-label="Hero" style="max-width:720px; margin:0 auto; padding:22px 20px 6px;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
+      <span style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Your ballot · Nov 3, 2026</span>
+      <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:var(--goldbg); color:var(--gold); font-size:11.5px; font-weight:800; padding:7px 14px; border-radius:999px; text-decoration:none; white-space:nowrap;">How to vote →</a>
+    </div>
+    <h1 style="font-weight:800; font-size:clamp(28px,6vw,38px); line-height:1.12; letter-spacing:-.02em; margin:16px 0 10px;">Nevada - Governor</h1>
+    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:560px;">⭐ The most vulnerable Republican governor in the country defends his seat against the state's attorney general. <a role="button" tabindex="0" onClick="{{ scrollToBackstory }}" style="color:var(--gold); font-weight:700; text-decoration:none; cursor:pointer; white-space:nowrap;">Get caught up ↓</a></p>
+  </div>
+
+  <div data-screen-label="Candidates" style="max-width:720px; margin:0 auto; padding:20px 20px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:104px; height:104px; margin:0 auto 12px; border-radius:50%; overflow:hidden; background:var(--bluebg);">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="gov-nv-ford" shape="circle" placeholder="Ford photo" style="width:104px; height:104px;" hint-size="104px,104px"></x-import>
+      </div>
+      <div style="font-weight:800; font-size:18px;">Aaron Ford</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat - Age: 54</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Nevada's attorney general since 2019 and former state Senate majority leader. A former public-school teacher who grew up on food stamps in Dallas.</p>
+      <a href="https://www.fordfornevada.com" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;">Campaign website →</a>
+    </div>
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:104px; height:104px; margin:0 auto 12px; border-radius:50%; overflow:hidden; background:var(--redbg);">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="gov-nv-lombardo" shape="circle" placeholder="Lombardo photo" style="width:104px; height:104px;" hint-size="104px,104px"></x-import>
+      </div>
+      <div style="font-weight:800; font-size:18px;">Joe Lombardo</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--redbg); color:var(--red); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Republican - Age: 63</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Governor since 2023, seeking a second term. Former Clark County sheriff — the only Republican to unseat a sitting Democratic governor in 2022.</p>
+      <a href="https://www.joelombardofornv.com" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--red); text-decoration:none;">Campaign website →</a>
+    </div>
+  </div>
+
+  <div data-screen-label="Polling" style="max-width:720px; margin:0 auto; padding:14px 20px 0;">
+    <div style="background:var(--card); border-radius:22px; padding:20px 20px 22px; box-shadow:var(--shadow);">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; gap:10px; flex-wrap:wrap;">
+        <span style="font-weight:800; font-size:16px;">Who's ahead?</span>
+        <span style="font-size:11px; font-weight:700; color:var(--gold); background:var(--goldbg); padding:5px 12px; border-radius:999px;">TOSS-UP</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+        <span style="flex:0 0 74px; font-size:12.5px; font-weight:700; color:var(--red);">Lombardo</span>
+        <div style="flex:1; height:24px; background:var(--track); border-radius:999px; overflow:hidden;"><div style="width:40%; height:100%; background:linear-gradient(90deg,var(--red2),var(--red)); border-radius:999px; transform-origin:left; animation:barGrow .8s ease;"></div></div>
+        <span style="flex:0 0 44px; text-align:right; font-size:15px; font-weight:800; color:var(--red);">40.0</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="flex:0 0 74px; font-size:12.5px; font-weight:700; color:var(--blue);">Ford</span>
+        <div style="flex:1; height:24px; background:var(--track); border-radius:999px; overflow:hidden;"><div style="width:39.5%; height:100%; background:linear-gradient(90deg,var(--blue2),var(--blue)); border-radius:999px; transform-origin:left; animation:barGrow .8s ease;"></div></div>
+        <span style="flex:0 0 44px; text-align:right; font-size:15px; font-weight:800; color:var(--blue);">39.5</span>
+      </div>
+      <p style="font-size:12px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Roughly one in five voters is still undecided — one of the biggest persuadable blocs in any marquee 2026 race.</p>
+      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:8px;">
+        <a href="https://www.realclearpolling.com/polls/governor/general/2026/nevada/lombardo-vs-ford" target="_blank" rel="noopener noreferrer" style="font-size:11px; color:var(--faint); text-decoration:none;">Average of recent public polls (RCP) →</a>
+        <span style="font-size:11px; color:var(--faint);">As of July 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="What a governor controls" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 4px;">What's actually at stake</h2>
+    <p style="font-size:13.5px; color:var(--soft); margin:0 0 14px;">A governor isn't one vote among 100 — they run the state. Here's what the winner controls.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:18px; box-shadow:var(--shadow);">
+        <div style="font-weight:800; font-size:14px; margin-bottom:5px;">The budget</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Proposes the ~$12B state budget — schools, Medicaid, and housing funds all start here.</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:18px; box-shadow:var(--shadow);">
+        <div style="font-weight:800; font-size:14px; margin-bottom:5px;">The veto pen</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Both chambers of Nevada's Legislature are Democratic. The governor decides what becomes law.</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:18px; box-shadow:var(--shadow);">
+        <div style="font-weight:800; font-size:14px; margin-bottom:5px;">The Guard &amp; ICE</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Commands the National Guard and sets how far state agencies cooperate with federal immigration enforcement.</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:18px; box-shadow:var(--shadow);">
+        <div style="font-weight:800; font-size:14px; margin-bottom:5px;">2030 redistricting</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">The winner will hold the veto pen when Nevada redraws its congressional maps after the 2030 census.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="The veto ledger" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 4px;">The veto ledger</h2>
+    <p style="font-size:13.5px; color:var(--soft); margin:0 0 14px;">Lombardo has vetoed 162 bills — a state record. Ford says he'd sign many of them. It's the clearest way to see the difference:</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-bottom:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:16px 18px; border-left:5px solid var(--red2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:6px;">LOMBARDO ON HIS VETOES</div>
+        <div style="font-size:13px; line-height:1.6; color:var(--soft);">"They made Nevada less safe, they grew government, raised taxes or misused your hard-earned taxpayer dollars… I won't hesitate to say no again."</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:16px 18px; border-left:5px solid var(--blue2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:6px;">FORD ON THE VETOES</div>
+        <div style="font-size:13px; line-height:1.6; color:var(--soft);">Calls it a record of "broken promises" — pointing to vetoed bills on housing, prescription drugs, and school meals while costs hit record highs.</div>
+      </div>
+    </div>
+    <div style="background:var(--card); border-radius:22px; padding:6px 20px; box-shadow:var(--shadow);">
+      <sc-for list="{{ vetoRows }}" as="row" hint-placeholder-count="6">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+          <div style="min-width:0;">
+            <div style="font-size:14px; font-weight:600;">{{ row.bill }}</div>
+            <div style="font-size:12px; color:var(--soft); margin-top:2px;">{{ row.detail }}</div>
+          </div>
+          <div style="flex:0 0 auto; display:flex; flex-direction:column; gap:4px; align-items:flex-end;">
+            <span style="font-size:10.5px; font-weight:800; color:var(--red); background:var(--redbg); padding:4px 10px; border-radius:999px; white-space:nowrap;">JL VETOED</span>
+            <span style="font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px; white-space:nowrap;">AF WOULD SIGN</span>
+          </div>
+        </div>
+      </sc-for>
+      <div style="padding:12px 0; font-size:11px; color:var(--faint);">Vetoes from the 2023 and 2025 legislative sessions · Ford positions from campaign statements and his platform</div>
+    </div>
+  </div>
+
+  <div data-screen-label="Where they stand" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 4px;">Where they stand</h2>
+    <p style="font-size:13.5px; color:var(--soft); margin:0 0 14px;">The issues a Nevada governor actually decides. Tap one that matters to you.</p>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+      <sc-for list="{{ topicChips }}" as="chip" hint-placeholder-count="7">
+        <button type="button" onClick="{{ chip.click }}" style="{{ chip.style }}">{{ chip.label }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--blue2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:7px;">FORD SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ fordSays }}</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--red2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:7px;">LOMBARDO SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ jlSays }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Money check" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <div style="background:var(--greenbg); border-radius:22px; padding:20px 22px;">
+      <div style="font-size:15px; font-weight:800; color:var(--green); margin-bottom:4px;">✓ Money &amp; integrity check</div>
+      <p style="font-size:12.5px; color:var(--soft); margin:0 0 12px;">Governors sign contracts, hand out incentives, and appoint regulators — so follow the money.</p>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>War chest (campaign + allied PAC, Q1 2026)</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--red);">JL $14M</span> · <span style="color:var(--blue);">AF $2.7M</span></span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Lombardo: runs a nonprofit fund that doesn't disclose donors — and vetoed the bill that would have required it</span>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--bad); background:var(--redbg); padding:4px 10px; border-radius:999px;">FLAG</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Lombardo: approved $700M+ in public money for the A's stadium and Tesla — projects that benefit major donors</span>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--bad); background:var(--redbg); padding:4px 10px; border-radius:999px;">FLAG</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Ford: facing a state ethics complaint over campaign use of official accounts and $35K in sponsored trips</span>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--bad); background:var(--redbg); padding:4px 10px; border-radius:999px;">FLAG</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Ford: law firms earning $165M+ in state legal fees are major donors to his allied PAC</span>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--bad); background:var(--redbg); padding:4px 10px; border-radius:999px;">FLAG</span>
+      </div>
+      <p style="font-size:12px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Neither side has clean hands here — both have real questions to answer about who funds them and who benefits. <span style="color:var(--faint);">— campaign finance reports and news coverage, 2025–26</span></p>
+    </div>
+  </div>
+
+  <div data-screen-label="Their stories" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 14px;">Their stories</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:12px;">AARON FORD</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">1972</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Born in Dallas; raised working-class, relying on food stamps and public schools.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">1990s</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Taught public school in Texas, then earned five degrees — including a law degree and a PhD.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">2013</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Elected to the Nevada Senate from Las Vegas; rose to majority leader.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">2019</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Became attorney general; won record opioid settlements and sued over federal rollbacks.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Term-limited as AG; won the Democratic primary for governor with 64%.</span></div>
+        </div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">JOE LOMBARDO</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">1962</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Born in Japan to a military family; graduated from Rancho High in Las Vegas.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">1988</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Joined Las Vegas Metro police after Army service; served 25+ years.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">2014</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Elected Clark County sheriff; led the response to the 2017 Route 91 mass shooting.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">2022</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Beat Gov. Sisolak by 1.5 points — the only challenger to unseat a governor that year.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Seeks a second term with Trump's endorsement and a record 162 vetoes.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="The backstory" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 ref="{{ backstoryRef }}" style="font-weight:800; font-size:21px; margin:0 0 14px;">The backstory</h2>
+    <div style="background:var(--card); border-radius:22px; padding:22px; box-shadow:var(--shadow);">
+      <p style="font-size:14px; line-height:1.7; margin:0 0 12px;">Nevada does this every time: the 2022 governor's race was decided by about 15,000 votes, and this one is polling inside a single point. Lombardo has governed as a Republican check on a Democratic legislature — signing a record teacher-raise fund and a $183M housing program, while vetoing 162 bills on rent caps, paid family leave, guns, and school meals.</p>
+      <p style="font-size:14px; line-height:1.7; margin:0 0 12px;">Ford's case is cost of living: Nevada has had the nation's highest unemployment rate for over a year, housing costs are at record highs, and he blames the "Lombardo-Trump economy." Lombardo's case is his record: job growth, a $14M war chest, and a warning that a Democratic governor plus a Democratic legislature would leave no one to say no in Carson City.</p>
+      <p style="font-size:14px; line-height:1.7; margin:0;">The deciders: Latino voters (Ford led by 24 points in spring polling), the Washoe County suburbs, and an unusually large undecided bloc. Trump won Nevada in 2024 — but he's underwater here now, and both campaigns know it.</p>
+    </div>
+  </div>
+
+  <div style="max-width:720px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; color:var(--faint); line-height:1.6;">
+    Positions summarized from campaign websites, veto records, and news reports · July 2026<br>
+    electy.org is in beta — expect rough edges as we build out every race.<br>
+    <a href="contact.html" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme: 'light', topic: 'Cost of Living' };
+  backstoryRef = React.createRef();
+
+  scrollToBackstory = () => {
+    const el = this.backstoryRef.current;
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 24;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+
+  static VETO_ROWS = [
+    { bill: 'Rent stabilization & rent-algorithm ban', detail: 'Would have capped rent hikes and banned rent-setting algorithms (AB 44)' },
+    { bill: 'Paid family & medical leave', detail: '12 weeks of paid leave at private employers with 50+ workers' },
+    { bill: 'Universal free school meals', detail: 'Breakfast and lunch for every public-school student' },
+    { bill: 'Limits on ICE activity near schools', detail: 'Would have restricted cooperation with immigration raids near schools (AB 217)' },
+    { bill: 'Raise the age for semi-automatic rifles to 21', detail: 'One of several gun bills vetoed despite majority support in polls' },
+    { bill: 'Donor disclosure for political nonprofits', detail: 'Would have required funds like Lombardo\u2019s to reveal donors (SB 60)' },
+  ];
+
+  static TOPICS = [
+    { label: 'Cost of Living',
+      af: 'His #1 issue. No new taxes during the affordability crisis; lower housing, health care, and energy costs by taking on "predatory corporations." Blames the "Lombardo-Trump economy" for the nation\u2019s highest unemployment rate.',
+      jl: 'Points to a record 1.6 million jobs and 11 straight months leading the nation in job growth, a 15% cut to the business payroll tax — and blames California energy policy for high gas prices.' },
+    { label: 'Housing',
+      af: 'Crack down on Wall Street landlords (investors own ~15% of Clark County homes) and algorithmic rent-fixing, cap security deposits at one month\u2019s rent, and ease permitting to build more.',
+      jl: 'Signed the $183M Attainable Housing Act, worked with the Trump administration to release federal land for homes, and touts 6,500 rentals in the pipeline. Vetoed rent caps as market interference.' },
+    { label: 'Education',
+      af: 'Guarantee free school meals, expand pre-K, and push per-pupil funding toward the national average — partly by collecting $500M+ in unpaid state taxes. Would keep the third-grade reading rule.',
+      jl: 'Signed a $250M matching fund for teacher raises and an accountability overhaul; champions school choice and charter expansion. Endorsed by the Clark County teachers union.' },
+    { label: 'Water & Growth',
+      af: 'A 96% lifetime conservation score as a legislator — but he hasn\u2019t released a water platform yet, a real gap with Colorado River renegotiations coming due.',
+      jl: 'Touts leading Colorado River conservation efforts to protect Nevada\u2019s water allocation, while backing continued growth in Southern Nevada.' },
+    { label: 'Energy & Data Centers',
+      af: 'As AG, fought NV Energy\u2019s "unlawful" demand charge and demanded refunds for two decades of overcharges. Wants clean-energy jobs; hasn\u2019t committed on tax breaks for data centers.',
+      jl: 'Signed a utility refund bill; frames energy policy as defending Nevadans from "California\u2019s extreme energy policies." Welcomes data-center and manufacturing investment.' },
+    { label: 'Immigration',
+      af: 'Wrote model policies limiting state help with ICE in schools and hospitals; sued to protect DACA. "You could have been here three generations or three days — you\u2019re part of the Nevada family."',
+      jl: 'Took Nevada off the sanctuary-state list, authorized National Guard support for ICE, and expanded jail-notification partnerships with federal enforcement.' },
+    { label: 'Crime & Safety',
+      af: 'Led "justice reinvestment" reforms as a senator — critics say raising the felony theft threshold went too far. Opposes the death penalty and would sign a repeal.',
+      jl: 'The ex-sheriff wants tougher smash-and-grab penalties ("ridiculous that Nevada has weaker laws than California") and signed the Crime Reduction Act.' },
+  ];
+
+  renderVals(){
+    const theme = this.state.theme;
+    const active = Component.TOPICS.find(t => t.label === this.state.topic) || Component.TOPICS[0];
+
+    const chipBase = "font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; padding:8px 14px; border-radius:999px; border:none; cursor:pointer;";
+    const topicChips = Component.TOPICS.map(t => ({
+      label: t.label,
+      style: chipBase + (t.label === active.label
+        ? ' background:var(--ink); color:var(--bg);'
+        : ' background:var(--card); color:var(--soft); box-shadow:var(--shadow);'),
+      click: () => this.setState({ topic: t.label }),
+    }));
+
+    return {
+      theme,
+      isDark: theme === 'dark',
+      isLight: theme !== 'dark',
+      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+      scrollToBackstory: this.scrollToBackstory,
+      backstoryRef: this.backstoryRef,
+      topicChips,
+      fordSays: active.af,
+      jlSays: active.jl,
+      vetoRows: Component.VETO_ROWS,
+    };
+  }
+}
+</script>
+</body>
+</html>

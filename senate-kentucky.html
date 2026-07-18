@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  :root{
+    --bg:#F6F4EF; --card:#FFFFFF; --ink:#23201A; --soft:#6B6455; --faint:#A39B89;
+    --chipbg:#E8E3D8; --track:#EFEBE2; --line:#ECE7DC;
+    --blue:#33569E; --bluebg:#DCE7FB; --blue2:#5B82D6;
+    --red:#9E3333; --redbg:#FADCDC; --red2:#D66A5B;
+    --gold:#B4832E; --goldbg:#F7ECD7;
+    --green:#2F6F4E; --greenbg:#EDF5EE; --bad:#B04A38;
+    --shadow:0 6px 18px -12px rgba(35,32,26,.3);
+  }
+  [data-theme="dark"]{
+    --bg:#15171C; --card:#212429; --ink:#F0EDE6; --soft:#A6AAB4; --faint:#6E7280;
+    --chipbg:#2B2E35; --track:#2B2E35; --line:#2E323A;
+    --blue:#9DB8EF; --bluebg:#273349; --blue2:#5B82D6;
+    --red:#E59B8F; --redbg:#3E2A2B; --red2:#C96A57;
+    --gold:#D9B26A; --goldbg:#37301F;
+    --green:#7FD6A4; --greenbg:#1E2F26; --bad:#E28B7B;
+    --shadow:0 8px 22px -12px rgba(0,0,0,.6);
+  }
+  [data-vf="agree"] .voteRow[data-cat="differ"]{ display:none !important; }
+  [data-vf="differ"] .voteRow[data-cat="agree"]{ display:none !important; }
+  @keyframes barGrow{ from{transform:scaleX(0);} to{transform:scaleX(1);} }
+</style>
+</helmet>
+
+<div data-theme="{{ theme }}" style="min-height:100vh; background:var(--bg); color:var(--ink); font-family:'Plus Jakarta Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .25s ease, color .25s ease;">
+
+  <div style="max-width:720px; margin:0 auto; padding:18px 20px 0; display:flex; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <a href="senate-hub.html" style="font-size:12.5px; font-weight:700; color:var(--soft); text-decoration:none; background:var(--card); padding:9px 16px; border-radius:999px; box-shadow:var(--shadow);">← All Senate races</a>
+      <span style="font-size:10px; font-weight:800; letter-spacing:.06em; color:var(--gold); background:var(--goldbg); padding:4px 8px; border-radius:999px;">BETA</span>
+    </div>
+    <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
+      <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="4.5"></line><line x1="12" y1="19.5" x2="12" y2="22"></line><line x1="2" y1="12" x2="4.5" y2="12"></line><line x1="19.5" y1="12" x2="22" y2="12"></line><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"></line><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"></line><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"></line><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"></line></svg>
+      </sc-if>
+      <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path></svg>
+      </sc-if>
+    </button>
+  </div>
+
+  <div data-screen-label="Hero" style="max-width:720px; margin:0 auto; padding:22px 20px 6px;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
+      <span style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Your ballot · Nov 3, 2026 · open seat</span>
+      <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:var(--goldbg); color:var(--gold); font-size:11.5px; font-weight:800; padding:7px 14px; border-radius:999px; text-decoration:none; white-space:nowrap;">How to vote →</a>
+    </div>
+    <h1 style="font-weight:800; font-size:clamp(28px,6vw,38px); line-height:1.12; letter-spacing:-.02em; margin:16px 0 10px;">Kentucky - United States Senate</h1>
+    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:560px;">Mitch McConnell's retirement ends his 40-year hold on this seat — the first open Senate race in Kentucky since 2010.</p>
+  </div>
+
+  <div data-screen-label="Candidates" style="max-width:720px; margin:0 auto; padding:20px 20px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:104px; height:104px; margin:0 auto 12px;"><image-slot id="ky-barr-photo" shape="circle" placeholder="Drop Barr photo" style="width:104px; height:104px; background:var(--redbg);"></image-slot></div>
+      <div style="font-weight:800; font-size:18px;">Andy Barr</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--redbg); color:var(--red); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Republican · Age 53</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">U.S. representative since 2013; won the GOP nomination with Trump's endorsement.</p>
+      <a href="https://www.andybarr.com" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--red); text-decoration:none;">Campaign website →</a>
+    </div>
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:104px; height:104px; margin:0 auto 12px;"><image-slot id="ky-booker-photo" shape="circle" placeholder="Drop Booker photo" style="width:104px; height:104px; background:var(--bluebg);"></image-slot></div>
+      <div style="font-weight:800; font-size:18px;">Charles Booker</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat · Age 38</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Former state representative from Louisville, running for the seat a third time.</p>
+      <a href="https://www.charlesbooker.org" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;">Campaign website →</a>
+    </div>
+  </div>
+
+  <div data-screen-label="Polling" style="max-width:720px; margin:0 auto; padding:14px 20px 0;">
+    <div style="background:var(--card); border-radius:22px; padding:20px 20px 22px; box-shadow:var(--shadow);">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; gap:10px; flex-wrap:wrap;">
+        <span style="font-weight:800; font-size:16px;">Who's ahead?</span>
+        <span style="font-size:11px; font-weight:700; color:var(--red); background:var(--redbg); padding:5px 12px; border-radius:999px;">SOLID R</span>
+      </div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:0 0 4px;">No neutral general-election poll of Barr vs. Booker has been released yet. Nonpartisan race raters — Cook Political Report, Sabato's Crystal Ball, and Inside Elections — all rate the seat Solid/Safe Republican, with Cook assigning it an R+7 partisan lean.</p>
+      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:10px;">
+        <a href="https://www.cookpolitical.com/ratings/senate-race-ratings" target="_blank" rel="noopener noreferrer" style="font-size:11px; color:var(--faint); text-decoration:none;">See Cook Political Report's Senate ratings →</a>
+        <span style="font-size:11px; color:var(--faint);">As of July 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Where they stand" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 4px;">Where they stand</h2>
+    <p style="font-size:13.5px; color:var(--soft); margin:0 0 14px;">Tap a topic that's important to you.</p>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+      <sc-for list="{{ topicChips }}" as="chip" hint-placeholder-count="6">
+        <button type="button" onClick="{{ chip.click }}" style="{{ chip.style }}">{{ chip.label }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--red2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:7px;">BARR SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ rSays }}</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--blue2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:7px;">BOOKER SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ dSays }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Money check" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <div style="background:var(--greenbg); border-radius:22px; padding:20px 22px;">
+      <div style="font-size:15px; font-weight:800; color:var(--green);">✓ Money &amp; integrity check</div>
+      <p style="font-size:12.5px; color:var(--soft); margin:4px 0 12px;">How each candidate handles money in politics.</p>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Ban Congress from trading stocks</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--faint);">AB unknown</span> · <span style="color:var(--green);">CB yes</span></span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Takes corporate PAC money</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--bad);">AB yes</span> · <span style="color:var(--green);">CB no</span></span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Wants to overturn Citizens United</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--bad);">AB no</span> · <span style="color:var(--green);">CB yes</span></span>
+      </div>
+      <p style="font-size:12px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Follow the money: Barr enters the general as the best-funded candidate in the race, drawing heavily on corporate PACs and large donors built up over six terms in the House. Booker has leaned on small-dollar and labor-union support since launching his campaign, as he did in his 2022 run.</p>
+    </div>
+  </div>
+
+  <div data-screen-label="What they'd do" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 14px;">Their big promises</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">BARR'S TOP 3</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Cut taxes &amp; spending</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Make the 2025 tax cuts permanent and rein in federal spending.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Secure the border</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Back the administration's border enforcement and deportation agenda.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Champion Kentucky coal &amp; bourbon</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Roll back energy regulation and defend distillers from retaliatory tariffs.</div></div>
+        </div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:12px;">BOOKER'S TOP 3</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Lower everyday costs</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Cheaper prescriptions, utilities, and housing for working Kentuckians.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Invest in Appalachia</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Bring jobs and infrastructure to counties left behind by coal's decline.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Money out of politics</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Reject corporate PAC money and push to overturn Citizens United.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Agree or differ" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+      <h2 style="font-weight:800; font-size:21px; margin:0;">Agree or differ?</h2>
+      <div style="display:flex; gap:6px;">
+        <button type="button" onClick="{{ setAll }}" style="{{ chipAll }}">All</button>
+        <button type="button" onClick="{{ setAgree }}" style="{{ chipAgree }}">Agree</button>
+        <button type="button" onClick="{{ setDiffer }}" style="{{ chipDiffer }}">Differ</button>
+      </div>
+    </div>
+    <div data-vf="{{ voteFilter }}" style="background:var(--card); border-radius:22px; padding:6px 20px; box-shadow:var(--shadow);">
+      <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Bourbon &amp; distillers vs. tariffs</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Both say retaliatory tariffs on Kentucky bourbon exports have hurt distillers and want them resolved</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+      </div>
+      <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Broadband expansion in rural counties</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Both back finishing rural broadband buildout across eastern and western Kentucky</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">The 2025 Medicaid &amp; budget law</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Barr voted for the law and defends its savings · Booker calls it a giveaway that guts rural hospitals</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Minimum wage</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Booker backs raising Kentucky's minimum wage · Barr opposes a federal mandate, citing costs to small businesses</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0;">
+        <div><div style="font-size:14px; font-weight:600;">Labor unions &amp; right-to-work</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Booker is endorsed by and aligned with Kentucky's labor unions · Barr supports the state's right-to-work law</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:720px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; color:var(--faint); line-height:1.6;">
+    Positions summarized from campaign websites, voting records, and news reports · July 2026<br>
+    electy.org is in beta — expect rough edges as we build out every race.<br>
+    <a href="contact.html" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme: 'light', topic: 'Cost of Living', voteFilter: 'all' };
+
+  static TOPICS = [
+    { label: 'Cost of Living',
+      r: 'Blames inflation on Democratic-era spending; backs permanent tax cuts and less regulation to bring prices down.',
+      d: 'Says corporations and Washington insiders have left working Kentuckians behind — cheaper prescriptions, utilities, and groceries come first.' },
+    { label: 'Iran War',
+      r: 'Backs the administration\u2019s strikes on Iran as necessary to stop its nuclear program.',
+      d: 'Calls the war reckless and wants Congress to reassert its constitutional war powers before further strikes.' },
+    { label: 'Healthcare',
+      r: 'Defends the 2025 budget law\u2019s Medicaid changes as targeting waste, not rural hospitals.',
+      d: 'Says the Medicaid cuts threaten to close rural hospitals across eastern and western Kentucky.' },
+    { label: 'Housing',
+      r: 'Generally favors deregulation and letting local markets drive housing supply.',
+      d: 'Wants federal investment in affordable housing and protections against rent gouging.' },
+    { label: 'Immigration',
+      r: 'Full support for the administration\u2019s border enforcement and deportation agenda.',
+      d: 'Supports border security paired with a path to citizenship for long-settled immigrants.' },
+    { label: 'Opioid Crisis',
+      r: 'Points to his work funding treatment and law-enforcement programs in Congress; wants tougher penalties for traffickers.',
+      d: 'A personal issue in his campaign — wants major new federal investment in treatment and recovery, not just enforcement.' },
+  ];
+
+  renderVals(){
+    const theme = this.state.theme;
+    const active = Component.TOPICS.find(t => t.label === this.state.topic) || Component.TOPICS[0];
+
+    const chipBase = "font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; padding:8px 14px; border-radius:999px; border:none; cursor:pointer;";
+    const topicChips = Component.TOPICS.map(t => ({
+      label: t.label,
+      style: chipBase + (t.label === active.label
+        ? ' background:var(--ink); color:var(--bg);'
+        : ' background:var(--card); color:var(--soft); box-shadow:var(--shadow);'),
+      click: () => this.setState({ topic: t.label }),
+    }));
+
+    const f = this.state.voteFilter;
+    const vChip = (on) => chipBase + (on ? ' background:var(--ink); color:var(--bg);' : ' background:var(--card); color:var(--soft); box-shadow:var(--shadow);');
+
+    return {
+      theme,
+      isDark: theme === 'dark',
+      isLight: theme !== 'dark',
+      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+
+      topicChips,
+      rSays: active.r,
+      dSays: active.d,
+
+      voteFilter: f,
+      chipAll: vChip(f === 'all'),
+      chipAgree: vChip(f === 'agree'),
+      chipDiffer: vChip(f === 'differ'),
+      setAll: () => this.setState({ voteFilter: 'all' }),
+      setAgree: () => this.setState({ voteFilter: 'agree' }),
+      setDiffer: () => this.setState({ voteFilter: 'differ' }),
+    };
+  }
+}
+</script>
+</body>
+</html>

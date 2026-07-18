@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  :root{
+    --bg:#F6F4EF; --card:#FFFFFF; --ink:#23201A; --soft:#6B6455; --faint:#A39B89;
+    --chipbg:#E8E3D8; --track:#EFEBE2; --line:#ECE7DC;
+    --blue:#33569E; --bluebg:#DCE7FB; --blue2:#5B82D6;
+    --red:#9E3333; --redbg:#FADCDC; --red2:#D66A5B;
+    --gold:#B4832E; --goldbg:#F7ECD7;
+    --green:#2F6F4E; --greenbg:#EDF5EE; --bad:#B04A38;
+    --shadow:0 6px 18px -12px rgba(35,32,26,.3);
+  }
+  [data-theme="dark"]{
+    --bg:#15171C; --card:#212429; --ink:#F0EDE6; --soft:#A6AAB4; --faint:#6E7280;
+    --chipbg:#2B2E35; --track:#2B2E35; --line:#2E323A;
+    --blue:#9DB8EF; --bluebg:#273349; --blue2:#5B82D6;
+    --red:#E59B8F; --redbg:#3E2A2B; --red2:#C96A57;
+    --gold:#D9B26A; --goldbg:#37301F;
+    --green:#7FD6A4; --greenbg:#1E2F26; --bad:#E28B7B;
+    --shadow:0 8px 22px -12px rgba(0,0,0,.6);
+  }
+  a{color:var(--gold);}
+  a:hover{color:var(--ink);}
+  [data-vf="agree"] .voteRow[data-cat="differ"]{ display:none !important; }
+  [data-vf="differ"] .voteRow[data-cat="agree"]{ display:none !important; }
+</style>
+</helmet>
+
+<div data-theme="{{ theme }}" style="min-height:100vh; background:var(--bg); color:var(--ink); font-family:'Plus Jakarta Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .25s ease, color .25s ease;">
+
+  <div style="max-width:720px; margin:0 auto; padding:18px 20px 0; display:flex; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <a href="senate-hub.html" style="font-size:12.5px; font-weight:700; color:var(--soft); text-decoration:none; background:var(--card); padding:9px 16px; border-radius:999px; box-shadow:var(--shadow);">← All Senate races</a>
+      <span style="font-size:10px; font-weight:800; letter-spacing:.06em; color:var(--gold); background:var(--goldbg); padding:4px 8px; border-radius:999px;">BETA</span>
+    </div>
+    <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
+      <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="4.5"></line><line x1="12" y1="19.5" x2="12" y2="22"></line><line x1="2" y1="12" x2="4.5" y2="12"></line><line x1="19.5" y1="12" x2="22" y2="12"></line><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"></line><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"></line><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"></line><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"></line></svg>
+      </sc-if>
+      <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path></svg>
+      </sc-if>
+    </button>
+  </div>
+
+  <div data-screen-label="Hero" style="max-width:720px; margin:0 auto; padding:22px 20px 6px;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
+      <span style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Democratic primary · Sept 1, 2026 · General Nov 3</span>
+      <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:var(--goldbg); color:var(--gold); font-size:11.5px; font-weight:800; padding:7px 14px; border-radius:999px; text-decoration:none; white-space:nowrap;">How to vote →</a>
+    </div>
+    <h1 style="font-weight:800; font-size:clamp(28px,6vw,38px); line-height:1.12; letter-spacing:-.02em; margin:16px 0 10px;">Massachusetts - United States Senate</h1>
+    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:560px;">The real contest is the September 1 Democratic primary, where 79-year-old Ed Markey faces a generational challenge from Seth Moulton.</p>
+  </div>
+
+  <div data-screen-label="Candidates" style="max-width:720px; margin:0 auto; padding:20px 20px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:104px; height:104px; margin:0 auto 12px;"><image-slot id="ma-markey-photo" shape="circle" placeholder="Drop Markey photo" style="width:104px; height:104px; background:var(--bluebg);"></image-slot></div>
+      <div style="font-weight:800; font-size:18px;">Ed Markey</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat · Age 79 · Incumbent</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">In Congress since 1976 and co-author of the Green New Deal; backed by Warren, Sanders, and the state party convention.</p>
+      <a href="https://www.edmarkey.com" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;">Campaign website →</a>
+    </div>
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:104px; height:104px; margin:0 auto 12px;"><image-slot id="ma-moulton-photo" shape="circle" placeholder="Drop Moulton photo" style="width:104px; height:104px; background:var(--bluebg);"></image-slot></div>
+      <div style="font-weight:800; font-size:18px;">Seth Moulton</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat · Age 47</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Salem congressman and Marine who served four tours in Iraq; demanding a "generational shift" in party leadership.</p>
+      <a href="https://www.sethmoulton.com" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;">Campaign website →</a>
+    </div>
+  </div>
+
+  <div data-screen-label="Polling" style="max-width:720px; margin:0 auto; padding:14px 20px 0;">
+    <div style="background:var(--card); border-radius:22px; padding:20px 20px 22px; box-shadow:var(--shadow);">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; gap:10px; flex-wrap:wrap;">
+        <span style="font-weight:800; font-size:16px;">Who's ahead?</span>
+        <span style="font-size:11px; font-weight:700; color:var(--gold); background:var(--goldbg); padding:5px 12px; border-radius:999px;">PRIMARY: MARKEY LEADS, NARROWING</span>
+      </div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:0;">A late-June <a href="https://www.axios.com/local/boston/2026/07/08/markey-moulton-debate-massachusetts" target="_blank" rel="noopener noreferrer" style="font-weight:700;">University of New Hampshire poll</a> had Markey at 41% to Moulton's 35% among likely primary voters, closer than <a href="https://emersoncollegepolling.com/massachusetts-2026-poll/" target="_blank" rel="noopener noreferrer" style="font-weight:700;">Emerson's May survey</a> (37–32, 29% undecided). Whoever wins, raters universally classify the November general as Safe Democrat.</p>
+    </div>
+  </div>
+
+  <div data-screen-label="Where they stand" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 4px;">Where they stand</h2>
+    <p style="font-size:13.5px; color:var(--soft); margin:0 0 14px;">Tap a topic that's important to you.</p>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+      <sc-for list="{{ topicChips }}" as="chip" hint-placeholder-count="6">
+        <button type="button" onClick="{{ chip.click }}" style="{{ chip.style }}">{{ chip.label }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--blue2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:7px;">MARKEY SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ mSays }}</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--gold); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--gold); letter-spacing:.04em; margin-bottom:7px;">MOULTON SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ oSays }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Money check" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <div style="background:var(--card); border-radius:22px; padding:20px 22px; box-shadow:var(--shadow);">
+      <div style="font-size:15px; font-weight:800;">Money &amp; integrity check</div>
+      <p style="font-size:12.5px; color:var(--soft); margin:4px 0 12px;">How each candidate handles money in politics. <span style="color:var(--green); font-weight:700;">Green = good</span>, <span style="color:var(--bad); font-weight:700;">red = bad</span>, grey = unknown.</p>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Ban Congress from trading stocks</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">Markey yes</span> · <span style="color:var(--faint);">Moulton ?</span></span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Takes corporate PAC money</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">Markey no</span> · <span style="color:var(--faint);">Moulton ?</span></span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
+        <span>Wants to overturn Citizens United</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">Markey yes</span> · <span style="color:var(--green);">Moulton yes</span></span>
+      </div>
+      <p style="font-size:12px; line-height:1.6; color:var(--faint); margin:12px 0 0;">Follow the money: Markey leans on the small-dollar grassroots network from his 2020 race. Moulton is backed by veterans' groups like VoteVets; Markey's campaign has attacked his $3.1M–$15.2M in defense-linked holdings, which Moulton moved into a blind trust in June.</p>
+    </div>
+  </div>
+
+  <div data-screen-label="Agree or differ" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+      <h2 style="font-weight:800; font-size:21px; margin:0;">Agree or differ?</h2>
+      <div style="display:flex; gap:6px;">
+        <button type="button" onClick="{{ setAll }}" style="{{ chipAll }}">All</button>
+        <button type="button" onClick="{{ setAgree }}" style="{{ chipAgree }}">Agree</button>
+        <button type="button" onClick="{{ setDiffer }}" style="{{ chipDiffer }}">Differ</button>
+      </div>
+    </div>
+    <div data-vf="{{ voteFilter }}" style="background:var(--card); border-radius:22px; padding:6px 20px; box-shadow:var(--shadow);">
+      <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Abortion rights</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Both support federal protection for abortion access</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+      </div>
+      <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Climate action</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Markey co-wrote the Green New Deal; Moulton backs aggressive clean-energy investment</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Democratic leadership</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Moulton vows not to back Chuck Schumer as leader and challenges Markey to match the pledge · Markey hasn't</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Age &amp; term limits</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Moulton wants age limits for Congress and term limits for committee chairs · Markey, 79, says experience delivers results</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0;">
+        <div><div style="font-size:14px; font-weight:600;">West–East rail</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Markey touts $150M+ he secured for West–East Rail · Moulton says it's far short of his Springfield–Boston high-speed vision</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:720px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; color:var(--faint); line-height:1.6;">
+    Positions summarized from campaign websites, voting records, and news reports · July 2026<br>
+    electy.org is in beta — expect rough edges as we build out every race.<br>
+    <a href="contact.html" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme: 'light', topic: 'Cost of Living', voteFilter: 'all' };
+
+  static TOPICS = [
+    { label: 'Cost of Living',
+      m: 'Runs on his record fighting for consumers: capping drug prices, taxing the wealthy, and taking on corporate price gouging.',
+      o: 'Says the old playbook hasn\u2019t lowered costs; wants a new economic agenda focused on housing, wages, and outcompeting China.' },
+    { label: 'Iran War',
+      m: 'A longtime anti-war voice: opposes the strikes on Iran and demands Congress vote before any escalation.',
+      o: 'The Iraq veteran also wants congressional authorization, but argues Democrats need credible national-security leadership, not just protest.' },
+    { label: 'Healthcare',
+      m: 'Backs Medicare for All \u2014 a single government plan covering everyone.',
+      o: 'Favors a public option that keeps private insurance while letting anyone buy into a government plan.' },
+    { label: 'Housing',
+      m: 'Wants major federal investment in affordable and green public housing.',
+      o: 'Makes building more housing, faster, a centerpiece \u2014 cutting red tape that blocks new homes.' },
+    { label: 'Immigration',
+      m: 'Fights the administration\u2019s deportation raids and defends immigrant communities in Massachusetts.',
+      o: 'Also opposes the raids, but says Democrats must pair border security with legal immigration reform to win the argument.' },
+    { label: 'Trans Rights',
+      m: 'Attacks Moulton for comments about trans athletes in youth sports; endorsed by the Human Rights Campaign.',
+      o: 'Points to his perfect Human Rights Campaign voting record while arguing Democrats shouldn\u2019t duck hard conversations.' },
+  ];
+
+  renderVals(){
+    const theme = this.state.theme;
+    const active = Component.TOPICS.find(t => t.label === this.state.topic) || Component.TOPICS[0];
+
+    const chipBase = "font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; padding:8px 14px; border-radius:999px; border:none; cursor:pointer;";
+    const topicChips = Component.TOPICS.map(t => ({
+      label: t.label,
+      style: chipBase + (t.label === active.label
+        ? ' background:var(--ink); color:var(--bg);'
+        : ' background:var(--card); color:var(--soft); box-shadow:var(--shadow);'),
+      click: () => this.setState({ topic: t.label }),
+    }));
+
+    const f = this.state.voteFilter;
+    const vChip = (on) => chipBase + (on ? ' background:var(--ink); color:var(--bg);' : ' background:var(--card); color:var(--soft); box-shadow:var(--shadow);');
+
+    return {
+      theme,
+      isDark: theme === 'dark',
+      isLight: theme !== 'dark',
+      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+
+      topicChips,
+      mSays: active.m,
+      oSays: active.o,
+
+      voteFilter: f,
+      chipAll: vChip(f === 'all'),
+      chipAgree: vChip(f === 'agree'),
+      chipDiffer: vChip(f === 'differ'),
+      setAll: () => this.setState({ voteFilter: 'all' }),
+      setAgree: () => this.setState({ voteFilter: 'agree' }),
+      setDiffer: () => this.setState({ voteFilter: 'differ' }),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texas U.S. Senate — Candidate Compare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EFEAE0;
+    --paper-deep: #E6DFD0;
+    --card: #FFF8EE;
+    --ink: #20242B;
+    --ink-soft: #565C68;
+    --rule: #C9C0AA;
+    --blue: #2D4A75;
+    --blue-soft: #DEE6EF;
+    --blue-line: #b9c8da;
+    --red: #8A3B2E;
+    --red-soft: #F1E1DC;
+    --red-line: #d9bdb3;
+    --brass: #A9823C;
+    --check: #2F6F4E;
+    --cross: #8A3B2E;
+    --radius: 2px;
+  }
+
+  html[data-theme="dark"]{
+    --paper: #1B1D22;
+    --paper-deep: #25272F;
+    --card: #24262D;
+    --ink: #EAE6DA;
+    --ink-soft: #9CA1AC;
+    --rule: #3A3D47;
+    --blue: #82A4D4;
+    --blue-soft: #20293A;
+    --blue-line: #314158;
+    --red: #D89685;
+    --red-soft: #332019;
+    --red-line: #4a2c23;
+    --brass: #D6B26C;
+    --check: #6FBB8E;
+    --cross: #D89685;
+  }
+
+  body{ transition:background-color .25s ease, color .25s ease; }
+  .candidate-bar, .poll-card, .market-card, .portrait, footer{ transition:background-color .25s ease, border-color .25s ease; }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .display{font-family:'Fraunces', serif;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    text-align:center;
+    padding:28px 16px 18px;
+    border-bottom:1px solid var(--rule);
+    background:
+      repeating-linear-gradient(90deg, var(--paper-deep) 0 6px, transparent 6px 14px) top/100% 5px no-repeat,
+      var(--paper);
+  }
+  .masthead .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:10px;
+  }
+  .masthead h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(26px, 4.4vw, 44px);
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .masthead .date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .vote-link{
+    display:inline-block;
+    margin-top:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.04em;
+    color:var(--brass);
+    text-decoration:none;
+    border-bottom:1px solid var(--brass);
+    padding-bottom:1px;
+  }
+  .vote-link:hover{ color:var(--ink); border-color:var(--ink); }
+
+  /* ---------- Sticky candidate bar ---------- */
+  .candidate-bar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:var(--paper);
+    border-bottom:2px solid var(--ink);
+    box-shadow:0 4px 10px -6px rgba(0,0,0,.25);
+  }
+  .theme-toggle-wrap{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:60;
+  }
+  .theme-toggle{
+    width:36px;height:36px;
+    border-radius:50%;
+    border:1.5px solid var(--ink);
+    background:var(--paper);
+    color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    padding:0;
+    box-shadow:0 2px 8px -3px rgba(0,0,0,.35);
+    transition:background-color .25s ease, border-color .25s ease;
+  }
+  .theme-toggle:hover{ border-color:var(--brass); color:var(--brass); }
+  .theme-toggle svg{ width:17px;height:17px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .theme-toggle .icon-moon{ display:none; }
+  html[data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
+  html[data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
+  .cand-tab{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:12px 16px;
+    min-width:0;
+  }
+  .cand-tab.dem{ background:var(--blue-soft); }
+  .cand-tab.rep{ background:var(--red-soft); }
+  .party-logo{
+    flex:0 0 auto;
+    width:26px;height:26px;
+    display:block;
+  }
+  .cand-tab .name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(14px, 2.4vw, 19px);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .cand-tab .name a{
+    color:inherit;
+    text-decoration:none;
+  }
+  .cand-tab .name a:hover{ text-decoration:underline; }
+  .dem .name{ color:var(--blue); }
+  .rep .name{ color:var(--red); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    display:grid;
+    grid-template-columns:1fr minmax(220px, 320px) 1fr;
+    gap:18px;
+    padding:30px 18px 10px;
+    max-width:1080px;
+    margin:0 auto;
+    align-items:start;
+  }
+  .portrait-wrap{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .portrait-wrap.dem{ align-items:flex-end; }
+  .portrait-wrap.rep{ align-items:flex-start; }
+  .portrait{
+    width:100%;
+    max-width:230px;
+    aspect-ratio:4/5;
+    border:1.5px dashed var(--ink-soft);
+    background:var(--paper-deep);
+    position:relative;
+    overflow:hidden;
+  }
+  .portrait img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .portrait-cap{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    max-width:230px;
+    text-align:center;
+  }
+
+  .poll-col{ display:flex; flex-direction:column; gap:18px; padding-top:6px; }
+  .poll-card{
+    border:1px solid var(--rule);
+    background:var(--card);
+    padding:14px 16px 16px;
+  }
+  .poll-card h3{
+    margin:0 0 8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    text-align:center;
+  }
+  .poll-source{
+    display:block;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    line-height:1.5;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px dotted var(--rule);
+    padding-bottom:10px;
+    margin-bottom:12px;
+  }
+  .poll-source:hover{ color:var(--brass); }
+  .poll-row{ margin-bottom:14px; }
+  .poll-row:last-child{ margin-bottom:0; }
+  .poll-row .top{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:13px; margin-bottom:6px;
+  }
+  .poll-row .who{ font-weight:600; }
+  .poll-row .pct{ font-family:'IBM Plex Mono', monospace; font-weight:600; }
+  .poll-track{
+    position:relative;
+    height:3px;
+    background:var(--rule);
+  }
+  .poll-fill{ position:absolute; top:0; left:0; height:100%; }
+  .poll-dot{
+    position:absolute; top:50%; transform:translate(-50%,-50%);
+    width:12px;height:12px;border-radius:50%;
+    border:2px solid var(--paper);
+  }
+  .poll-row.dem .poll-fill, .poll-row.dem .poll-dot{ background:var(--blue); }
+  .poll-row.rep .poll-fill, .poll-row.rep .poll-dot{ background:var(--red); }
+
+  .market-card{
+    border:1px dashed var(--rule);
+    background:var(--paper-deep);
+    aspect-ratio:16/9;
+    display:flex;align-items:center;justify-content:center;
+    flex-direction:column; gap:4px;
+  }
+  .market-card span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Section shell ---------- */
+  .section{
+    max-width:1080px;
+    margin:0 auto;
+    padding:8px 18px;
+  }
+  .section + .section{ border-top:1px solid var(--rule); padding-top:26px; }
+
+  details.block{ }
+  details.block > summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 0;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(19px, 2.6vw, 26px);
+    color:var(--ink);
+  }
+  details.block > summary::-webkit-details-marker{ display:none; }
+  .tri{
+    width:0;height:0;
+    border-left:6px solid transparent;
+    border-right:6px solid transparent;
+    border-top:8px solid var(--brass);
+    transition:transform .2s ease;
+    flex:0 0 auto;
+  }
+  details[open] > summary .tri{ transform:rotate(180deg); }
+
+  /* ---- issues ---- */
+  .issues-wrap{ position:relative; }
+  .issues-divider{
+    position:absolute;
+    top:0; bottom:0; left:50%;
+    width:1px;
+    background:var(--rule);
+  }
+  .issues-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    padding:6px 0 18px;
+  }
+  .issue-col.dem{ padding-right:28px; }
+  .issue-col.rep{ padding-left:0; }
+  .issue{ margin-bottom:20px; }
+  .issue:last-child{ margin-bottom:0; }
+  .issue h4{
+    margin:0 0 8px;
+    font-family:'Fraunces', serif;
+    font-size:17px;
+    font-weight:600;
+  }
+  .issue-col.dem h4{ color:var(--blue); }
+  .issue-col.rep h4{ color:var(--red); }
+  .issue p{
+    margin:0;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+  .see-more{
+    display:block;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--brass);
+    cursor:pointer;
+    border:none;
+    background:none;
+    width:100%;
+    padding:6px 0 14px;
+  }
+  .more-issues{ display:none; }
+  .more-issues.shown{ display:block; }
+
+  /* ---- finances ---- */
+  .finance-list{ padding:4px 0 22px; }
+  .fin-row{
+    display:grid;
+    grid-template-columns:40px 1fr 40px;
+    align-items:center;
+    gap:14px;
+    padding:13px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .fin-row:last-child{ border-bottom:none; }
+  .fin-label{
+    font-size:14.5px;
+    text-align:center;
+    color:var(--ink);
+  }
+  .mark{
+    width:30px;height:30px;
+    margin:0 auto;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;
+    font-weight:700;
+    border:1.5px solid currentColor;
+  }
+  .mark.yes{ color:var(--check); }
+  .mark.no{ color:var(--cross); }
+
+  /* ---- leading issues ---- */
+  .topic-block{ padding:14px 0 8px; }
+  .topic-block + .topic-block{ border-top:1px solid var(--rule); }
+  .topic-title{
+    text-align:center;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:18px;
+    margin:0 0 14px;
+  }
+  .topic-row.issues-wrap{ position:relative; }
+  .topic-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    padding-bottom:8px;
+  }
+  .topic-col p{
+    margin:0 0 12px;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+  .topic-col p:last-child{ margin-bottom:0; }
+  .topic-col.dem{ padding-right:28px; }
+  .topic-col.rep{ padding-left:0; }
+  .more-leading{ display:none; }
+  .more-leading.shown{ display:block; }
+
+  footer{
+    text-align:center;
+    padding:30px 18px 50px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width:720px){
+    .hero{
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .poll-col{ grid-column:1 / -1; order:3; }
+    .portrait{ max-width:160px; }
+    .portrait-wrap.dem{ align-items:center; }
+    .portrait-wrap.rep{ align-items:center; }
+
+    .cand-tab{ padding:10px 10px; gap:7px; }
+    .cand-tab .name{ font-size:14px; }
+    .party-logo{ width:22px;height:22px; }
+    .theme-toggle{ width:30px;height:30px; }
+    .theme-toggle svg{ width:14px;height:14px; }
+    .theme-toggle-wrap{ top:10px; right:10px; }
+
+    .issues-grid{ grid-template-columns:1fr; gap:6px; }
+    .issue-col.dem{ border-bottom:1px solid var(--rule); padding-right:0; padding-bottom:16px; margin-bottom:16px; }
+    .issues-divider{ display:none; }
+
+    .topic-cols{ grid-template-columns:1fr; gap:6px; }
+    .topic-col.dem{ border-bottom:1px solid var(--rule); padding-right:0; padding-bottom:14px; margin-bottom:14px; }
+    .topic-row .issues-divider{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="theme-toggle-wrap">
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
+
+  <div class="masthead">
+    <div class="eyebrow">General Election · Ballot Compare</div>
+    <h1>United States Senate Election in Texas</h1>
+    <div class="date mono">November 3, 2026</div>
+    <a class="vote-link" href="https://vote.org" target="_blank" rel="noopener noreferrer">See how to vote →</a>
+  </div>
+
+  <div class="candidate-bar">
+    <div class="cand-tab dem">
+      <svg class="party-logo" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" fill="#2D4A75"/>
+        <ellipse cx="46" cy="62" rx="23" ry="15" fill="#fff"/>
+        <circle cx="74" cy="46" r="13" fill="#fff"/>
+        <path d="M83 32 Q92 28 88 40 Q84 38 81 36 Z" fill="#fff"/>
+        <path d="M30 75 Q24 90 20 76 Z" fill="#fff"/>
+        <rect x="33" y="74" width="6" height="14" rx="2" fill="#fff"/>
+        <rect x="55" y="74" width="6" height="14" rx="2" fill="#fff"/>
+      </svg>
+      <span class="name"><a href="talarico.html">James Talarico</a></span>
+    </div>
+
+    <div class="cand-tab rep">
+      <svg class="party-logo" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" fill="#8A3B2E"/>
+        <ellipse cx="42" cy="60" rx="22" ry="15" fill="#fff"/>
+        <circle cx="68" cy="44" r="14" fill="#fff"/>
+        <ellipse cx="80" cy="40" rx="11" ry="14" fill="#fff"/>
+        <path d="M76 50 Q70 66 78 72 Q83 67 80 58 Q79 53 76 50 Z" fill="#fff"/>
+        <rect x="28" y="73" width="6" height="14" rx="2" fill="#fff"/>
+        <rect x="50" y="73" width="6" height="14" rx="2" fill="#fff"/>
+      </svg>
+      <span class="name"><a href="paxton.html">Ken Paxton</a></span>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="portrait-wrap dem">
+      <div class="portrait">
+        <!-- Swap the src below with a photo URL -->
+        <img src="https://placehold.co/400x500/E6DFD0/565C68?text=Photo" alt="James Talarico — replace with photo">
+      </div>
+      <div class="portrait-cap">Texas state representative for District 50 since 2018. Former middle school teacher with degrees from UT Austin and Harvard.</div>
+    </div>
+
+    <div class="poll-col">
+      <div class="poll-card">
+        <h3>Recent Polling</h3>
+        <a class="poll-source" href="https://www.nytimes.com" target="_blank" rel="noopener noreferrer">The New York Times/Siena poll<br>June 19-27</a>
+        <div class="poll-row dem">
+          <div class="top"><span class="who">Talarico</span><span class="pct mono">48%</span></div>
+          <div class="poll-track"><div class="poll-fill" style="width:48%"></div><div class="poll-dot" style="left:48%"></div></div>
+        </div>
+        <div class="poll-row rep">
+          <div class="top"><span class="who">Paxton</span><span class="pct mono">46%</span></div>
+          <div class="poll-track"><div class="poll-fill" style="width:46%"></div><div class="poll-dot" style="left:46%"></div></div>
+        </div>
+      </div>
+
+      <div class="market-card">
+        <span>Prediction Market</span>
+        <span>Chart Placeholder</span>
+      </div>
+    </div>
+
+    <div class="portrait-wrap rep">
+      <div class="portrait">
+        <!-- Swap the src below with a photo URL -->
+        <img src="https://placehold.co/400x500/E6DFD0/565C68?text=Photo" alt="Ken Paxton — replace with photo">
+      </div>
+      <div class="portrait-cap">Attorney General of Texas since 2015, after earlier serving in the Texas House and Senate. Baylor and UVA Law graduate.</div>
+    </div>
+  </section>
+
+  <div class="section">
+    <details class="block" open>
+      <summary><span class="tri"></span> Their Issues</summary>
+
+      <div class="issues-wrap">
+        <div class="issues-divider"></div>
+        <div class="issues-grid">
+          <div class="issue-col dem">
+            <div class="issue">
+              <h4>Corruption</h4>
+              <p>Has campaigned on stronger ethics rules and transparency requirements for state officeholders.</p>
+            </div>
+            <div class="issue">
+              <h4>Taxes</h4>
+              <p>Backs property tax relief for homeowners alongside closing loopholes used by large corporations.</p>
+            </div>
+          </div>
+          <div class="issue-col rep">
+            <div class="issue">
+              <h4>Trump's Agenda</h4>
+              <p>Has aligned with the administration's priorities on border security, energy production, and federal spending cuts.</p>
+            </div>
+            <div class="issue">
+              <h4>Big Pharma</h4>
+              <p>Has pushed measures aimed at lowering prescription drug costs for Texas families.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="more-issues" id="moreIssues">
+          <div class="issues-grid">
+            <div class="issue-col dem">
+              <div class="issue">
+                <h4>Healthcare</h4>
+                <p>Supports expanding access to affordable coverage for rural and uninsured Texans.</p>
+              </div>
+            </div>
+            <div class="issue-col rep">
+              <div class="issue">
+                <h4>Border Security</h4>
+                <p>Supports continued state and federal funding for border enforcement operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="see-more" onclick="document.getElementById('moreIssues').classList.toggle('shown')">See more ▾</button>
+    </details>
+  </div>
+
+  <div class="section">
+    <details class="block" open>
+      <summary><span class="tri"></span> Finances</summary>
+      <div class="finance-list">
+        <div class="fin-row">
+          <span class="mark yes">✓</span>
+          <span class="fin-label">Supports congressional stock trading ban</span>
+          <span class="mark no">✕</span>
+        </div>
+        <div class="fin-row">
+          <span class="mark no">✕</span>
+          <span class="fin-label">Accepts corporate PAC money</span>
+          <span class="mark yes">✓</span>
+        </div>
+        <div class="fin-row">
+          <span class="mark yes">✓</span>
+          <span class="fin-label">Supports overturning Citizens United</span>
+          <span class="mark no">✕</span>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <details class="block">
+      <summary><span class="tri"></span> Leading Issues</summary>
+
+      <div class="topic-block">
+        <h4 class="topic-title">The Iran War</h4>
+        <div class="topic-row issues-wrap">
+          <div class="issues-divider"></div>
+          <div class="topic-cols">
+            <div class="topic-col dem">
+              <p>Has called for congressional approval before further military action in the region.</p>
+              <p>Favors renewed diplomatic engagement over an open-ended military commitment.</p>
+            </div>
+            <div class="topic-col rep">
+              <p>Has backed the administration's posture and emphasized deterrence against Iran's nuclear program.</p>
+              <p>Supports continued military readiness in the region as a check on Iranian influence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-block">
+        <h4 class="topic-title">Climate Change</h4>
+        <div class="topic-row issues-wrap">
+          <div class="issues-divider"></div>
+          <div class="topic-cols">
+            <div class="topic-col dem">
+              <p>Supports expanding renewable energy investment and stronger emissions standards.</p>
+            </div>
+            <div class="topic-col rep">
+              <p>Has prioritized continued oil and gas production and opposed new federal emissions mandates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-block">
+        <h4 class="topic-title">Cost of Living</h4>
+        <div class="topic-row issues-wrap">
+          <div class="issues-divider"></div>
+          <div class="topic-cols">
+            <div class="topic-col dem">
+              <p>Has focused on housing affordability and capping rising grocery and healthcare costs.</p>
+            </div>
+            <div class="topic-col rep">
+              <p>Has pointed to tax relief and reduced regulation as the path to lowering costs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="more-leading" id="moreLeading">
+        <div class="topic-block">
+          <h4 class="topic-title">Healthcare</h4>
+          <div class="topic-row issues-wrap">
+            <div class="issues-divider"></div>
+            <div class="topic-cols">
+              <div class="topic-col dem">
+                <p>Supports expanding access to affordable coverage for rural and uninsured Texans.</p>
+              </div>
+              <div class="topic-col rep">
+                <p>Has pushed for greater price transparency and more private-market competition.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="see-more" onclick="document.getElementById('moreLeading').classList.toggle('shown')">See more ▾</button>
+    </details>
+  </div>
+
+  <footer>
+    Sample layout · Replace placeholder copy with verified candidate positions before publishing
+  </footer>
+
+  <script>
+    function setTheme(theme){
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+    function toggleTheme(){
+      var current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    }
+    (function(){
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
+    })();
+  </script>
+
+</body>
+</html>

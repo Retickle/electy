@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  :root{
+    --bg:#F6F4EF; --card:#FFFFFF; --ink:#23201A; --soft:#6B6455; --faint:#A39B89;
+    --chipbg:#E8E3D8; --track:#EFEBE2; --line:#ECE7DC;
+    --blue:#33569E; --bluebg:#DCE7FB; --blue2:#5B82D6;
+    --red:#9E3333; --redbg:#FADCDC; --red2:#D66A5B;
+    --gold:#B4832E; --goldbg:#F7ECD7;
+    --green:#2F6F4E; --greenbg:#EDF5EE; --bad:#B04A38;
+    --shadow:0 6px 18px -12px rgba(35,32,26,.3);
+  }
+  [data-theme="dark"]{
+    --bg:#15171C; --card:#212429; --ink:#F0EDE6; --soft:#A6AAB4; --faint:#6E7280;
+    --chipbg:#2B2E35; --track:#2B2E35; --line:#2E323A;
+    --blue:#9DB8EF; --bluebg:#273349; --blue2:#5B82D6;
+    --red:#E59B8F; --redbg:#3E2A2B; --red2:#C96A57;
+    --gold:#D9B26A; --goldbg:#37301F;
+    --green:#7FD6A4; --greenbg:#1E2F26; --bad:#E28B7B;
+    --shadow:0 8px 22px -12px rgba(0,0,0,.6);
+  }
+  [data-vf="agree"] .voteRow[data-cat="differ"]{ display:none !important; }
+  [data-vf="differ"] .voteRow[data-cat="agree"]{ display:none !important; }
+</style>
+</helmet>
+
+<div data-theme="{{ theme }}" style="min-height:100vh; background:var(--bg); color:var(--ink); font-family:'Plus Jakarta Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .25s ease, color .25s ease;">
+
+  <div style="max-width:720px; margin:0 auto; padding:18px 20px 0; display:flex; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <a href="senate-hub.html" style="font-size:12.5px; font-weight:700; color:var(--soft); text-decoration:none; background:var(--card); padding:9px 16px; border-radius:999px; box-shadow:var(--shadow);">← All Senate races</a>
+      <span style="font-size:10px; font-weight:800; letter-spacing:.06em; color:var(--gold); background:var(--goldbg); padding:4px 8px; border-radius:999px;">BETA</span>
+    </div>
+    <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
+      <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="4.5"></line><line x1="12" y1="19.5" x2="12" y2="22"></line><line x1="2" y1="12" x2="4.5" y2="12"></line><line x1="19.5" y1="12" x2="22" y2="12"></line><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"></line><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"></line><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"></line><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"></line></svg>
+      </sc-if>
+      <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path></svg>
+      </sc-if>
+    </button>
+  </div>
+
+  <div data-screen-label="Hero" style="max-width:720px; margin:0 auto; padding:22px 20px 6px;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
+      <span style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Your ballot · Nov 3, 2026 · primaries held June 2</span>
+      <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:var(--goldbg); color:var(--gold); font-size:11.5px; font-weight:800; padding:7px 14px; border-radius:999px; text-decoration:none; white-space:nowrap;">How to vote →</a>
+    </div>
+    <h1 style="font-weight:800; font-size:clamp(28px,6vw,38px); line-height:1.12; letter-spacing:-.02em; margin:16px 0 10px;">Montana - United States Senate</h1>
+    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:560px;">⭐ Sen. Steve Daines' last-minute retirement turned this into a rare open, three-way race in a state Trump won by 20 points.</p>
+  </div>
+
+  <div data-screen-label="Candidates" style="max-width:720px; margin:0 auto; padding:20px 20px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px;">
+    <div style="background:var(--card); border-radius:22px; padding:22px 16px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:96px; height:96px; margin:0 auto 12px;"><image-slot id="mt-alme-photo" shape="circle" placeholder="Drop Alme photo" style="width:96px; height:96px; background:var(--redbg); border-radius:50%;"></image-slot></div>
+      <div style="font-weight:800; font-size:17px;">Kurt Alme</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--redbg); color:var(--red); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Republican</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Former U.S. Attorney for Montana, endorsed by Trump and Daines.</p>
+      <a href="https://ballotpedia.org/Kurt_Alme" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--red); text-decoration:none;">Ballotpedia profile →</a>
+    </div>
+    <div style="background:var(--card); border-radius:22px; padding:22px 16px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:96px; height:96px; margin:0 auto 12px;"><image-slot id="mt-bankhead-photo" shape="circle" placeholder="Drop Bankhead photo" style="width:96px; height:96px; background:var(--bluebg); border-radius:50%;"></image-slot></div>
+      <div style="font-weight:800; font-size:17px;">Alani Bankhead</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Air Force officer who won a five-way Democratic primary.</p>
+      <a href="https://ballotpedia.org/Alani_Bankhead" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;">Ballotpedia profile →</a>
+    </div>
+    <div style="background:var(--card); border-radius:22px; padding:22px 16px; text-align:center; box-shadow:var(--shadow);">
+      <div style="width:96px; height:96px; margin:0 auto 12px;"><image-slot id="mt-bodnar-photo" shape="circle" placeholder="Drop Bodnar photo" style="width:96px; height:96px; background:var(--goldbg); border-radius:50%;"></image-slot></div>
+      <div style="font-weight:800; font-size:17px;">Seth Bodnar</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--goldbg); color:var(--gold); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Independent - Age: 46</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Former University of Montana president, backed by ex-Sen. Jon Tester.</p>
+      <a href="https://ballotpedia.org/Seth_Bodnar" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--gold); text-decoration:none;">Ballotpedia profile →</a>
+    </div>
+  </div>
+
+  <div data-screen-label="Polling" style="max-width:720px; margin:0 auto; padding:14px 20px 0;">
+    <div style="background:var(--card); border-radius:22px; padding:20px 20px 22px; box-shadow:var(--shadow);">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; gap:10px; flex-wrap:wrap;">
+        <span style="font-weight:800; font-size:16px;">Who's ahead?</span>
+        <span style="font-size:11px; font-weight:700; color:var(--red); background:var(--redbg); padding:5px 12px; border-radius:999px;">LIKELY REPUBLICAN</span>
+      </div>
+      <p style="font-size:13.5px; line-height:1.65; color:var(--soft); margin:0;">No independent polling of the Alme–Bankhead–Bodnar matchup has been released since the June primary. Nonpartisan handicappers rate the race <strong style="color:var(--red);">Likely Republican</strong> — a February American Pulse poll (taken before Daines withdrew) showed the Republican above 50% in every tested matchup, with the anti-GOP vote split between a Democrat and an independent.</p>
+      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <a href="https://dailymontanan.com/2026/02/24/poll-shows-daines-with-sizable-lead-over-democratic-independent-challengers/" target="_blank" rel="noopener noreferrer" style="font-size:11px; color:var(--faint); text-decoration:none;">Daily Montanan: American Pulse poll, Feb 2026 →</a>
+        <span style="font-size:11px; color:var(--faint);">As of July 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Where they stand" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 4px;">Where they stand</h2>
+    <p style="font-size:13.5px; color:var(--soft); margin:0 0 14px;">Tap a topic that's important to you.</p>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+      <sc-for list="{{ topicChips }}" as="chip" hint-placeholder-count="6">
+        <button type="button" onClick="{{ chip.click }}" style="{{ chip.style }}">{{ chip.label }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--red2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:7px;">ALME SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ aSays }}</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--blue2); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:7px;">BANKHEAD SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ bSays }}</div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--gold); box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--gold); letter-spacing:.04em; margin-bottom:7px;">BODNAR SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ cSays }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Money check" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <div style="background:var(--greenbg); border-radius:22px; padding:20px 22px;">
+      <div style="font-size:15px; font-weight:800; color:var(--green);">✓ Money &amp; integrity check</div>
+      <p style="font-size:12.5px; color:var(--soft); margin:4px 0 12px;">How each candidate handles money in politics.</p>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line); flex-wrap:wrap;">
+        <span>Ban Congress from trading stocks</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--faint);">KA unclear</span> · <span style="color:var(--faint);">AB unclear</span> · <span style="color:var(--faint);">SB unclear</span></span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line); flex-wrap:wrap;">
+        <span>Takes corporate PAC money</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--faint);">KA unclear</span> · <span style="color:var(--green);">AB no</span> · <span style="color:var(--green);">SB no</span></span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line); flex-wrap:wrap;">
+        <span>Wants to overturn Citizens United</span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--faint);">KA unclear</span> · <span style="color:var(--green);">AB yes</span> · <span style="color:var(--faint);">SB unclear</span></span>
+      </div>
+      <p style="font-size:12px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Follow the money: Bodnar has led the field in fundraising, mostly from individual donors; Alme entered late but has national GOP money behind him; Bankhead's campaign is small-dollar and heavily outspent. <span style="color:var(--faint);">— FEC filings &amp; Montana Free Press, 2026</span></p>
+    </div>
+  </div>
+
+  <div data-screen-label="What they'd do" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 14px;">Their big promises</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">ALME'S TOP 3</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Back the president's agenda</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Runs as the Trump-endorsed continuation of Daines' seat.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Law and order</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Leans on his record as U.S. Attorney prosecuting drug trafficking.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Cut spending and regulation</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Smaller federal budgets and fewer rules on Montana businesses.</div></div>
+        </div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:12px;">BANKHEAD'S TOP 3</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Affordable Montana</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Lower housing, healthcare, and grocery costs for working families.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Protect rural healthcare</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Defend Medicaid and keep rural hospitals and clinics open.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Service over party</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Runs on her Air Force career as proof she'll put country first.</div></div>
+        </div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--gold); letter-spacing:.04em; margin-bottom:12px;">BODNAR'S TOP 3</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Break the two-party gridlock</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">An independent voice beholden to Montanans, not a national party.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Tackle the housing squeeze</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Make it possible for working Montanans to live where they work.</div></div>
+          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Defend public lands</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Keep federal lands in public hands and access open.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Agree or differ" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+      <h2 style="font-weight:800; font-size:21px; margin:0;">Agree or differ?</h2>
+      <div style="display:flex; gap:6px;">
+        <button type="button" onClick="{{ setAll }}" style="{{ chipAll }}">All</button>
+        <button type="button" onClick="{{ setAgree }}" style="{{ chipAgree }}">Agree</button>
+        <button type="button" onClick="{{ setDiffer }}" style="{{ chipDiffer }}">Differ</button>
+      </div>
+    </div>
+    <div data-vf="{{ voteFilter }}" style="background:var(--card); border-radius:22px; padding:6px 20px; box-shadow:var(--shadow);">
+      <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Sentinel missile program at Malmstrom AFB</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">All three back the nuclear modernization jobs anchored in Great Falls</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Trump's tariffs</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Alme: backs them · Bankhead &amp; Bodnar: call them import taxes hurting Montana farms and ranches</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Continued U.S. military aid to Ukraine</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Bankhead &amp; Bodnar: support it · Alme: skeptical of open-ended foreign aid</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+      <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
+        <div><div style="font-size:14px; font-weight:600;">Grizzly bear delisting &amp; state wildlife management</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">All three lean toward giving Montana more control over recovered species</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+      </div>
+      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0;">
+        <div><div style="font-size:14px; font-weight:600;">Reform the Senate filibuster</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Bankhead: open to reform · Alme: keep the 60-vote rule · Bodnar: undecided</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-screen-label="Their stories" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
+    <h2 style="font-weight:800; font-size:21px; margin:0 0 14px;">Their stories</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px;">
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">KURT ALME</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--red);">Career</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Tax attorney and federal prosecutor; led Montana's budget office.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--red);">2017</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Appointed U.S. Attorney for Montana in the first Trump administration.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--red);">Mar 2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Filed eight minutes before the deadline as Daines withdrew and endorsed him.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--red);">Jun 2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Won the Republican primary with 76% of the vote.</span></div>
+        </div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:12px;">ALANI BANKHEAD</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--blue);">Career</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Air Force officer with a career in national security.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--blue);">2025</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Entered the race expecting to challenge Sen. Steve Daines.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--blue);">Jun 2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Won the five-way Democratic primary with 43.7% of the vote.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--blue);">Jun 2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Rejected calls to step aside for Bodnar and urged him to drop out instead.</span></div>
+        </div>
+      </div>
+      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="font-size:11px; font-weight:800; color:var(--gold); letter-spacing:.04em; margin-bottom:12px;">SETH BODNAR</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--gold);">Career</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">West Point graduate, Green Beret, and GE executive.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--gold);">2018</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Became the youngest president of the University of Montana.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--gold);">Mar 2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Resigned to launch an independent Senate campaign with Jon Tester's support.</span></div>
+          <div style="display:flex; gap:12px;"><span style="flex:0 0 52px; font-size:12px; font-weight:800; color:var(--gold);">May 2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Submitted petition signatures and out-raised the entire field.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:720px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; color:var(--faint); line-height:1.6;">
+    Positions summarized from campaign websites, voting records, and news reports · July 2026<br>
+    electy.org is in beta — expect rough edges as we build out every race.<br>
+    <a href="contact.html" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme: 'light', topic: 'Cost of Living', voteFilter: 'all' };
+
+  static TOPICS = [
+    { label: 'Cost of Living',
+      a: 'Washington overspending and regulation drive up prices; cut both and extend the Trump tax cuts.',
+      b: 'Lower housing, grocery, and healthcare costs for working families; crack down on price gouging.',
+      c: 'Both parties have failed on affordability — focus on kitchen-table costs, starting with housing.' },
+    { label: 'Iran War',
+      a: 'Backs the administration\u2019s hard line on Tehran and its nuclear program.',
+      b: 'Career military officer; says Congress, not the president alone, must authorize war.',
+      c: 'Green Beret veteran; wary of open-ended conflict and wants Congress to reclaim its war powers.' },
+    { label: 'Healthcare',
+      a: 'Market-based reform: more competition and price transparency instead of new federal programs.',
+      b: 'Protect Medicaid from cuts and keep Montana\u2019s rural hospitals and clinics open.',
+      c: 'Says rural hospital closures are a crisis; wants pragmatic fixes over partisan repeal fights.' },
+    { label: 'Housing',
+      a: 'Housing is a supply problem — cut regulations and permitting delays that slow building.',
+      b: 'Build more homes and rein in out-of-state buyers pricing out Montana workers.',
+      c: 'Makes the housing squeeze his signature issue — build supply so workers can live where they work.' },
+    { label: 'Public Lands',
+      a: 'Supports multiple use — grazing, timber, and energy alongside recreation on federal lands.',
+      b: 'Keep public lands public; opposes any sell-off of federal lands in Montana.',
+      c: 'Defend public land access as a core Montana value; opposes transfers or sales.' },
+    { label: 'Abortion',
+      a: 'Pro-life; says abortion law should be decided by the states.',
+      b: 'Supports abortion rights; notes Montanans voted to protect them in 2024.',
+      c: 'Says the government shouldn\u2019t be in the exam room; supports the status quo Montanans chose.' },
+  ];
+
+  renderVals(){
+    const theme = this.state.theme;
+    const active = Component.TOPICS.find(t => t.label === this.state.topic) || Component.TOPICS[0];
+
+    const chipBase = "font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; padding:8px 14px; border-radius:999px; border:none; cursor:pointer;";
+    const topicChips = Component.TOPICS.map(t => ({
+      label: t.label,
+      style: chipBase + (t.label === active.label
+        ? ' background:var(--ink); color:var(--bg);'
+        : ' background:var(--card); color:var(--soft); box-shadow:var(--shadow);'),
+      click: () => this.setState({ topic: t.label }),
+    }));
+
+    const f = this.state.voteFilter;
+    const vChip = (on) => chipBase + (on ? ' background:var(--ink); color:var(--bg);' : ' background:var(--card); color:var(--soft); box-shadow:var(--shadow);');
+
+    return {
+      theme,
+      isDark: theme === 'dark',
+      isLight: theme !== 'dark',
+      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+
+      topicChips,
+      aSays: active.a,
+      bSays: active.b,
+      cSays: active.c,
+
+      voteFilter: f,
+      chipAll: vChip(f === 'all'),
+      chipAgree: vChip(f === 'agree'),
+      chipDiffer: vChip(f === 'differ'),
+      setAll: () => this.setState({ voteFilter: 'all' }),
+      setAgree: () => this.setState({ voteFilter: 'agree' }),
+      setDiffer: () => this.setState({ voteFilter: 'differ' }),
+    };
+  }
+}
+</script>
+</body>
+</html>

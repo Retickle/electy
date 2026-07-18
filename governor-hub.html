@@ -15,12 +15,12 @@
 <link rel="alternate icon" type="image/png" href="favicon.png">
 <template id="__bundler_thumbnail" data-bg-color="#F6F4EF">
   <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-    <rect x="38" y="26" width="12" height="12" rx="3" fill="#33569E"></rect>
+    <rect x="38" y="26" width="12" height="12" rx="3" fill="#9E3333"></rect>
     <rect x="54" y="26" width="12" height="12" rx="3" fill="#B4832E"></rect>
-    <rect x="70" y="26" width="12" height="12" rx="3" fill="#9E3333"></rect>
-    <rect x="38" y="42" width="12" height="12" rx="3" fill="#9E3333"></rect>
-    <rect x="54" y="42" width="12" height="12" rx="3" fill="#33569E"></rect>
-    <rect x="70" y="42" width="12" height="12" rx="3" fill="#33569E"></rect>
+    <rect x="70" y="26" width="12" height="12" rx="3" fill="#33569E"></rect>
+    <rect x="38" y="42" width="12" height="12" rx="3" fill="#33569E"></rect>
+    <rect x="54" y="42" width="12" height="12" rx="3" fill="#9E3333"></rect>
+    <rect x="70" y="42" width="12" height="12" rx="3" fill="#B4832E"></rect>
   </svg>
 </template>
 <style>
@@ -66,8 +66,8 @@
     </div>
     <div class="hubseg" style="display:grid; grid-template-columns:1fr auto 1fr; gap:4px; background:var(--card); padding:4px; border-radius:999px; box-shadow:var(--shadow);">
       <a href="house-hub.html" style="text-align:center; font-size:12px; font-weight:700; padding:7px 14px; border-radius:999px; color:var(--soft); text-decoration:none;">House</a>
-      <span style="text-align:center; font-size:12px; font-weight:800; padding:7px 14px; border-radius:999px; background:var(--ink); color:var(--bg);">Senate</span>
-      <a href="governor-hub.html" style="text-align:center; font-size:12px; font-weight:700; padding:7px 14px; border-radius:999px; color:var(--soft); text-decoration:none;">Governors</a>
+      <a href="senate-hub.html" style="text-align:center; font-size:12px; font-weight:700; padding:7px 14px; border-radius:999px; color:var(--soft); text-decoration:none;">Senate</a>
+      <span style="text-align:center; font-size:12px; font-weight:800; padding:7px 14px; border-radius:999px; background:var(--ink); color:var(--bg);">Governors</span>
     </div>
     <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="justify-self:end; width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
       <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
@@ -81,38 +81,34 @@
 
   <div data-screen-label="Hero" style="max-width:840px; margin:0 auto; padding:14px 20px 6px; text-align:center;">
     <div style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">2026 midterms · November 3</div>
-    <h1 style="font-weight:800; font-size:clamp(30px,6vw,44px); line-height:1.1; letter-spacing:-.02em; margin:16px 0 10px;">The Senate,<br>side by side.</h1>
-    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0 auto; max-width:520px;">Tap a state to see its Senate race — both candidates, what they'd do, who funds them, and where the polls stand.</p>
+    <h1 style="font-weight:800; font-size:clamp(30px,6vw,44px); line-height:1.1; letter-spacing:-.02em; margin:16px 0 10px;">The governors,<br>side by side.</h1>
+    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0 auto; max-width:520px;">Tap a state to see its governor's race — the candidates, what they'd do, who funds them, and where the polls stand.</p>
   </div>
 
   <div data-screen-label="Balance of power" style="max-width:720px; margin:0 auto; padding:26px 20px 0;">
     <div style="background:var(--card); border-radius:22px; padding:20px 22px 22px; box-shadow:var(--shadow);">
       <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
-        <span style="font-weight:800; font-size:16px;">Who holds the Senate now</span>
-        <span style="font-size:11px; font-weight:700; color:var(--gold); background:var(--goldbg); padding:5px 12px; border-radius:999px;">35 seats up for grabs</span>
+        <span style="font-weight:800; font-size:16px;">Who holds the governorships now</span>
+        <span style="font-size:11px; font-weight:700; color:var(--gold); background:var(--goldbg); padding:5px 12px; border-radius:999px;">36 seats up for grabs</span>
       </div>
-      <p style="font-size:12.5px; color:var(--soft); margin:0 0 18px;">Striped = up for election in 2026. Democrats need to gain 4 seats for a majority.</p>
-      <div style="position:relative; padding-top:18px;">
-        <div style="position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--ink); border-radius:2px; z-index:2;"></div>
-        <div style="position:absolute; left:50%; top:-4px; transform:translate(-50%,-100%); font-size:10px; font-weight:800; color:var(--soft); white-space:nowrap;">51 = MAJORITY</div>
-        <div style="display:flex; height:28px; border-radius:999px; overflow:hidden;">
-          <div title="34 Democratic-held seats not up in 2026" style="width:34%; background:var(--blue2);"></div>
-          <div title="13 Democratic-held seats on the ballot" style="width:13%; background:repeating-linear-gradient(135deg, rgba(255,255,255,.45) 0 3px, transparent 3px 8px), var(--blue2);"></div>
-          <div title="22 Republican-held seats on the ballot" style="width:22%; background:repeating-linear-gradient(135deg, rgba(255,255,255,.45) 0 3px, transparent 3px 8px), var(--red2);"></div>
-          <div title="31 Republican-held seats not up in 2026" style="width:31%; background:var(--red2);"></div>
-        </div>
+      <p style="font-size:12.5px; color:var(--soft); margin:0 0 18px;">Striped = up for election in 2026. Each party is defending exactly 18 of the 36 seats on the ballot.</p>
+      <div style="display:flex; height:28px; border-radius:999px; overflow:hidden;">
+        <div title="6 Democratic-held governorships not up in 2026" style="width:12%; background:var(--blue2);"></div>
+        <div title="18 Democratic-held governorships on the ballot" style="width:36%; background:repeating-linear-gradient(135deg, rgba(255,255,255,.45) 0 3px, transparent 3px 8px), var(--blue2);"></div>
+        <div title="18 Republican-held governorships on the ballot" style="width:36%; background:repeating-linear-gradient(135deg, rgba(255,255,255,.45) 0 3px, transparent 3px 8px), var(--red2);"></div>
+        <div title="8 Republican-held governorships not up in 2026" style="width:16%; background:var(--red2);"></div>
       </div>
       <div style="display:flex; justify-content:space-between; margin-top:10px; font-size:12.5px; font-weight:800;">
-        <span style="color:var(--blue);">47 Democrats*</span>
-        <span style="color:var(--red);">53 Republicans</span>
+        <span style="color:var(--blue);">24 Democrats</span>
+        <span style="color:var(--red);">26 Republicans</span>
       </div>
-      <div style="font-size:10.5px; color:var(--faint); margin-top:6px;">*includes 2 independents</div>
+      <div style="font-size:10.5px; color:var(--faint); margin-top:6px;">Governors elected in 2026 will be in office for the 2030 redistricting cycle.</div>
     </div>
   </div>
 
   <div data-screen-label="State map" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
     <h2 style="font-weight:800; font-size:21px; margin:0 0 4px; text-align:center;">Browse races</h2>
-    <p style="font-size:13px; color:var(--soft); margin:0 0 18px; text-align:center;">Colored states have a Senate election in 2026.</p>
+    <p style="font-size:13px; color:var(--soft); margin:0 0 18px; text-align:center;">Colored states elect a governor in 2026.</p>
     <div class="mapcard" style="background:var(--card); border-radius:22px; padding:20px; box-shadow:var(--shadow);">
       <div class="mapgrid" style="display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); gap:6px;">
         <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="50">
@@ -132,76 +128,76 @@
 
   <div data-screen-label="Races to watch" style="max-width:840px; margin:0 auto; padding:30px 20px 0;">
     <h2 style="font-weight:800; font-size:21px; margin:0 0 4px; text-align:center;">The races to watch</h2>
-    <p style="font-size:13px; color:var(--soft); margin:0 0 18px; text-align:center;">Democrats must win 5 of these 7 races to take Senate control from Republicans.</p>
+    <p style="font-size:13px; color:var(--soft); margin:0 0 18px; text-align:center;">Open seats and vulnerable incumbents make these the most likely governorships to flip.</p>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:14px;">
 
-      <a href="senate-texas.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; background: var(--card); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); border: 2px solid var(--gold); border-width: 0px">
+      <a href="governor-arizona.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-          <span style="font-weight:800; font-size:18px;">Texas</span>
+          <span style="font-weight:800; font-size:18px;">Arizona</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">James Talarico (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Ken Paxton (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open Republican seat after Paxton beat Sen. Cornyn in the primary. Latest poll: Talarico 47, Paxton 47 — dead heat.</div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Katie Hobbs (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Hobbs seeks a second term in a state Trump won in 2024. Republicans pick her challenger in the August 4 primary.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
-      <a href="senate-maine.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; background: var(--card); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); border: 2px solid var(--gold); border-width: 0px">
+      <a href="governor-nevada.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-          <span style="font-weight:800; font-size:18px;">Maine</span>
+          <span style="font-weight:800; font-size:18px;">Nevada</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Graham Platner (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Susan Collins (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">The only Republican senator defending a state that voted Democratic in 2024. Polls: Platner 47.5, Collins 46.8.</div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Aaron Ford (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Joe Lombardo (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">The state attorney general challenges the incumbent — the most vulnerable Republican governor on the map.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
-      <a href="senate-north-carolina.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+      <a href="governor-wisconsin.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-          <span style="font-weight:800; font-size:18px;">North Carolina</span>
-          <span style="font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">LEAN D</span>
+          <span style="font-weight:800; font-size:18px;">Wisconsin</span>
+          <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Roy Cooper (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Michael Whatley (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open seat after Sen. Tillis's retirement. The popular former governor faces the former RNC chairman. Latest poll: Cooper 49.8, Whatley 38.7.</div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Democratic nominee</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Tom Tiffany (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open seat after Gov. Evers declined a third term. Democrats choose among a crowded field August 11.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
-      <a href="senate-georgia.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; background: var(--card); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); border: 2px solid var(--gold); border-width: 0px">
+      <a href="governor-georgia.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
           <span style="font-weight:800; font-size:18px;">Georgia</span>
-          <span style="font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">LEAN D</span>
-        </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Jon Ossoff (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Mike Collins (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">The only Democratic senator on the ballot in a Trump-won state. Collins won the GOP runoff with Trump's endorsement; Fox poll: Ossoff 56, Collins 43.</div>
-        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
-      </a>
-
-      <a href="senate-ohio.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-          <span style="font-weight:800; font-size:18px;">Ohio <span style="font-size:10.5px; font-weight:700; color:var(--faint);">· special</span></span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Sherrod Brown (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Jon Husted (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">The former senator is trying to return against the appointed incumbent, in the seat JD Vance vacated. Fox poll: Brown 53, Husted 45.</div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Democratic nominee</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Kemp is term-limited, and Democrats see their best shot at a governorship they haven't won since 1998.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
-      <a href="senate-michigan.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+      <a href="governor-iowa.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <span style="font-weight:800; font-size:18px;">Iowa</span>
+          <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
+        </div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Rob Sand (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Reynolds is retiring, and the state auditor — Iowa's only statewide Democrat — is polling close in a state trending red.</div>
+        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
+      </a>
+
+      <a href="governor-michigan.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
           <span style="font-weight:800; font-size:18px;">Michigan</span>
-          <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
+          <span style="font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">LEAN D</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Democratic nominee</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Mike Rogers (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open Democratic seat. Democrats pick their nominee August 4; Rogers narrowly lost this race in 2024. Every matchup polls within the margin of error.</div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Jocelyn Benson (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open seat with Gov. Whitmer term-limited. The secretary of state leads every polled matchup ahead of the August 4 primaries.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
-      <a href="senate-alaska.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+      <a href="governor-kansas.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-          <span style="font-weight:800; font-size:18px;">Alaska</span>
-          <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
+          <span style="font-weight:800; font-size:18px;">Kansas</span>
+          <span style="font-size:10.5px; font-weight:800; color:var(--red); background:var(--redbg); padding:4px 10px; border-radius:999px;">LEAN R</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Mary Peltola (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Dan Sullivan (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">The former congresswoman is challenging the two-term incumbent under ranked-choice voting. Latest poll: Sullivan 47, Peltola 45.</div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Democratic nominee</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Kelly is term-limited, and raters call this Democratic-held seat the most likely governorship to flip in 2026.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
@@ -214,77 +210,65 @@
     <a href="contact.html" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
   </div>
 
-  <sc-if value="{{ toastVisible }}" hint-placeholder-val="{{ false }}">
-    <div style="position:fixed; left:50%; bottom:26px; transform:translateX(-50%); z-index:100; background:var(--ink); color:var(--bg); font-size:12.5px; font-weight:700; padding:11px 20px; border-radius:999px; box-shadow:0 10px 30px -10px rgba(0,0,0,.5); animation:toastIn .2s ease; white-space:nowrap;">{{ toast }}</div>
-  </sc-if>
-
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { theme: 'light', toast: '' };
+  state = { theme: 'light' };
 
-  componentWillUnmount(){ if (this._t) clearTimeout(this._t); }
-
-  showToast(msg){
-    if (this._t) clearTimeout(this._t);
-    this.setState({ toast: msg });
-    this._t = setTimeout(() => this.setState({ toast: '' }), 2400);
-  }
-
-  // col,row are 0-indexed positions in a 12-wide tile grid.
-  // race: party currently holding the seat that is up in 2026 ('D'|'R') or null.
-  // hot: among the most competitive races. live: has a built race page.
+  // col,row are 0-indexed positions in a 12-wide tile grid (same layout as the Senate hub).
+  // race: party currently holding the governorship that is up in 2026 ('D'|'R') or null.
+  // hot: among the most competitive races.
   static STATES = [
-    { abbr:'AK', name:'Alaska',        col:0,  row:0, race:'R', hot:true  },
-    { abbr:'ME', name:'Maine',         col:11, row:0, race:'R', hot:true  },
-    { abbr:'WI', name:'Wisconsin',     col:6,  row:1, race:null },
-    { abbr:'VT', name:'Vermont',       col:10, row:1, race:null },
-    { abbr:'NH', name:'New Hampshire', col:11, row:1, race:'D', hot:false },
+    { abbr:'AK', name:'Alaska',        col:0,  row:0, race:'R', hot:false },
+    { abbr:'ME', name:'Maine',         col:11, row:0, race:'D', hot:false },
+    { abbr:'WI', name:'Wisconsin',     col:6,  row:1, race:'D', hot:true  },
+    { abbr:'VT', name:'Vermont',       col:10, row:1, race:'R', hot:false },
+    { abbr:'NH', name:'New Hampshire', col:11, row:1, race:'R', hot:false },
     { abbr:'WA', name:'Washington',    col:1,  row:2, race:null },
     { abbr:'ID', name:'Idaho',         col:2,  row:2, race:'R', hot:false },
-    { abbr:'MT', name:'Montana',       col:3,  row:2, race:'R', hot:false },
+    { abbr:'MT', name:'Montana',       col:3,  row:2, race:null },
     { abbr:'ND', name:'North Dakota',  col:4,  row:2, race:null },
     { abbr:'MN', name:'Minnesota',     col:5,  row:2, race:'D', hot:false },
     { abbr:'IL', name:'Illinois',      col:6,  row:2, race:'D', hot:false },
     { abbr:'MI', name:'Michigan',      col:7,  row:2, race:'D', hot:true  },
-    { abbr:'NY', name:'New York',      col:9,  row:2, race:null },
+    { abbr:'NY', name:'New York',      col:9,  row:2, race:'D', hot:false },
     { abbr:'MA', name:'Massachusetts', col:10, row:2, race:'D', hot:false },
     { abbr:'RI', name:'Rhode Island',  col:11, row:2, race:'D', hot:false },
     { abbr:'OR', name:'Oregon',        col:1,  row:3, race:'D', hot:false },
-    { abbr:'NV', name:'Nevada',        col:2,  row:3, race:null },
+    { abbr:'NV', name:'Nevada',        col:2,  row:3, race:'R', hot:true  },
     { abbr:'WY', name:'Wyoming',       col:3,  row:3, race:'R', hot:false },
     { abbr:'SD', name:'South Dakota',  col:4,  row:3, race:'R', hot:false },
-    { abbr:'IA', name:'Iowa',          col:5,  row:3, race:'R', hot:false },
+    { abbr:'IA', name:'Iowa',          col:5,  row:3, race:'R', hot:true  },
     { abbr:'IN', name:'Indiana',       col:6,  row:3, race:null },
     { abbr:'OH', name:'Ohio',          col:7,  row:3, race:'R', hot:true  },
-    { abbr:'PA', name:'Pennsylvania',  col:8,  row:3, race:null },
-    { abbr:'NJ', name:'New Jersey',    col:9,  row:3, race:'D', hot:false },
-    { abbr:'CT', name:'Connecticut',   col:10, row:3, race:null },
-    { abbr:'CA', name:'California',    col:1,  row:4, race:null },
+    { abbr:'PA', name:'Pennsylvania',  col:8,  row:3, race:'D', hot:false },
+    { abbr:'NJ', name:'New Jersey',    col:9,  row:3, race:null },
+    { abbr:'CT', name:'Connecticut',   col:10, row:3, race:'D', hot:false },
+    { abbr:'CA', name:'California',    col:1,  row:4, race:'D', hot:false },
     { abbr:'UT', name:'Utah',          col:2,  row:4, race:null },
     { abbr:'CO', name:'Colorado',      col:3,  row:4, race:'D', hot:false },
     { abbr:'NE', name:'Nebraska',      col:4,  row:4, race:'R', hot:false },
     { abbr:'MO', name:'Missouri',      col:5,  row:4, race:null },
-    { abbr:'KY', name:'Kentucky',      col:6,  row:4, race:'R', hot:false },
-    { abbr:'WV', name:'West Virginia', col:7,  row:4, race:'R', hot:false },
-    { abbr:'VA', name:'Virginia',      col:8,  row:4, race:'D', hot:false },
-    { abbr:'MD', name:'Maryland',      col:9,  row:4, race:null },
-    { abbr:'DE', name:'Delaware',      col:10, row:4, race:'D', hot:false },
-    { abbr:'AZ', name:'Arizona',       col:2,  row:5, race:null },
+    { abbr:'KY', name:'Kentucky',      col:6,  row:4, race:null },
+    { abbr:'WV', name:'West Virginia', col:7,  row:4, race:null },
+    { abbr:'VA', name:'Virginia',      col:8,  row:4, race:null },
+    { abbr:'MD', name:'Maryland',      col:9,  row:4, race:'D', hot:false },
+    { abbr:'DE', name:'Delaware',      col:10, row:4, race:null },
+    { abbr:'AZ', name:'Arizona',       col:2,  row:5, race:'D', hot:true  },
     { abbr:'NM', name:'New Mexico',    col:3,  row:5, race:'D', hot:false },
-    { abbr:'KS', name:'Kansas',        col:4,  row:5, race:'R', hot:false },
+    { abbr:'KS', name:'Kansas',        col:4,  row:5, race:'D', hot:true  },
     { abbr:'AR', name:'Arkansas',      col:5,  row:5, race:'R', hot:false },
     { abbr:'TN', name:'Tennessee',     col:6,  row:5, race:'R', hot:false },
-    { abbr:'NC', name:'North Carolina',col:7,  row:5, race:'R', hot:true  },
+    { abbr:'NC', name:'North Carolina',col:7,  row:5, race:null },
     { abbr:'SC', name:'South Carolina',col:8,  row:5, race:'R', hot:false },
     { abbr:'OK', name:'Oklahoma',      col:4,  row:6, race:'R', hot:false },
-    { abbr:'LA', name:'Louisiana',     col:5,  row:6, race:'R', hot:false },
-    { abbr:'MS', name:'Mississippi',   col:6,  row:6, race:'R', hot:false },
+    { abbr:'LA', name:'Louisiana',     col:5,  row:6, race:null },
+    { abbr:'MS', name:'Mississippi',   col:6,  row:6, race:null },
     { abbr:'AL', name:'Alabama',       col:7,  row:6, race:'R', hot:false },
-    { abbr:'GA', name:'Georgia',       col:8,  row:6, race:'D', hot:true  },
-    { abbr:'HI', name:'Hawaii',        col:0,  row:7, race:null },
-    { abbr:'TX', name:'Texas',         col:4,  row:7, race:'R', hot:true  },
+    { abbr:'GA', name:'Georgia',       col:8,  row:6, race:'R', hot:true  },
+    { abbr:'HI', name:'Hawaii',        col:0,  row:7, race:'D', hot:false },
+    { abbr:'TX', name:'Texas',         col:4,  row:7, race:'R', hot:false },
     { abbr:'FL', name:'Florida',       col:9,  row:7, race:'R', hot:false },
   ];
 
@@ -297,15 +281,15 @@ class Component extends DCLogic {
       let style, tip, click;
       if (!s.race) {
         style = base + ' background:var(--track); color:var(--faint); cursor:default;';
-        tip = s.name + ' — no Senate race in 2026';
+        tip = s.name + ' — no governor\u2019s race in 2026';
         click = undefined;
       } else {
         const bg = s.race === 'D' ? 'var(--bluebg)' : 'var(--redbg)';
         const fg = s.race === 'D' ? 'var(--blue)' : 'var(--red)';
         style = base + ' background:' + bg + '; color:' + fg + '; cursor:pointer;' + (s.hot ? ' box-shadow:inset 0 0 0 2px var(--gold);' : '');
-        // Every state page follows the same "senate-{state}.html" naming
+        // Every state page follows the same "governor-{state}.html" naming
         // convention, so a newly-dropped-in file is linked automatically.
-        const href = 'senate-' + s.name.toLowerCase().replace(/ /g, '-') + '.html';
+        const href = 'governor-' + s.name.toLowerCase().replace(/ /g, '-') + '.html';
         tip = s.name + ' — view the race';
         click = () => { window.location.href = href; };
       }
@@ -322,9 +306,6 @@ class Component extends DCLogic {
       isLight: theme !== 'dark',
       toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
       tiles,
-      govSoon: () => this.showToast("Governors' hub coming soon"),
-      toast: this.state.toast,
-      toastVisible: !!this.state.toast,
     };
   }
 }
