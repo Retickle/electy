@@ -11,7 +11,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="alternate icon" type="image/png" href="favicon.png">
 <style>
@@ -69,23 +68,22 @@
       <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:var(--goldbg); color:var(--gold); font-size:11.5px; font-weight:800; padding:7px 14px; border-radius:999px; text-decoration:none; white-space:nowrap;">How to vote →</a>
     </div>
     <h1 style="font-weight:800; font-size:clamp(28px,6vw,38px); line-height:1.12; letter-spacing:-.02em; margin:16px 0 10px;">South Carolina - United States Senate</h1>
-    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:520px;">Lindsey Graham is seeking a fifth term in a state that hasn't sent a Democrat to the Senate since 1998. <a role="button" tabindex="0" onClick="{{ scrollToNarrative }}" style="color:var(--gold); font-weight:700; text-decoration:none; cursor:pointer; white-space:nowrap;">Get caught up ↓</a></p>
+    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:520px;">Following the death of Sen. Lindsey Graham, this seat is vacant and South Carolina Republicans have not yet chosen a nominee. Democrat Annie Andrews is running in a state that hasn't sent a Democrat to the Senate since 1998. <a role="button" tabindex="0" onClick="{{ scrollToNarrative }}" style="color:var(--gold); font-weight:700; text-decoration:none; cursor:pointer; white-space:nowrap;">Get caught up ↓</a></p>
   </div>
 
   <div data-screen-label="Candidates" style="max-width:720px; margin:0 auto; padding:20px 20px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
     <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
-      <div style="width:104px; height:104px; margin:0 auto 12px;"><image-slot id="sc-andrews-photo" src="uploads/annieandrews.jpg" shape="circle" placeholder="Drop Andrews photo" style="width:104px; height:104px; background:var(--bluebg); border-radius:50%;"></image-slot></div>
+      <div style="width:104px; height:104px; margin:0 auto 12px;"><img src="uploads/annieandrews.jpg" alt="Annie Andrews" style="width:104px; height:104px; display:block; border-radius:50%; object-fit:cover; background:var(--bluebg);"></div>
       <div style="font-weight:800; font-size:18px;">Annie Andrews</div>
       <div style="display:inline-block; margin-top:7px; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat - Age: 44/45</div>
       <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Charleston pediatrician making her first Senate run; ran for Congress in 2022.</p>
       <a href="https://annieandrews.com" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;">Campaign website →</a>
     </div>
     <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
-      <div style="width:104px; height:104px; margin:0 auto 12px;"><image-slot id="sc-graham-photo" src="uploads/lindseygraham.jpg" shape="circle" placeholder="Drop Graham photo" style="width:104px; height:104px; background:var(--redbg); border-radius:50%;"></image-slot></div>
-      <div style="font-weight:800; font-size:18px;">Lindsey Graham</div>
-      <div style="display:inline-block; margin-top:7px; background:var(--redbg); color:var(--red); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Republican - Age: 70 · Incumbent</div>
-      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">U.S. senator since 2003, seeking a fifth term. Air Force veteran and foreign-policy hawk.</p>
-      <a href="https://www.lindseygraham.com" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--red); text-decoration:none;">Campaign website →</a>
+      <div style="width:104px; height:104px; margin:0 auto 12px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--redbg); color:var(--red); font-weight:800; font-size:40px;">?</div>
+      <div style="font-weight:800; font-size:18px;">Republican nominee</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--redbg); color:var(--red); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Republican - To be determined</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">The seat is vacant following Sen. Lindsey Graham's death. South Carolina Republicans have not yet named a candidate.</p>
     </div>
   </div>
 
@@ -95,10 +93,10 @@
         <span style="font-weight:800; font-size:16px;">Who's ahead?</span>
         <span style="font-size:11px; font-weight:700; color:var(--red); background:var(--redbg); padding:5px 12px; border-radius:999px;">SAFE REPUBLICAN</span>
       </div>
-      <p style="font-size:13.5px; line-height:1.65; color:var(--soft); margin:0;">There's no recent independent public polling of this race — the only 2026 survey is a Democratic-sponsored internal showing Graham up 5. Most pollsters and forecasters rate the race <b style="color:var(--ink);">Safe Republican</b>: Trump won the state by 18 points in 2024.</p>
+      <p style="font-size:13.5px; line-height:1.65; color:var(--soft); margin:0;">With the seat vacant after Sen. Lindsey Graham's death and no Republican nominee yet, there's no head-to-head polling. Forecasters still rate the seat <b style="color:var(--ink);">Safe Republican</b>: Trump won South Carolina by 18 points in 2024.</p>
       <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:12px;">
         <a href="https://www.cookpolitical.com/senate/race/488671" target="_blank" rel="noopener noreferrer" style="font-size:11px; color:var(--faint); text-decoration:none;">Cook Political Report race rating →</a>
-        <span style="font-size:11px; color:var(--faint);">As of late June</span>
+        <span style="font-size:11px; color:var(--faint);">As of July 2026</span>
       </div>
     </div>
   </div>
@@ -117,7 +115,7 @@
         <div style="font-size:14px; line-height:1.6;">{{ aaSays }}</div>
       </div>
       <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--red2); box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:7px;">GRAHAM SAYS</div>
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:7px;">REPUBLICAN NOMINEE</div>
         <div style="font-size:14px; line-height:1.6;">{{ lgSays }}</div>
       </div>
     </div>
@@ -129,17 +127,17 @@
       <p style="font-size:12.5px; color:var(--soft); margin:4px 0 12px;">How each candidate handles money in politics.</p>
       <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
         <span>Ban Congress from trading stocks</span>
-        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">AA yes</span> · <span style="color:var(--bad);">LG no</span></span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">AA yes</span> · <span style="color:var(--faint);">TBD</span></span>
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
         <span>Takes corporate PAC money</span>
-        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">AA no</span> · <span style="color:var(--bad);">LG yes</span></span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">AA no</span> · <span style="color:var(--faint);">TBD</span></span>
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
         <span>Wants to overturn Citizens United</span>
-        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">AA yes</span> · <span style="color:var(--bad);">LG no</span></span>
+        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">AA yes</span> · <span style="color:var(--faint);">TBD</span></span>
       </div>
-      <p style="font-size:12px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Follow the money: Graham's war chest is funded largely by large donors and PACs; Andrews raises mostly from small-dollar (under $200) contributions. <span style="color:var(--faint);">— FEC filings &amp; OpenSecrets, 2026</span></p>
+      <p style="font-size:12px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Follow the money: Andrews raises mostly from small-dollar (under $200) contributions. Republican fundraising will be tracked once a nominee is chosen. <span style="color:var(--faint);">— FEC filings &amp; OpenSecrets, 2026</span></p>
     </div>
   </div>
 
@@ -155,49 +153,43 @@
         </div>
       </div>
       <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">GRAHAM'S TOP 3</div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">A strong military</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Bigger defense budgets and support for SC's bases, from Fort Jackson to Joint Base Charleston.</div></div>
-          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Judges &amp; the border</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Keep confirming conservative judges; fund the administration's border crackdown.</div></div>
-          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Deliver for South Carolina</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Federal money for the Port of Charleston, I-73, and hurricane recovery.</div></div>
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">REPUBLICAN NOMINEE</div>
+        <div style="display:flex; align-items:center; justify-content:center; min-height:120px; text-align:center;">
+          <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Priorities will appear here once South Carolina Republicans choose a nominee to fill the vacant seat.</div>
         </div>
       </div>
     </div>
   </div>
 
   <div data-screen-label="Agree or differ" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
-      <h2 style="font-weight:800; font-size:21px; margin:0;">Agree or differ?</h2>
-      <div style="display:flex; gap:6px;">
-        <button type="button" onClick="{{ setAll }}" style="{{ chipAll }}">All</button>
-        <button type="button" onClick="{{ setAgree }}" style="{{ chipAgree }}">Agree</button>
-        <button type="button" onClick="{{ setDiffer }}" style="{{ chipDiffer }}">Differ</button>
-      </div>
+    <div style="margin-bottom:14px;">
+      <h2 style="font-weight:800; font-size:21px; margin:0 0 4px;">Where Annie Andrews stands</h2>
+      <p style="font-size:13.5px; color:var(--soft); margin:0;">A side-by-side will return once a Republican nominee is set.</p>
     </div>
     <div data-vf="{{ voteFilter }}" style="background:var(--card); border-radius:22px; padding:6px 20px; box-shadow:var(--shadow);">
       <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">Continued U.S. military aid to Ukraine</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Graham is one of the Senate's loudest advocates · Andrews supports continued aid</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+        <div><div style="font-size:14px; font-weight:600;">Continued U.S. military aid to Ukraine</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Andrews supports continued aid · Republican nominee: TBD</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">ANDREWS</span>
       </div>
       <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">Ban the sale of assault-style weapons</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Andrews: supports a ban · Graham: opposes, though he backed 2022's red-flag compromise</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+        <div><div style="font-size:14px; font-weight:600;">Ban the sale of assault-style weapons</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Andrews: supports a ban · Republican nominee: TBD</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">ANDREWS</span>
       </div>
       <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">No oil drilling off South Carolina's coast</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Both oppose offshore drilling near the state's beaches and tourism economy</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+        <div><div style="font-size:14px; font-weight:600;">No oil drilling off South Carolina's coast</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Andrews opposes offshore drilling near the state's beaches · Republican nominee: TBD</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">ANDREWS</span>
       </div>
       <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">Federal protection for same-sex marriage</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Andrews: supports · Graham: voted against the 2022 Respect for Marriage Act</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+        <div><div style="font-size:14px; font-weight:600;">Federal protection for same-sex marriage</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Andrews: supports · Republican nominee: TBD</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">ANDREWS</span>
       </div>
       <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">Keep the Senate filibuster</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Graham: defends it · Andrews: would end it to pass voting-rights and gun bills</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
+        <div><div style="font-size:14px; font-weight:600;">Keep the Senate filibuster</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Andrews: would end it to pass voting-rights and gun bills · Republican nominee: TBD</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">ANDREWS</span>
       </div>
       <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0;">
-        <div><div style="font-size:14px; font-weight:600;">Federal disaster aid for hurricane recovery</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Both support it</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
+        <div><div style="font-size:14px; font-weight:600;">Federal disaster aid for hurricane recovery</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Andrews supports it · Republican nominee: TBD</div></div>
+        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">ANDREWS</span>
       </div>
     </div>
   </div>
@@ -215,12 +207,9 @@
         </div>
       </div>
       <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">LINDSEY GRAHAM</div>
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">1955</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Born in Central, SC; grew up in the back of his family's bar and pool hall.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">1982</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Air Force lawyer (JAG); still serves in the Reserves.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">2002</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Elected to the Senate after four House terms; re-elected in 2008, 2014, and 2020.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Survived a MAGA primary challenge with Trump's endorsement, winning 56.8%.</span></div>
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">REPUBLICAN NOMINEE</div>
+        <div style="display:flex; align-items:center; justify-content:center; min-height:120px; text-align:center;">
+          <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Sen. Lindsey Graham held this seat from 2003 until his death in 2026. A profile will appear here once Republicans choose a nominee.</div>
         </div>
       </div>
     </div>
@@ -306,7 +295,7 @@ class Component extends DCLogic {
 
       topicChips,
       aaSays: active.aa,
-      lgSays: active.lg,
+      lgSays: 'Positions will appear here once South Carolina Republicans choose a nominee.',
 
       voteFilter: f,
       chipAll: vChip(f === 'all'),
