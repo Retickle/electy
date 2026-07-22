@@ -68,9 +68,9 @@
   </div>
 
   <div data-screen-label="Hero" style="max-width:840px; margin:0 auto; padding:36px 20px 6px; text-align:center;">
-    <div style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">2026 midterms · November 3</div>
+    <div style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Midterm Edition · November 3, 2026</div>
     <h1 style="font-weight:800; font-size:clamp(30px,6vw,46px); line-height:1.1; letter-spacing:-.02em; margin:16px 0 10px;">Elections made simple.</h1>
-    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0 auto; max-width:540px;">Electy is nonpartisan and funded by its readers.</p>
+    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0 auto; max-width:540px;">Beta release - some races are missing or incomplete</p>
   </div>
 
   <div data-screen-label="Find your races" style="max-width:720px; margin:0 auto; padding:30px 20px 0;">
@@ -259,7 +259,7 @@
 
   <div style="max-width:840px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; line-height:1.7; color:var(--faint);">
     Nonpartisan · <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="color:var(--gold); font-weight:700; text-decoration:none;">See how to vote →</a><br>
-    electy.org is in beta. some races will be missing or incomplete.<br>
+    electy.org is in beta. Some races will be missing or incomplete.<br>
     <a href="contact.html" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
   </div>
 
@@ -271,7 +271,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { theme: 'light', toast: '', address: '', showResults: false, resultPlace: '', resultState: '', resultAbbr: '', resultDistrict: '', finding: false, tab: 'address', selState: '', selDist: 0 };
+  state = { theme: (function(){ try { return localStorage.getItem('electy-theme') || 'light'; } catch(e){ return 'light'; } })(), toast: '', address: '', showResults: false, resultPlace: '', resultState: '', resultAbbr: '', resultDistrict: '', finding: false, tab: 'address', selState: '', selDist: 0 };
 
   componentWillUnmount(){ if (this._t) clearTimeout(this._t); }
 
@@ -307,7 +307,7 @@ class Component extends DCLogic {
   static REDREW = ['AL','CA','FL','LA','MO','NC','OH','TN','TX','UT'];
 
   // District label → race page file (add entries as pages are built).
-  static RACE_PAGES = { 'NY-10': 'house-ny-10.html', 'CA-45': 'house-ca-45.html' };
+  static RACE_PAGES = { 'NY-10': 'house-ny-10.html' };
 
   // State abbr → Senate race pages that exist.
   static SENATE_PAGES = new Set(['AK','AR','CO','GA','ID','IA','KY','LA','ME','MA','MI','MN','MS','MT','NE','NH','NM','NC','OH','OK','OR','SC','SD','TX','VA','WY']);
@@ -489,7 +489,7 @@ class Component extends DCLogic {
       mapTiles,
       isDark: theme === 'dark',
       isLight: theme !== 'dark',
-      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+      toggleTheme: () => this.setState(s => { const t = s.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('electy-theme', t); } catch(e){} return { theme: t }; }),
 
       isAddressTab: tab === 'address',
       isDistrictTab: tab === 'district',

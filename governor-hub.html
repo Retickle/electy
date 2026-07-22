@@ -59,17 +59,14 @@
 
 <div data-theme="{{ theme }}" style="min-height:100vh; background:var(--bg); color:var(--ink); font-family:'Plus Jakarta Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .25s ease, color .25s ease;">
 
-  <div class="hubnav" style="max-width:840px; margin:0 auto; padding:18px 20px 0; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px;">
-    <div style="justify-self:start; display:flex; align-items:center; gap:8px;">
-      <a href="index.html" style="font-size:12.5px; font-weight:700; color:var(--soft); text-decoration:none; background:var(--card); padding:9px 16px; border-radius:999px; box-shadow:var(--shadow);">← electy.org</a>
-      <span style="font-size:10px; font-weight:800; letter-spacing:.06em; color:var(--gold); background:var(--goldbg); padding:4px 8px; border-radius:999px;">BETA</span>
-    </div>
-    <div class="hubseg" style="display:grid; grid-template-columns:1fr auto 1fr; gap:4px; background:var(--card); padding:4px; border-radius:999px; box-shadow:var(--shadow);">
-      <a href="house-hub.html" style="text-align:center; font-size:12px; font-weight:700; padding:7px 14px; border-radius:999px; color:var(--soft); text-decoration:none;">House</a>
-      <a href="senate-hub.html" style="text-align:center; font-size:12px; font-weight:700; padding:7px 14px; border-radius:999px; color:var(--soft); text-decoration:none;">Senate</a>
-      <span style="text-align:center; font-size:12px; font-weight:800; padding:7px 14px; border-radius:999px; background:var(--ink); color:var(--bg);">Governors</span>
-    </div>
-    <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="justify-self:end; width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
+  <div data-screen-label="Header" style="max-width:840px; margin:0 auto; padding:18px 20px 0; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+    <a href="index.html" style="display:flex; align-items:center; gap:9px; text-decoration:none; color:inherit;">
+      <img src="favicon.svg" alt="electy.org logo" style="width:26px; height:26px; display:block;">
+      <span style="font-weight:800; font-size:17px; letter-spacing:-.01em;">electy<span style="color:var(--gold);">.org</span></span>
+      <span style="font-size:10px; font-weight:800; letter-spacing:.06em; color:var(--gold); background:var(--goldbg); padding:3px 8px; border-radius:999px;">BETA</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="justify-self:end; width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
       <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
         <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="4.5"></line><line x1="12" y1="19.5" x2="12" y2="22"></line><line x1="2" y1="12" x2="4.5" y2="12"></line><line x1="19.5" y1="12" x2="22" y2="12"></line><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"></line><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"></line><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"></line><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"></line></svg>
       </sc-if>
@@ -77,10 +74,19 @@
         <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path></svg>
       </sc-if>
     </button>
+    </div>
+  </div>
+
+  <div style="max-width:840px; margin:0 auto; padding:16px 20px 0; display:flex; justify-content:center;">
+    <div class="hubseg" style="display:grid; grid-template-columns:1fr auto 1fr; gap:4px; background:var(--card); padding:4px; border-radius:999px; box-shadow:var(--shadow);">
+      <a href="house-hub.html" style="text-align:center; font-size:12px; font-weight:700; padding:7px 14px; border-radius:999px; color:var(--soft); text-decoration:none;">House</a>
+      <a href="senate-hub.html" style="text-align:center; font-size:12px; font-weight:700; padding:7px 14px; border-radius:999px; color:var(--soft); text-decoration:none;">Senate</a>
+      <span style="text-align:center; font-size:12px; font-weight:800; padding:7px 14px; border-radius:999px; background:var(--ink); color:var(--bg);">Governors</span>
+    </div>
   </div>
 
   <div data-screen-label="Hero" style="max-width:840px; margin:0 auto; padding:14px 20px 6px; text-align:center;">
-    <div style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">2026 midterms · November 3</div>
+    <div style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Midterm Edition · November 3, 2026</div>
     <h1 style="font-weight:800; font-size:clamp(30px,6vw,44px); line-height:1.1; letter-spacing:-.02em; margin:16px 0 10px;">The governors,<br>side by side.</h1>
     <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0 auto; max-width:520px;">Tap a state to see its governor's race.<br>Governors are the top official of their state, responsible for the state's laws, budget, and more.</p>
   </div>
@@ -136,8 +142,8 @@
           <span style="font-weight:800; font-size:18px;">Arizona</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Katie Hobbs (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Hobbs seeks a second term in a state Trump won in 2024. Republicans pick her challenger in the August 4 primary.</div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Katie Hobbs (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Andy Biggs (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Hobbs seeks a second term in a state Trump won in 2024. Congressman Andy Biggs won the Republican primary to challenge her.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
@@ -191,22 +197,12 @@
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
-      <a href="governor-kansas.html" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-          <span style="font-weight:800; font-size:18px;">Kansas</span>
-          <span style="font-size:10.5px; font-weight:800; color:var(--red); background:var(--redbg); padding:4px 10px; border-radius:999px;">LEAN R</span>
-        </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Democratic nominee</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Kelly is term-limited, and raters call this Democratic-held seat the most likely governorship to flip in 2026.</div>
-        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
-      </a>
-
     </div>
   </div>
 
   <div style="max-width:840px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; color:var(--faint); line-height:1.6;">
     Seat counts and ratings as of July 2026 · <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="color:var(--gold); font-weight:700; text-decoration:none;">See how to vote →</a><br>
-    electy.org is in beta — expect rough edges as we build out every race.<br>
+    electy.org is in beta. Some races will be missing or incomplete.<br>
     <a href="contact.html" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
   </div>
 
@@ -214,7 +210,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { theme: 'light' };
+  state = { theme: (function(){ try { return localStorage.getItem('electy-theme') || 'light'; } catch(e){ return 'light'; } })() };
 
   // col,row are 0-indexed positions in a 12-wide tile grid (same layout as the Senate hub).
   // race: party currently holding the governorship that is up in 2026 ('D'|'R') or null.
@@ -304,7 +300,7 @@ class Component extends DCLogic {
       theme,
       isDark: theme === 'dark',
       isLight: theme !== 'dark',
-      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+      toggleTheme: () => this.setState(s => { const t = s.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('electy-theme', t); } catch(e){} return { theme: t }; }),
       tiles,
     };
   }

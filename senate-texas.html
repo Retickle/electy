@@ -47,12 +47,14 @@
 
 <div data-theme="{{ theme }}" style="min-height:100vh; background:var(--bg); color:var(--ink); font-family:'Plus Jakarta Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color .25s ease, color .25s ease;">
 
-  <div style="max-width:720px; margin:0 auto; padding:18px 20px 0; display:flex; align-items:center; justify-content:space-between;">
-    <div style="display:flex; align-items:center; gap:8px;">
-      <a href="senate-hub.html" style="font-size:12.5px; font-weight:700; color:var(--soft); text-decoration:none; background:var(--card); padding:9px 16px; border-radius:999px; box-shadow:var(--shadow);">← All Senate races</a>
-      <span style="font-size:10px; font-weight:800; letter-spacing:.06em; color:var(--gold); background:var(--goldbg); padding:4px 8px; border-radius:999px;">BETA</span>
-    </div>
-    <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
+  <div data-screen-label="Header" style="max-width:720px; margin:0 auto; padding:18px 20px 0; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+    <a href="index.html" style="display:flex; align-items:center; gap:9px; text-decoration:none; color:inherit;">
+      <img src="favicon.svg" alt="electy.org logo" style="width:26px; height:26px; display:block;">
+      <span style="font-weight:800; font-size:17px; letter-spacing:-.01em;">electy<span style="color:var(--gold);">.org</span></span>
+      <span style="font-size:10px; font-weight:800; letter-spacing:.06em; color:var(--gold); background:var(--goldbg); padding:3px 8px; border-radius:999px;">BETA</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="width:38px; height:38px; border-radius:50%; border:none; background:var(--card); color:var(--ink); display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; box-shadow:var(--shadow);">
       <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
         <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="2" x2="12" y2="4.5"></line><line x1="12" y1="19.5" x2="12" y2="22"></line><line x1="2" y1="12" x2="4.5" y2="12"></line><line x1="19.5" y1="12" x2="22" y2="12"></line><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"></line><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"></line><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"></line><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"></line></svg>
       </sc-if>
@@ -60,26 +62,30 @@
         <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path></svg>
       </sc-if>
     </button>
+    </div>
+  </div>
+
+  <div style="max-width:720px; margin:0 auto; padding:16px 20px 0;">
+    <a href="senate-hub.html" style="font-size:12.5px; font-weight:700; color:var(--soft); text-decoration:none; background:var(--card); padding:9px 16px; border-radius:999px; box-shadow:var(--shadow);">← All Senate races</a>
   </div>
 
   <div data-screen-label="Hero" style="max-width:720px; margin:0 auto; padding:22px 20px 6px;">
     <div style="display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
-      <span style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">🗳 Your ballot · Nov 3, 2026</span>
-      <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:var(--goldbg); color:var(--gold); font-size:11.5px; font-weight:800; padding:7px 14px; border-radius:999px; text-decoration:none; white-space:nowrap;">How to vote →</a>
+      <span style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Nov 3, 2026</span>
     </div>
     <h1 style="font-weight:800; font-size:clamp(28px,6vw,38px); line-height:1.12; letter-spacing:-.02em; margin:16px 0 10px;">Texas - United States Senate</h1>
     <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:520px;">⭐ This is one of seven races that will determine control of the Senate! <a role="button" tabindex="0" onClick="{{ scrollToNarrative }}" style="color:var(--gold); font-weight:700; text-decoration:none; cursor:pointer; white-space:nowrap;">Get caught up ↓</a></p>
   </div>
 
   <div data-screen-label="Candidates" style="max-width:720px; margin:0 auto; padding:20px 20px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
-    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow); border:2px solid var(--blue);">
       <img src="uploads/jamestalarico.jpg" alt="James Talarico" style="width:104px; height:104px; margin:0 auto 12px; display:block; border-radius:50%; overflow:hidden; object-fit:cover; background:var(--bluebg);">
       <div style="font-weight:800; font-size:18px;">James Talarico</div>
       <div style="display:inline-block; margin-top:7px; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat - Age: 37</div>
       <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Texas state representative since 2018 and former middle-school teacher. Degrees from UT Austin and Harvard.</p>
       <a href="https://talaricofortexas.com" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;">Campaign website →</a>
     </div>
-    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow);">
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow); border:2px solid var(--red);">
       <img src="uploads/kenpaxton.jpg" alt="Ken Paxton" style="width:104px; height:104px; margin:0 auto 12px; display:block; border-radius:50%; overflow:hidden; object-fit:cover; background:var(--redbg);">
       <div style="font-weight:800; font-size:18px;">Ken Paxton</div>
       <div style="display:inline-block; margin-top:7px; background:var(--redbg); color:var(--red); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Republican - Age: 63</div>
@@ -135,17 +141,25 @@
     <div style="background:var(--greenbg); border-radius:22px; padding:20px 22px;">
       <div style="font-size:15px; font-weight:800; color:var(--green); margin-bottom:4px;">✓ Money &amp; integrity check</div>
       <p style="font-size:12.5px; color:var(--soft); margin:0 0 12px;">How each candidate handles money in politics.</p>
-      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
-        <span>Ban Congress from trading stocks</span>
-        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">JT yes</span> · <span style="color:var(--bad);">KP no</span></span>
+      <div style="display:grid; grid-template-columns:88px 1fr 88px; align-items:center; gap:10px; padding-bottom:8px; margin-top:12px;">
+        <div style="font-size:10.5px; font-weight:800; letter-spacing:.04em; color:var(--blue); text-align:center;">TALARICO</div>
+        <div></div>
+        <div style="font-size:10.5px; font-weight:800; letter-spacing:.04em; color:var(--red); text-align:center;">PAXTON</div>
       </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
-        <span>Takes corporate PAC money</span>
-        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">JT no</span> · <span style="color:var(--bad);">KP yes</span></span>
+      <div style="display:grid; grid-template-columns:88px 1fr 88px; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line);">
+        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--green); background:var(--card); padding:5px 12px; border-radius:999px;">✓ Yes</span>
+        <span style="font-size:13px; text-align:center; line-height:1.45;">Ban Congress from trading stocks</span>
+        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--bad); background:var(--card); padding:5px 12px; border-radius:999px;">✗ No</span>
       </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:13.5px; padding:10px 0; border-top:1px solid var(--line);">
-        <span>Wants to overturn Citizens United</span>
-        <span style="font-weight:800; white-space:nowrap;"><span style="color:var(--green);">JT yes</span> · <span style="color:var(--bad);">KP no</span></span>
+      <div style="display:grid; grid-template-columns:88px 1fr 88px; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line);">
+        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--green); background:var(--card); padding:5px 12px; border-radius:999px;">✓ No</span>
+        <span style="font-size:13px; text-align:center; line-height:1.45;">Takes corporate PAC money</span>
+        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--bad); background:var(--card); padding:5px 12px; border-radius:999px;">✗ Yes</span>
+      </div>
+      <div style="display:grid; grid-template-columns:88px 1fr 88px; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line);">
+        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--green); background:var(--card); padding:5px 12px; border-radius:999px;">✓ Yes</span>
+        <span style="font-size:13px; text-align:center; line-height:1.45;">Wants to overturn Citizens United</span>
+        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--bad); background:var(--card); padding:5px 12px; border-radius:999px;">✗ No</span>
       </div>
       <p style="font-size:12px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Follow the money: Talarico's viral online following has made him one of the country's top small-dollar fundraisers; Paxton draws more on large donors and PAC support.</p>
     </div>
@@ -239,14 +253,14 @@
 
   <div style="max-width:720px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; color:var(--faint); line-height:1.6;">
     Positions summarized from campaign websites, voting records, and news reports · July 2026<br>
-    electy.org is in beta — expect rough edges as we build out every race.<br>
+    electy.org is in beta. Some races will be missing or incomplete.<br>
     <a href="contact.html" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
   </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { theme: 'light', topic: 'Cost of Living', voteFilter: 'all', pulse: false };
+  state = { theme: (function(){ try { return localStorage.getItem('electy-theme') || 'light'; } catch(e){ return 'light'; } })(), topic: 'Cost of Living', voteFilter: 'all', pulse: false };
   narrativeRef = React.createRef();
 
   componentWillUnmount(){
@@ -308,7 +322,7 @@ class Component extends DCLogic {
       theme,
       isDark: theme === 'dark',
       isLight: theme !== 'dark',
-      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+      toggleTheme: () => this.setState(s => { const t = s.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('electy-theme', t); } catch(e){} return { theme: t }; }),
 
       topicChips,
       jtSays: active.jt,
