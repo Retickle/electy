@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026 U.S. Senate races · electy.org</title>
-<meta name="description" content="Every 2026 U.S. Senate race, with ratings, candidates and the seats that decide control.">
+<meta name="description" content="All 35 U.S. Senate races on the ballot November 3, 2026, and the seven that will decide control of the Senate.">
 <link rel="canonical" href="https://electy.org/senate/">
 <meta property="og:title" content="2026 U.S. Senate races · electy.org">
-<meta property="og:description" content="Every 2026 U.S. Senate race, with ratings, candidates and the seats that decide control.">
+<meta property="og:description" content="All 35 U.S. Senate races on the ballot November 3, 2026, and the seven that will decide control of the Senate.">
 <meta property="og:url" content="https://electy.org/senate/">
 <meta property="og:site_name" content="electy.org">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://electy.org/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <script src="../support.js"></script>
 </head>
 <body>
@@ -130,9 +133,9 @@
     <div class="mapcard" style="background:var(--card); border-radius:22px; padding:20px; box-shadow:var(--shadow);">
       <div class="mapgrid" style="display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); gap:6px;">
         <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="50">
-          <button type="button" class="tile" onClick="{{ t.click }}" title="{{ t.tip }}" style="{{ t.style }}">
+          <a class="tile" href="{{ t.href }}" onClick="{{ t.click }}" title="{{ t.tip }}" style="{{ t.style }}">
             {{ t.abbr }}
-          </button>
+          </a>
         </sc-for>
       </div>
       <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:18px; font-size:11px; font-weight:600; color:var(--soft);">
@@ -146,7 +149,7 @@
 
   <div data-screen-label="Races to watch" style="max-width:840px; margin:0 auto; padding:30px 20px 0;">
     <h2 style="font-weight:800; font-size:21px; margin:0 0 4px; text-align:center;">The races to watch</h2>
-    <p style="font-size:13px; color:var(--soft); margin:0 0 18px; text-align:center;">Democrats must win 5 of these 7 races to take Senate control from Republicans.</p>
+    <p style="font-size:13px; color:var(--soft); margin:0 0 18px; text-align:center;">Democrats need a net gain of four seats. If every other seat stays with its party, that means holding Georgia and Michigan and flipping four of the other five — 6 of these 7.</p>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:14px;">
 
       <a href="../senate/texas/" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; background: var(--card); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); border: 2px solid var(--gold); border-width: 0px">
@@ -165,7 +168,7 @@
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
         <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Troy Jackson (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red); white-space:nowrap;">Susan Collins (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Progressive logger vs five term senator. Collins is defending the only Republican seat that voted Democratic in 2024.</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Former Maine Senate president vs five-term senator. Collins is defending the only Republican seat that voted Democratic in 2024.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
@@ -204,8 +207,8 @@
           <span style="font-weight:800; font-size:18px;">Michigan</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Democratic nominee</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Mike Rogers (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open Democratic seat. Democrats pick their nominee August 4; Rogers narrowly lost this race in 2024.</div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Abdul El-Sayed (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Mike Rogers (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open Democratic seat. El-Sayed won the August 4 primary; Rogers narrowly lost this race in 2024.</div>
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
@@ -250,7 +253,7 @@ class Component extends DCLogic {
   // race: party currently holding the seat that is up in 2026 ('D'|'R') or null.
   // hot: among the most competitive races. live: has a built race page.
   // States with a Senate race page built.
-  static SENATE_PAGES = new Set(["alaska","arkansas","colorado","georgia","idaho","iowa","kentucky","louisiana","maine","massachusetts","michigan","minnesota","mississippi","montana","nebraska","new-hampshire","new-mexico","north-carolina","ohio","oklahoma","oregon","south-carolina","south-dakota","texas","virginia","wyoming"]);
+  static SENATE_PAGES = new Set(["alabama","alaska","arkansas","colorado","delaware","florida","georgia","idaho","illinois","iowa","kansas","kentucky","louisiana","maine","massachusetts","michigan","minnesota","mississippi","montana","nebraska","new-hampshire","new-jersey","new-mexico","north-carolina","ohio","oklahoma","oregon","rhode-island","south-carolina","south-dakota","tennessee","texas","virginia","west-virginia","wyoming"]);
 
   static STATES = [
     { abbr:'AK', name:'Alaska',        col:0,  row:0, race:'R', hot:true  },
@@ -308,10 +311,10 @@ class Component extends DCLogic {
   renderVals(){
     const theme = this.state.theme;
 
-    const base = "position:relative; aspect-ratio:1/1; width:100%; padding:0; border-radius:9px; font-family:'Plus Jakarta Sans',sans-serif; font-size:11.5px; font-weight:800; display:flex; align-items:center; justify-content:center; border:none; transition:filter .15s ease;";
+    const base = "position:relative; aspect-ratio:1/1; width:100%; padding:0; border-radius:9px; font-family:'Plus Jakarta Sans',sans-serif; font-size:11.5px; font-weight:800; display:flex; align-items:center; justify-content:center; border:none; text-decoration:none; transition:filter .15s ease;";
 
     const tiles = Component.STATES.map(s => {
-      let style, tip, click;
+      let style, tip, click, link;
       if (!s.race) {
         style = base + ' background:var(--track); color:var(--faint); cursor:default;';
         tip = s.name + ' — no Senate race in 2026';
@@ -325,8 +328,9 @@ class Component extends DCLogic {
         const slug = s.name.toLowerCase().replace(/ /g, '-');
         if (Component.SENATE_PAGES.has(slug)) {
           const href = '../senate/' + slug + '/';
+          link = href;
           tip = s.name + ' — view the race';
-          click = () => { window.location.href = href; };
+          click = undefined;
         } else {
           tip = s.name + ' — race page coming soon';
           click = () => this.showToast(s.name + ' race page coming soon');
@@ -335,7 +339,7 @@ class Component extends DCLogic {
       return {
         abbr: s.abbr,
         style: style + ' grid-column:' + (s.col + 1) + '; grid-row:' + (s.row + 1) + ';',
-        tip, click,
+        tip, click, href: link,
       };
     });
 

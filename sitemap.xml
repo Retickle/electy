@@ -1,471 +1,515 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://electy.org/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/governor/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/contact/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/alaska/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/arkansas/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/colorado/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/georgia/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/idaho/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/iowa/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/kentucky/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/louisiana/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/maine/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/massachusetts/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/michigan/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/minnesota/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/mississippi/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/montana/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/nebraska/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/new-hampshire/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/new-mexico/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/north-carolina/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/ohio/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/oklahoma/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/oregon/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/south-carolina/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/south-dakota/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/texas/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/virginia/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/senate/wyoming/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/governor/nevada/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/governor/ohio/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ak-al/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/al-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/al-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/al-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/al-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/al-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/al-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/al-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ar-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ar-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ar-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ar-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/az-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-15/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-16/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-17/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-18/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-19/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-20/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-21/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-22/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-23/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-24/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-25/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-26/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-27/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-28/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-29/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-30/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-31/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-32/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-33/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-34/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-35/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-36/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-37/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-38/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-39/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-40/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-41/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-42/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-43/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-44/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-45/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-46/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-47/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-48/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-49/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-50/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-51/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ca-52/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/co-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/co-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/co-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/co-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/co-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/co-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/co-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/co-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ct-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ct-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ct-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ct-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ct-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/de-al/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-15/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-16/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-17/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-18/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-19/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-20/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-21/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-22/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-23/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-24/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-25/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-26/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-27/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/fl-28/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ga-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/hi-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/hi-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ia-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ia-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ia-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ia-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/id-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/id-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-15/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-16/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/il-17/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/in-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ks-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ks-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ks-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ks-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ky-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ky-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ky-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ky-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ky-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ky-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/la-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/la-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/la-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/la-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/la-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/la-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ma-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/md-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/md-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/md-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/md-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/md-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/md-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/md-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/md-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/me-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/me-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mi-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mn-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mn-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mn-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mn-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mn-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mn-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mn-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mn-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mo-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mo-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mo-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mo-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mo-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mo-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mo-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mo-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ms-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ms-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ms-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ms-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mt-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/mt-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nc-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nd-al/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ne-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ne-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ne-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nh-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nh-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nj-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nm-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nm-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nm-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nv-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nv-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nv-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/nv-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-15/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-16/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-17/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-18/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-19/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-20/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-21/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-22/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-23/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-24/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-25/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ny-26/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/oh-15/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ok-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ok-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ok-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ok-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ok-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/or-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/or-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/or-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/or-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/or-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/or-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-15/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-16/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/pa-17/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ri-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ri-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/sc-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/sc-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/sc-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/sc-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/sc-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/sc-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/sc-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/sd-al/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tn-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-12/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-13/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-14/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-15/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-16/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-17/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-18/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-19/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-20/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-21/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-22/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-23/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-24/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-25/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-26/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-27/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-28/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-29/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-30/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-31/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-32/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-33/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-34/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-35/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-36/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-37/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/tx-38/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ut-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ut-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ut-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/ut-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/va-11/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/vt-al/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-09/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wa-10/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wi-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wi-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wi-03/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wi-04/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wi-05/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wi-06/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wi-07/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wi-08/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wv-01/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wv-02/</loc><lastmod>2026-09-16</lastmod></url>
-  <url><loc>https://electy.org/house/wy-al/</loc><lastmod>2026-09-16</lastmod></url>
+<url><loc>https://electy.org/contact/</loc></url>
+<url><loc>https://electy.org/governor/</loc></url>
+<url><loc>https://electy.org/governor/nevada/</loc></url>
+<url><loc>https://electy.org/governor/pennsylvania/</loc></url>
+<url><loc>https://electy.org/governor/new-york/</loc></url>
+<url><loc>https://electy.org/governor/california/</loc></url>
+<url><loc>https://electy.org/governor/colorado/</loc></url>
+<url><loc>https://electy.org/governor/south-carolina/</loc></url>
+<url><loc>https://electy.org/governor/florida/</loc></url>
+<url><loc>https://electy.org/governor/texas/</loc></url>
+<url><loc>https://electy.org/governor/oregon/</loc></url>
+<url><loc>https://electy.org/governor/new-mexico/</loc></url>
+<url><loc>https://electy.org/governor/minnesota/</loc></url>
+<url><loc>https://electy.org/governor/alaska/</loc></url>
+<url><loc>https://electy.org/governor/arizona/</loc></url>
+<url><loc>https://electy.org/governor/kansas/</loc></url>
+<url><loc>https://electy.org/governor/maine/</loc></url>
+<url><loc>https://electy.org/governor/new-hampshire/</loc></url>
+
+<url><loc>https://electy.org/governor/ohio/</loc></url>
+<url><loc>https://electy.org/house/</loc></url>
+<url><loc>https://electy.org/</loc></url>
+<url><loc>https://electy.org/senate/alaska/</loc></url>
+<url><loc>https://electy.org/senate/arkansas/</loc></url>
+<url><loc>https://electy.org/senate/colorado/</loc></url>
+<url><loc>https://electy.org/senate/georgia/</loc></url>
+<url><loc>https://electy.org/senate/</loc></url>
+<url><loc>https://electy.org/senate/idaho/</loc></url>
+<url><loc>https://electy.org/senate/iowa/</loc></url>
+<url><loc>https://electy.org/senate/kentucky/</loc></url>
+<url><loc>https://electy.org/senate/louisiana/</loc></url>
+<url><loc>https://electy.org/senate/maine/</loc></url>
+<url><loc>https://electy.org/senate/massachusetts/</loc></url>
+<url><loc>https://electy.org/senate/michigan/</loc></url>
+<url><loc>https://electy.org/senate/minnesota/</loc></url>
+<url><loc>https://electy.org/senate/mississippi/</loc></url>
+<url><loc>https://electy.org/senate/montana/</loc></url>
+<url><loc>https://electy.org/senate/nebraska/</loc></url>
+<url><loc>https://electy.org/senate/new-hampshire/</loc></url>
+<url><loc>https://electy.org/senate/new-mexico/</loc></url>
+<url><loc>https://electy.org/senate/north-carolina/</loc></url>
+<url><loc>https://electy.org/senate/ohio/</loc></url>
+<url><loc>https://electy.org/senate/oklahoma/</loc></url>
+<url><loc>https://electy.org/senate/oregon/</loc></url>
+<url><loc>https://electy.org/senate/south-carolina/</loc></url>
+<url><loc>https://electy.org/senate/south-dakota/</loc></url>
+<url><loc>https://electy.org/senate/texas/</loc></url>
+<url><loc>https://electy.org/senate/virginia/</loc></url>
+<url><loc>https://electy.org/senate/wyoming/</loc></url>
+<url><loc>https://electy.org/house/ak-al/</loc></url>
+<url><loc>https://electy.org/house/al-01/</loc></url>
+<url><loc>https://electy.org/house/al-02/</loc></url>
+<url><loc>https://electy.org/house/al-03/</loc></url>
+<url><loc>https://electy.org/house/al-04/</loc></url>
+<url><loc>https://electy.org/house/al-05/</loc></url>
+<url><loc>https://electy.org/house/al-06/</loc></url>
+<url><loc>https://electy.org/house/al-07/</loc></url>
+<url><loc>https://electy.org/house/ar-01/</loc></url>
+<url><loc>https://electy.org/house/ar-02/</loc></url>
+<url><loc>https://electy.org/house/ar-03/</loc></url>
+<url><loc>https://electy.org/house/ar-04/</loc></url>
+<url><loc>https://electy.org/house/az-01/</loc></url>
+<url><loc>https://electy.org/house/az-02/</loc></url>
+<url><loc>https://electy.org/house/az-03/</loc></url>
+<url><loc>https://electy.org/house/az-04/</loc></url>
+<url><loc>https://electy.org/house/az-05/</loc></url>
+<url><loc>https://electy.org/house/az-06/</loc></url>
+<url><loc>https://electy.org/house/az-07/</loc></url>
+<url><loc>https://electy.org/house/az-08/</loc></url>
+<url><loc>https://electy.org/house/az-09/</loc></url>
+<url><loc>https://electy.org/house/ca-01/</loc></url>
+<url><loc>https://electy.org/house/ca-02/</loc></url>
+<url><loc>https://electy.org/house/ca-03/</loc></url>
+<url><loc>https://electy.org/house/ca-04/</loc></url>
+<url><loc>https://electy.org/house/ca-05/</loc></url>
+<url><loc>https://electy.org/house/ca-06/</loc></url>
+<url><loc>https://electy.org/house/ca-07/</loc></url>
+<url><loc>https://electy.org/house/ca-08/</loc></url>
+<url><loc>https://electy.org/house/ca-09/</loc></url>
+<url><loc>https://electy.org/house/ca-10/</loc></url>
+<url><loc>https://electy.org/house/ca-11/</loc></url>
+<url><loc>https://electy.org/house/ca-12/</loc></url>
+<url><loc>https://electy.org/house/ca-13/</loc></url>
+<url><loc>https://electy.org/house/ca-14/</loc></url>
+<url><loc>https://electy.org/house/ca-15/</loc></url>
+<url><loc>https://electy.org/house/ca-16/</loc></url>
+<url><loc>https://electy.org/house/ca-17/</loc></url>
+<url><loc>https://electy.org/house/ca-18/</loc></url>
+<url><loc>https://electy.org/house/ca-19/</loc></url>
+<url><loc>https://electy.org/house/ca-20/</loc></url>
+<url><loc>https://electy.org/house/ca-21/</loc></url>
+<url><loc>https://electy.org/house/ca-22/</loc></url>
+<url><loc>https://electy.org/house/ca-23/</loc></url>
+<url><loc>https://electy.org/house/ca-24/</loc></url>
+<url><loc>https://electy.org/house/ca-25/</loc></url>
+<url><loc>https://electy.org/house/ca-26/</loc></url>
+<url><loc>https://electy.org/house/ca-27/</loc></url>
+<url><loc>https://electy.org/house/ca-28/</loc></url>
+<url><loc>https://electy.org/house/ca-29/</loc></url>
+<url><loc>https://electy.org/house/ca-30/</loc></url>
+<url><loc>https://electy.org/house/ca-31/</loc></url>
+<url><loc>https://electy.org/house/ca-32/</loc></url>
+<url><loc>https://electy.org/house/ca-33/</loc></url>
+<url><loc>https://electy.org/house/ca-34/</loc></url>
+<url><loc>https://electy.org/house/ca-35/</loc></url>
+<url><loc>https://electy.org/house/ca-36/</loc></url>
+<url><loc>https://electy.org/house/ca-37/</loc></url>
+<url><loc>https://electy.org/house/ca-38/</loc></url>
+<url><loc>https://electy.org/house/ca-39/</loc></url>
+<url><loc>https://electy.org/house/ca-40/</loc></url>
+<url><loc>https://electy.org/house/ca-41/</loc></url>
+<url><loc>https://electy.org/house/ca-42/</loc></url>
+<url><loc>https://electy.org/house/ca-43/</loc></url>
+<url><loc>https://electy.org/house/ca-44/</loc></url>
+<url><loc>https://electy.org/house/ca-45/</loc></url>
+<url><loc>https://electy.org/house/ca-46/</loc></url>
+<url><loc>https://electy.org/house/ca-47/</loc></url>
+<url><loc>https://electy.org/house/ca-48/</loc></url>
+<url><loc>https://electy.org/house/ca-49/</loc></url>
+<url><loc>https://electy.org/house/ca-50/</loc></url>
+<url><loc>https://electy.org/house/ca-51/</loc></url>
+<url><loc>https://electy.org/house/ca-52/</loc></url>
+<url><loc>https://electy.org/house/co-01/</loc></url>
+<url><loc>https://electy.org/house/co-02/</loc></url>
+<url><loc>https://electy.org/house/co-03/</loc></url>
+<url><loc>https://electy.org/house/co-04/</loc></url>
+<url><loc>https://electy.org/house/co-05/</loc></url>
+<url><loc>https://electy.org/house/co-06/</loc></url>
+<url><loc>https://electy.org/house/co-07/</loc></url>
+<url><loc>https://electy.org/house/co-08/</loc></url>
+<url><loc>https://electy.org/house/ct-01/</loc></url>
+<url><loc>https://electy.org/house/ct-02/</loc></url>
+<url><loc>https://electy.org/house/ct-03/</loc></url>
+<url><loc>https://electy.org/house/ct-04/</loc></url>
+<url><loc>https://electy.org/house/ct-05/</loc></url>
+<url><loc>https://electy.org/house/de-al/</loc></url>
+<url><loc>https://electy.org/house/fl-01/</loc></url>
+<url><loc>https://electy.org/house/fl-02/</loc></url>
+<url><loc>https://electy.org/house/fl-03/</loc></url>
+<url><loc>https://electy.org/house/fl-04/</loc></url>
+<url><loc>https://electy.org/house/fl-05/</loc></url>
+<url><loc>https://electy.org/house/fl-06/</loc></url>
+<url><loc>https://electy.org/house/fl-07/</loc></url>
+<url><loc>https://electy.org/house/fl-08/</loc></url>
+<url><loc>https://electy.org/house/fl-09/</loc></url>
+<url><loc>https://electy.org/house/fl-10/</loc></url>
+<url><loc>https://electy.org/house/fl-11/</loc></url>
+<url><loc>https://electy.org/house/fl-12/</loc></url>
+<url><loc>https://electy.org/house/fl-13/</loc></url>
+<url><loc>https://electy.org/house/fl-14/</loc></url>
+<url><loc>https://electy.org/house/fl-15/</loc></url>
+<url><loc>https://electy.org/house/fl-16/</loc></url>
+<url><loc>https://electy.org/house/fl-17/</loc></url>
+<url><loc>https://electy.org/house/fl-18/</loc></url>
+<url><loc>https://electy.org/house/fl-19/</loc></url>
+<url><loc>https://electy.org/house/fl-20/</loc></url>
+<url><loc>https://electy.org/house/fl-21/</loc></url>
+<url><loc>https://electy.org/house/fl-22/</loc></url>
+<url><loc>https://electy.org/house/fl-23/</loc></url>
+<url><loc>https://electy.org/house/fl-24/</loc></url>
+<url><loc>https://electy.org/house/fl-25/</loc></url>
+<url><loc>https://electy.org/house/fl-26/</loc></url>
+<url><loc>https://electy.org/house/fl-27/</loc></url>
+<url><loc>https://electy.org/house/fl-28/</loc></url>
+<url><loc>https://electy.org/house/ga-01/</loc></url>
+<url><loc>https://electy.org/house/ga-02/</loc></url>
+<url><loc>https://electy.org/house/ga-03/</loc></url>
+<url><loc>https://electy.org/house/ga-04/</loc></url>
+<url><loc>https://electy.org/house/ga-05/</loc></url>
+<url><loc>https://electy.org/house/ga-06/</loc></url>
+<url><loc>https://electy.org/house/ga-07/</loc></url>
+<url><loc>https://electy.org/house/ga-08/</loc></url>
+<url><loc>https://electy.org/house/ga-09/</loc></url>
+<url><loc>https://electy.org/house/ga-10/</loc></url>
+<url><loc>https://electy.org/house/ga-11/</loc></url>
+<url><loc>https://electy.org/house/ga-12/</loc></url>
+<url><loc>https://electy.org/house/ga-13/</loc></url>
+<url><loc>https://electy.org/house/ga-14/</loc></url>
+<url><loc>https://electy.org/house/hi-01/</loc></url>
+<url><loc>https://electy.org/house/hi-02/</loc></url>
+<url><loc>https://electy.org/house/ia-01/</loc></url>
+<url><loc>https://electy.org/house/ia-02/</loc></url>
+<url><loc>https://electy.org/house/ia-03/</loc></url>
+<url><loc>https://electy.org/house/ia-04/</loc></url>
+<url><loc>https://electy.org/house/id-01/</loc></url>
+<url><loc>https://electy.org/house/id-02/</loc></url>
+<url><loc>https://electy.org/house/il-01/</loc></url>
+<url><loc>https://electy.org/house/il-02/</loc></url>
+<url><loc>https://electy.org/house/il-03/</loc></url>
+<url><loc>https://electy.org/house/il-04/</loc></url>
+<url><loc>https://electy.org/house/il-05/</loc></url>
+<url><loc>https://electy.org/house/il-06/</loc></url>
+<url><loc>https://electy.org/house/il-07/</loc></url>
+<url><loc>https://electy.org/house/il-08/</loc></url>
+<url><loc>https://electy.org/house/il-09/</loc></url>
+<url><loc>https://electy.org/house/il-10/</loc></url>
+<url><loc>https://electy.org/house/il-11/</loc></url>
+<url><loc>https://electy.org/house/il-12/</loc></url>
+<url><loc>https://electy.org/house/il-13/</loc></url>
+<url><loc>https://electy.org/house/il-14/</loc></url>
+<url><loc>https://electy.org/house/il-15/</loc></url>
+<url><loc>https://electy.org/house/il-16/</loc></url>
+<url><loc>https://electy.org/house/il-17/</loc></url>
+<url><loc>https://electy.org/house/in-01/</loc></url>
+<url><loc>https://electy.org/house/in-02/</loc></url>
+<url><loc>https://electy.org/house/in-03/</loc></url>
+<url><loc>https://electy.org/house/in-04/</loc></url>
+<url><loc>https://electy.org/house/in-05/</loc></url>
+<url><loc>https://electy.org/house/in-06/</loc></url>
+<url><loc>https://electy.org/house/in-07/</loc></url>
+<url><loc>https://electy.org/house/in-08/</loc></url>
+<url><loc>https://electy.org/house/in-09/</loc></url>
+<url><loc>https://electy.org/house/ks-01/</loc></url>
+<url><loc>https://electy.org/house/ks-02/</loc></url>
+<url><loc>https://electy.org/house/ks-03/</loc></url>
+<url><loc>https://electy.org/house/ks-04/</loc></url>
+<url><loc>https://electy.org/house/ky-01/</loc></url>
+<url><loc>https://electy.org/house/ky-02/</loc></url>
+<url><loc>https://electy.org/house/ky-03/</loc></url>
+<url><loc>https://electy.org/house/ky-04/</loc></url>
+<url><loc>https://electy.org/house/ky-05/</loc></url>
+<url><loc>https://electy.org/house/ky-06/</loc></url>
+<url><loc>https://electy.org/house/la-01/</loc></url>
+<url><loc>https://electy.org/house/la-02/</loc></url>
+<url><loc>https://electy.org/house/la-03/</loc></url>
+<url><loc>https://electy.org/house/la-04/</loc></url>
+<url><loc>https://electy.org/house/la-05/</loc></url>
+<url><loc>https://electy.org/house/la-06/</loc></url>
+<url><loc>https://electy.org/house/ma-01/</loc></url>
+<url><loc>https://electy.org/house/ma-02/</loc></url>
+<url><loc>https://electy.org/house/ma-03/</loc></url>
+<url><loc>https://electy.org/house/ma-04/</loc></url>
+<url><loc>https://electy.org/house/ma-05/</loc></url>
+<url><loc>https://electy.org/house/ma-06/</loc></url>
+<url><loc>https://electy.org/house/ma-07/</loc></url>
+<url><loc>https://electy.org/house/ma-08/</loc></url>
+<url><loc>https://electy.org/house/ma-09/</loc></url>
+<url><loc>https://electy.org/house/md-01/</loc></url>
+<url><loc>https://electy.org/house/md-02/</loc></url>
+<url><loc>https://electy.org/house/md-03/</loc></url>
+<url><loc>https://electy.org/house/md-04/</loc></url>
+<url><loc>https://electy.org/house/md-05/</loc></url>
+<url><loc>https://electy.org/house/md-06/</loc></url>
+<url><loc>https://electy.org/house/md-07/</loc></url>
+<url><loc>https://electy.org/house/md-08/</loc></url>
+<url><loc>https://electy.org/house/me-01/</loc></url>
+<url><loc>https://electy.org/house/me-02/</loc></url>
+<url><loc>https://electy.org/house/mi-01/</loc></url>
+<url><loc>https://electy.org/house/mi-02/</loc></url>
+<url><loc>https://electy.org/house/mi-03/</loc></url>
+<url><loc>https://electy.org/house/mi-04/</loc></url>
+<url><loc>https://electy.org/house/mi-05/</loc></url>
+<url><loc>https://electy.org/house/mi-06/</loc></url>
+<url><loc>https://electy.org/house/mi-07/</loc></url>
+<url><loc>https://electy.org/house/mi-08/</loc></url>
+<url><loc>https://electy.org/house/mi-09/</loc></url>
+<url><loc>https://electy.org/house/mi-10/</loc></url>
+<url><loc>https://electy.org/house/mi-11/</loc></url>
+<url><loc>https://electy.org/house/mi-12/</loc></url>
+<url><loc>https://electy.org/house/mi-13/</loc></url>
+<url><loc>https://electy.org/house/mn-01/</loc></url>
+<url><loc>https://electy.org/house/mn-02/</loc></url>
+<url><loc>https://electy.org/house/mn-03/</loc></url>
+<url><loc>https://electy.org/house/mn-04/</loc></url>
+<url><loc>https://electy.org/house/mn-05/</loc></url>
+<url><loc>https://electy.org/house/mn-06/</loc></url>
+<url><loc>https://electy.org/house/mn-07/</loc></url>
+<url><loc>https://electy.org/house/mn-08/</loc></url>
+<url><loc>https://electy.org/house/mo-01/</loc></url>
+<url><loc>https://electy.org/house/mo-02/</loc></url>
+<url><loc>https://electy.org/house/mo-03/</loc></url>
+<url><loc>https://electy.org/house/mo-04/</loc></url>
+<url><loc>https://electy.org/house/mo-05/</loc></url>
+<url><loc>https://electy.org/house/mo-06/</loc></url>
+<url><loc>https://electy.org/house/mo-07/</loc></url>
+<url><loc>https://electy.org/house/mo-08/</loc></url>
+<url><loc>https://electy.org/house/ms-01/</loc></url>
+<url><loc>https://electy.org/house/ms-02/</loc></url>
+<url><loc>https://electy.org/house/ms-03/</loc></url>
+<url><loc>https://electy.org/house/ms-04/</loc></url>
+<url><loc>https://electy.org/house/mt-01/</loc></url>
+<url><loc>https://electy.org/house/mt-02/</loc></url>
+<url><loc>https://electy.org/house/nc-01/</loc></url>
+<url><loc>https://electy.org/house/nc-02/</loc></url>
+<url><loc>https://electy.org/house/nc-03/</loc></url>
+<url><loc>https://electy.org/house/nc-04/</loc></url>
+<url><loc>https://electy.org/house/nc-05/</loc></url>
+<url><loc>https://electy.org/house/nc-06/</loc></url>
+<url><loc>https://electy.org/house/nc-07/</loc></url>
+<url><loc>https://electy.org/house/nc-08/</loc></url>
+<url><loc>https://electy.org/house/nc-09/</loc></url>
+<url><loc>https://electy.org/house/nc-10/</loc></url>
+<url><loc>https://electy.org/house/nc-11/</loc></url>
+<url><loc>https://electy.org/house/nc-12/</loc></url>
+<url><loc>https://electy.org/house/nc-13/</loc></url>
+<url><loc>https://electy.org/house/nc-14/</loc></url>
+<url><loc>https://electy.org/house/nd-al/</loc></url>
+<url><loc>https://electy.org/house/ne-01/</loc></url>
+<url><loc>https://electy.org/house/ne-02/</loc></url>
+<url><loc>https://electy.org/house/ne-03/</loc></url>
+<url><loc>https://electy.org/house/nh-01/</loc></url>
+<url><loc>https://electy.org/house/nh-02/</loc></url>
+<url><loc>https://electy.org/house/nj-01/</loc></url>
+<url><loc>https://electy.org/house/nj-02/</loc></url>
+<url><loc>https://electy.org/house/nj-03/</loc></url>
+<url><loc>https://electy.org/house/nj-04/</loc></url>
+<url><loc>https://electy.org/house/nj-05/</loc></url>
+<url><loc>https://electy.org/house/nj-06/</loc></url>
+<url><loc>https://electy.org/house/nj-07/</loc></url>
+<url><loc>https://electy.org/house/nj-08/</loc></url>
+<url><loc>https://electy.org/house/nj-09/</loc></url>
+<url><loc>https://electy.org/house/nj-10/</loc></url>
+<url><loc>https://electy.org/house/nj-11/</loc></url>
+<url><loc>https://electy.org/house/nj-12/</loc></url>
+<url><loc>https://electy.org/house/nm-01/</loc></url>
+<url><loc>https://electy.org/house/nm-02/</loc></url>
+<url><loc>https://electy.org/house/nm-03/</loc></url>
+<url><loc>https://electy.org/house/nv-01/</loc></url>
+<url><loc>https://electy.org/house/nv-02/</loc></url>
+<url><loc>https://electy.org/house/nv-03/</loc></url>
+<url><loc>https://electy.org/house/nv-04/</loc></url>
+<url><loc>https://electy.org/house/ny-01/</loc></url>
+<url><loc>https://electy.org/house/ny-02/</loc></url>
+<url><loc>https://electy.org/house/ny-03/</loc></url>
+<url><loc>https://electy.org/house/ny-04/</loc></url>
+<url><loc>https://electy.org/house/ny-05/</loc></url>
+<url><loc>https://electy.org/house/ny-06/</loc></url>
+<url><loc>https://electy.org/house/ny-07/</loc></url>
+<url><loc>https://electy.org/house/ny-08/</loc></url>
+<url><loc>https://electy.org/house/ny-09/</loc></url>
+<url><loc>https://electy.org/house/ny-10/</loc></url>
+<url><loc>https://electy.org/house/ny-11/</loc></url>
+<url><loc>https://electy.org/house/ny-12/</loc></url>
+<url><loc>https://electy.org/house/ny-13/</loc></url>
+<url><loc>https://electy.org/house/ny-14/</loc></url>
+<url><loc>https://electy.org/house/ny-15/</loc></url>
+<url><loc>https://electy.org/house/ny-16/</loc></url>
+<url><loc>https://electy.org/house/ny-17/</loc></url>
+<url><loc>https://electy.org/house/ny-18/</loc></url>
+<url><loc>https://electy.org/house/ny-19/</loc></url>
+<url><loc>https://electy.org/house/ny-20/</loc></url>
+<url><loc>https://electy.org/house/ny-21/</loc></url>
+<url><loc>https://electy.org/house/ny-22/</loc></url>
+<url><loc>https://electy.org/house/ny-23/</loc></url>
+<url><loc>https://electy.org/house/ny-24/</loc></url>
+<url><loc>https://electy.org/house/ny-25/</loc></url>
+<url><loc>https://electy.org/house/ny-26/</loc></url>
+<url><loc>https://electy.org/house/oh-01/</loc></url>
+<url><loc>https://electy.org/house/oh-02/</loc></url>
+<url><loc>https://electy.org/house/oh-03/</loc></url>
+<url><loc>https://electy.org/house/oh-04/</loc></url>
+<url><loc>https://electy.org/house/oh-05/</loc></url>
+<url><loc>https://electy.org/house/oh-06/</loc></url>
+<url><loc>https://electy.org/house/oh-07/</loc></url>
+<url><loc>https://electy.org/house/oh-08/</loc></url>
+<url><loc>https://electy.org/house/oh-09/</loc></url>
+<url><loc>https://electy.org/house/oh-10/</loc></url>
+<url><loc>https://electy.org/house/oh-11/</loc></url>
+<url><loc>https://electy.org/house/oh-12/</loc></url>
+<url><loc>https://electy.org/house/oh-13/</loc></url>
+<url><loc>https://electy.org/house/oh-14/</loc></url>
+<url><loc>https://electy.org/house/oh-15/</loc></url>
+<url><loc>https://electy.org/house/ok-01/</loc></url>
+<url><loc>https://electy.org/house/ok-02/</loc></url>
+<url><loc>https://electy.org/house/ok-03/</loc></url>
+<url><loc>https://electy.org/house/ok-04/</loc></url>
+<url><loc>https://electy.org/house/ok-05/</loc></url>
+<url><loc>https://electy.org/house/or-01/</loc></url>
+<url><loc>https://electy.org/house/or-02/</loc></url>
+<url><loc>https://electy.org/house/or-03/</loc></url>
+<url><loc>https://electy.org/house/or-04/</loc></url>
+<url><loc>https://electy.org/house/or-05/</loc></url>
+<url><loc>https://electy.org/house/or-06/</loc></url>
+<url><loc>https://electy.org/house/pa-01/</loc></url>
+<url><loc>https://electy.org/house/pa-02/</loc></url>
+<url><loc>https://electy.org/house/pa-03/</loc></url>
+<url><loc>https://electy.org/house/pa-04/</loc></url>
+<url><loc>https://electy.org/house/pa-05/</loc></url>
+<url><loc>https://electy.org/house/pa-06/</loc></url>
+<url><loc>https://electy.org/house/pa-07/</loc></url>
+<url><loc>https://electy.org/house/pa-08/</loc></url>
+<url><loc>https://electy.org/house/pa-09/</loc></url>
+<url><loc>https://electy.org/house/pa-10/</loc></url>
+<url><loc>https://electy.org/house/pa-11/</loc></url>
+<url><loc>https://electy.org/house/pa-12/</loc></url>
+<url><loc>https://electy.org/house/pa-13/</loc></url>
+<url><loc>https://electy.org/house/pa-14/</loc></url>
+<url><loc>https://electy.org/house/pa-15/</loc></url>
+<url><loc>https://electy.org/house/pa-16/</loc></url>
+<url><loc>https://electy.org/house/pa-17/</loc></url>
+<url><loc>https://electy.org/house/ri-01/</loc></url>
+<url><loc>https://electy.org/house/ri-02/</loc></url>
+<url><loc>https://electy.org/house/sc-01/</loc></url>
+<url><loc>https://electy.org/house/sc-02/</loc></url>
+<url><loc>https://electy.org/house/sc-03/</loc></url>
+<url><loc>https://electy.org/house/sc-04/</loc></url>
+<url><loc>https://electy.org/house/sc-05/</loc></url>
+<url><loc>https://electy.org/house/sc-06/</loc></url>
+<url><loc>https://electy.org/house/sc-07/</loc></url>
+<url><loc>https://electy.org/house/sd-al/</loc></url>
+<url><loc>https://electy.org/house/tn-01/</loc></url>
+<url><loc>https://electy.org/house/tn-02/</loc></url>
+<url><loc>https://electy.org/house/tn-03/</loc></url>
+<url><loc>https://electy.org/house/tn-04/</loc></url>
+<url><loc>https://electy.org/house/tn-05/</loc></url>
+<url><loc>https://electy.org/house/tn-06/</loc></url>
+<url><loc>https://electy.org/house/tn-07/</loc></url>
+<url><loc>https://electy.org/house/tn-08/</loc></url>
+<url><loc>https://electy.org/house/tn-09/</loc></url>
+<url><loc>https://electy.org/house/tx-01/</loc></url>
+<url><loc>https://electy.org/house/tx-02/</loc></url>
+<url><loc>https://electy.org/house/tx-03/</loc></url>
+<url><loc>https://electy.org/house/tx-04/</loc></url>
+<url><loc>https://electy.org/house/tx-05/</loc></url>
+<url><loc>https://electy.org/house/tx-06/</loc></url>
+<url><loc>https://electy.org/house/tx-07/</loc></url>
+<url><loc>https://electy.org/house/tx-08/</loc></url>
+<url><loc>https://electy.org/house/tx-09/</loc></url>
+<url><loc>https://electy.org/house/tx-10/</loc></url>
+<url><loc>https://electy.org/house/tx-11/</loc></url>
+<url><loc>https://electy.org/house/tx-12/</loc></url>
+<url><loc>https://electy.org/house/tx-13/</loc></url>
+<url><loc>https://electy.org/house/tx-14/</loc></url>
+<url><loc>https://electy.org/house/tx-15/</loc></url>
+<url><loc>https://electy.org/house/tx-16/</loc></url>
+<url><loc>https://electy.org/house/tx-17/</loc></url>
+<url><loc>https://electy.org/house/tx-18/</loc></url>
+<url><loc>https://electy.org/house/tx-19/</loc></url>
+<url><loc>https://electy.org/house/tx-20/</loc></url>
+<url><loc>https://electy.org/house/tx-21/</loc></url>
+<url><loc>https://electy.org/house/tx-22/</loc></url>
+<url><loc>https://electy.org/house/tx-23/</loc></url>
+<url><loc>https://electy.org/house/tx-24/</loc></url>
+<url><loc>https://electy.org/house/tx-25/</loc></url>
+<url><loc>https://electy.org/house/tx-26/</loc></url>
+<url><loc>https://electy.org/house/tx-27/</loc></url>
+<url><loc>https://electy.org/house/tx-28/</loc></url>
+<url><loc>https://electy.org/house/tx-29/</loc></url>
+<url><loc>https://electy.org/house/tx-30/</loc></url>
+<url><loc>https://electy.org/house/tx-31/</loc></url>
+<url><loc>https://electy.org/house/tx-32/</loc></url>
+<url><loc>https://electy.org/house/tx-33/</loc></url>
+<url><loc>https://electy.org/house/tx-34/</loc></url>
+<url><loc>https://electy.org/house/tx-35/</loc></url>
+<url><loc>https://electy.org/house/tx-36/</loc></url>
+<url><loc>https://electy.org/house/tx-37/</loc></url>
+<url><loc>https://electy.org/house/tx-38/</loc></url>
+<url><loc>https://electy.org/house/ut-01/</loc></url>
+<url><loc>https://electy.org/house/ut-02/</loc></url>
+<url><loc>https://electy.org/house/ut-03/</loc></url>
+<url><loc>https://electy.org/house/ut-04/</loc></url>
+<url><loc>https://electy.org/house/va-01/</loc></url>
+<url><loc>https://electy.org/house/va-02/</loc></url>
+<url><loc>https://electy.org/house/va-03/</loc></url>
+<url><loc>https://electy.org/house/va-04/</loc></url>
+<url><loc>https://electy.org/house/va-05/</loc></url>
+<url><loc>https://electy.org/house/va-06/</loc></url>
+<url><loc>https://electy.org/house/va-07/</loc></url>
+<url><loc>https://electy.org/house/va-08/</loc></url>
+<url><loc>https://electy.org/house/va-09/</loc></url>
+<url><loc>https://electy.org/house/va-10/</loc></url>
+<url><loc>https://electy.org/house/va-11/</loc></url>
+<url><loc>https://electy.org/house/vt-al/</loc></url>
+<url><loc>https://electy.org/house/wa-01/</loc></url>
+<url><loc>https://electy.org/house/wa-02/</loc></url>
+<url><loc>https://electy.org/house/wa-03/</loc></url>
+<url><loc>https://electy.org/house/wa-04/</loc></url>
+<url><loc>https://electy.org/house/wa-05/</loc></url>
+<url><loc>https://electy.org/house/wa-06/</loc></url>
+<url><loc>https://electy.org/house/wa-07/</loc></url>
+<url><loc>https://electy.org/house/wa-08/</loc></url>
+<url><loc>https://electy.org/house/wa-09/</loc></url>
+<url><loc>https://electy.org/house/wa-10/</loc></url>
+<url><loc>https://electy.org/house/wi-01/</loc></url>
+<url><loc>https://electy.org/house/wi-02/</loc></url>
+<url><loc>https://electy.org/house/wi-03/</loc></url>
+<url><loc>https://electy.org/house/wi-04/</loc></url>
+<url><loc>https://electy.org/house/wi-05/</loc></url>
+<url><loc>https://electy.org/house/wi-06/</loc></url>
+<url><loc>https://electy.org/house/wi-07/</loc></url>
+<url><loc>https://electy.org/house/wi-08/</loc></url>
+<url><loc>https://electy.org/house/wv-01/</loc></url>
+<url><loc>https://electy.org/house/wv-02/</loc></url>
+<url><loc>https://electy.org/house/wy-al/</loc></url>
+<url><loc>https://electy.org/senate/florida/</loc></url>
+<url><loc>https://electy.org/senate/alabama/</loc></url>
+<url><loc>https://electy.org/senate/illinois/</loc></url>
+<url><loc>https://electy.org/senate/delaware/</loc></url>
+<url><loc>https://electy.org/senate/kansas/</loc></url>
+<url><loc>https://electy.org/senate/new-jersey/</loc></url>
+<url><loc>https://electy.org/senate/rhode-island/</loc></url>
+<url><loc>https://electy.org/senate/tennessee/</loc></url>
+<url><loc>https://electy.org/senate/west-virginia/</loc></url>
+<url><loc>https://electy.org/governor/wisconsin/</loc></url>
+<url><loc>https://electy.org/governor/georgia/</loc></url>
+<url><loc>https://electy.org/governor/iowa/</loc></url>
+<url><loc>https://electy.org/governor/michigan/</loc></url>
+<url><loc>https://electy.org/governor/alabama/</loc></url>
+<url><loc>https://electy.org/governor/arkansas/</loc></url>
+<url><loc>https://electy.org/governor/connecticut/</loc></url>
+<url><loc>https://electy.org/governor/hawaii/</loc></url>
+<url><loc>https://electy.org/governor/idaho/</loc></url>
+<url><loc>https://electy.org/governor/illinois/</loc></url>
+<url><loc>https://electy.org/governor/maryland/</loc></url>
+<url><loc>https://electy.org/governor/massachusetts/</loc></url>
+<url><loc>https://electy.org/governor/nebraska/</loc></url>
+<url><loc>https://electy.org/governor/oklahoma/</loc></url>
+<url><loc>https://electy.org/governor/rhode-island/</loc></url>
+<url><loc>https://electy.org/governor/south-dakota/</loc></url>
+<url><loc>https://electy.org/governor/tennessee/</loc></url>
+<url><loc>https://electy.org/governor/vermont/</loc></url>
+<url><loc>https://electy.org/governor/wyoming/</loc></url>
 </urlset>

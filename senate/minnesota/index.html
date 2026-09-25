@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>electy.org</title>
+<title>Minnesota Senate race 2026: Flanagan vs Tafoya · electy.org</title>
+<meta name="description" content="Who is running for U.S. Senate in Minnesota on November 3, 2026: Peggy Flanagan (D) vs Michele Tafoya (R). Where they stand, polling, money and records.">
 <link rel="canonical" href="https://electy.org/senate/minnesota/">
-<meta property="og:title" content="electy.org">
+<meta property="og:title" content="Minnesota Senate race 2026: Flanagan vs Tafoya · electy.org">
+<meta property="og:description" content="Who is running for U.S. Senate in Minnesota on November 3, 2026: Peggy Flanagan (D) vs Michele Tafoya (R). Where they stand, polling, money and records.">
 <meta property="og:url" content="https://electy.org/senate/minnesota/">
 <meta property="og:site_name" content="electy.org">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://electy.org/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <script src="../../support.js"></script>
 </head>
 <body>
@@ -42,11 +47,7 @@
   }
   [data-vf="agree"] .voteRow[data-cat="differ"]{ display:none !important; }
   [data-vf="differ"] .voteRow[data-cat="agree"]{ display:none !important; }
-  @keyframes narrativePulse{
-    0%{ background:var(--goldbg); box-shadow:0 0 0 0 var(--goldbg); }
-    70%{ background:var(--goldbg); box-shadow:0 0 0 10px rgba(180,131,46,0); }
-    100%{ background:transparent; box-shadow:0 0 0 0 rgba(180,131,46,0); }
-  }
+  @keyframes barGrow{ from{transform:scaleX(0);} to{transform:scaleX(1);} }
 </style>
 </helmet>
 
@@ -76,58 +77,37 @@
 
   <div data-screen-label="Hero" style="max-width:720px; margin:0 auto; padding:22px 20px 6px;">
     <div style="display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
-      <span style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Nov 3, 2026 · primaries Aug 11</span>
+      <span style="display:inline-block; background:var(--chipbg); color:var(--soft); font-size:11.5px; font-weight:700; padding:7px 14px; border-radius:999px;">Nov 3, 2026 · open seat</span>
     </div>
     <h1 style="font-weight:800; font-size:clamp(28px,6vw,38px); line-height:1.12; letter-spacing:-.02em; margin:16px 0 10px;">Minnesota - United States Senate</h1>
-    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:520px;">⭐ Tina Smith's retirement opens this seat for the first time in 20 years — and both parties' primaries are still undecided. <a role="button" tabindex="0" onClick="{{ scrollToNarrative }}" style="color:var(--gold); font-weight:700; text-decoration:none; cursor:pointer; white-space:nowrap;">Get caught up ↓</a></p>
+    <p style="font-size:15px; line-height:1.6; color:var(--soft); margin:0; max-width:520px;">Sen. Tina Smith is retiring, making this Minnesota's first Senate race without an incumbent since 2006. Lt. Gov. Peggy Flanagan beat Rep. Angie Craig in the August 11 DFL primary with 59%; former sportscaster Michele Tafoya won the Republican primary with 52.1% over Adam Schwarze and Royce White. Republicans haven't won a Senate race here since 2002.</p>
   </div>
 
   <div data-screen-label="Candidates" style="max-width:720px; margin:0 auto; padding:20px 20px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
-    <div style="background:var(--card); border-radius:22px; padding:22px 18px; box-shadow:var(--shadow);">
-      <div style="text-align:center;">
-        <div style="display:inline-block; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat (DFL) - nominee picked Aug 11</div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:14px; margin-top:16px;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="flex:0 0 56px; width:56px; height:56px;"><div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--bluebg); color:var(--blue); font-weight:800; font-size:19px; letter-spacing:.01em;">PF</div></div>
-          <div><div style="font-weight:800; font-size:14.5px;">Peggy Flanagan <span style="font-weight:600; color:var(--faint); font-size:11.5px;">· 46</span></div><div style="font-size:12px; line-height:1.5; color:var(--soft);">Lieutenant governor; the DFL-endorsed progressive, backed by Tina Smith.</div></div>
-        </div>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="flex:0 0 56px; width:56px; height:56px;"><div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--bluebg); color:var(--blue); font-weight:800; font-size:19px; letter-spacing:.01em;">AC</div></div>
-          <div><div style="font-weight:800; font-size:14.5px;">Angie Craig <span style="font-weight:600; color:var(--faint); font-size:11.5px;">· 54</span></div><div style="font-size:12px; line-height:1.5; color:var(--soft);">Four-term congresswoman; the centrist with the bigger war chest.</div></div>
-        </div>
-      </div>
-      <p style="font-size:12px; line-height:1.6; color:var(--faint); margin:14px 0 0; text-align:center;">Flanagan leads Craig in recent primary polls.</p>
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow); border:2px solid var(--blue);">
+      <div style="width:104px; height:104px; margin:0 auto 12px;"><div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--bluebg); color:var(--blue); font-weight:800; font-size:35px; letter-spacing:.01em;">PF</div></div>
+      <div style="font-weight:800; font-size:18px;">Peggy Flanagan</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--bluebg); color:var(--blue); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Democrat</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Lieutenant governor. Endorsed by Tina Smith and aligned with Sens. Bernie Sanders and Elizabeth Warren; would be the first Native American woman in the Senate.</p>
+      <a href="https://www.mprnews.org/story/2026/08/11/heated-contests-settle-nominations-for-dfl-republican-parties-in-us-senate-race" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;">MPR News →</a>
     </div>
-    <div style="background:var(--card); border-radius:22px; padding:22px 18px; box-shadow:var(--shadow);">
-      <div style="text-align:center;">
-        <div style="display:inline-block; background:var(--redbg); color:var(--red); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Republican - nominee picked Aug 11</div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:14px; margin-top:16px;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="flex:0 0 56px; width:56px; height:56px;"><div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--redbg); color:var(--red); font-weight:800; font-size:19px; letter-spacing:.01em;">AS</div></div>
-          <div><div style="font-weight:800; font-size:14.5px;">Adam Schwarze <span style="font-weight:600; color:var(--faint); font-size:11.5px;">· 42</span></div><div style="font-size:12px; line-height:1.5; color:var(--soft);">Retired Navy SEAL and Marine; won the state GOP's endorsement.</div></div>
-        </div>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="flex:0 0 56px; width:56px; height:56px;"><div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--redbg); color:var(--red); font-weight:800; font-size:19px; letter-spacing:.01em;">MT</div></div>
-          <div><div style="font-weight:800; font-size:14.5px;">Michele Tafoya <span style="font-weight:600; color:var(--faint); font-size:11.5px;">· 61</span></div><div style="font-size:12px; line-height:1.5; color:var(--soft);">Former NBC sideline reporter turned conservative commentator.</div></div>
-        </div>
-      </div>
-      <p style="font-size:12px; line-height:1.6; color:var(--faint); margin:14px 0 0; text-align:center;">A June KSTP/SurveyUSA poll had Tafoya ahead.</p>
+    <div style="background:var(--card); border-radius:22px; padding:22px 18px; text-align:center; box-shadow:var(--shadow); border:2px solid var(--red);">
+      <div style="width:104px; height:104px; margin:0 auto 12px;"><div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--redbg); color:var(--red); font-weight:800; font-size:35px; letter-spacing:.01em;">MT</div></div>
+      <div style="font-weight:800; font-size:18px;">Michele Tafoya</div>
+      <div style="display:inline-block; margin-top:7px; background:var(--redbg); color:var(--red); font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px;">Republican</div>
+      <p style="font-size:13px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Former NFL sideline reporter. Backed by the national GOP; Trump did not endorse in the primary.</p>
+      <a href="https://www.fox9.com/news/minnesota-senate-primary-election-results-2026" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:var(--red); text-decoration:none;">FOX 9 →</a>
     </div>
   </div>
 
   <div data-screen-label="Polling" style="max-width:720px; margin:0 auto; padding:14px 20px 0;">
     <div style="background:var(--card); border-radius:22px; padding:20px 20px 22px; box-shadow:var(--shadow);">
-      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; gap:10px; flex-wrap:wrap;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; gap:10px; flex-wrap:wrap;">
         <span style="font-weight:800; font-size:16px;">Who's ahead?</span>
-        <span style="font-size:11px; font-weight:700; color:var(--blue); background:var(--bluebg); padding:5px 12px; border-radius:999px;">LIKELY DEMOCRATIC</span>
+        <span data-ratings="1" style="display:flex; gap:6px; flex-wrap:wrap;"><span style="display:inline-flex; gap:5px; align-items:baseline; font-size:11px; font-weight:700; color:var(--blue); background:var(--bluebg); padding:5px 10px; border-radius:999px; white-space:nowrap;"><span style="font-weight:600; opacity:.85;">Cook</span>LIKELY D</span><span style="display:inline-flex; gap:5px; align-items:baseline; font-size:11px; font-weight:700; color:var(--blue); background:var(--bluebg); padding:5px 10px; border-radius:999px; white-space:nowrap;"><span style="font-weight:600; opacity:.85;">Sabato</span>LIKELY D</span><span style="display:inline-flex; gap:5px; align-items:baseline; font-size:11px; font-weight:700; color:var(--blue); background:var(--bluebg); padding:5px 10px; border-radius:999px; white-space:nowrap;"><span style="font-weight:600; opacity:.85;">DDHQ</span>LIKELY D</span></span>
       </div>
-      <p style="font-size:13.5px; line-height:1.65; color:var(--soft); margin:0;">With both primaries unsettled, there's no head-to-head polling of the November matchup yet. A June Star Tribune/KARE 11 Minnesota Poll found voters favoring a generic Democrat 49–41, and nonpartisan handicappers — Cook Political Report, Inside Elections, and Sabato's Crystal Ball — all rate the race <strong style="color:var(--blue);">Likely Democratic</strong>.</p>
-      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:12px;">
-        <a href="https://www.startribune.com/mn-poll-us-senate-race-tina-smith-craig-flanagan-schwarze-tafoya-primary-august/601857339" target="_blank" rel="noopener noreferrer" style="font-size:11px; color:var(--faint); text-decoration:none;">Minnesota Poll (Mason-Dixon, June 8–10) →</a>
-        <a href="https://www.cookpolitical.com/ratings/senate-race-ratings" target="_blank" rel="noopener noreferrer" style="font-size:11px; color:var(--faint); text-decoration:none;">Cook Senate ratings →</a>
-      </div>
+      <div data-ratings-note="1" style="font-size:11px; color:var(--faint); margin:-6px 0 12px;">Ratings: Cook Political Report (Aug 20), Sabato’s Crystal Ball (Aug 26), Decision Desk HQ (Aug 5). <a href="https://en.wikipedia.org/wiki/2026_United_States_Senate_elections" target="_blank" rel="noopener noreferrer" style="color:var(--faint);">Source →</a></div>
+      <p style="font-size:13.5px; line-height:1.6; color:var(--soft); margin:0;">We haven’t found a public poll of Flanagan vs. Tafoya since the primaries.</p>
     </div>
   </div>
 
@@ -135,138 +115,43 @@
     <h2 style="font-weight:800; font-size:21px; margin:0 0 4px;">Where they stand</h2>
     <p style="font-size:13.5px; color:var(--soft); margin:0 0 14px;">Tap a topic that's important to you.</p>
     <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
-      <sc-for list="{{ topicChips }}" as="chip" hint-placeholder-count="6">
+      <sc-for list="{{ topicChips }}" as="chip" hint-placeholder-count="5">
         <button type="button" onClick="{{ chip.click }}" style="{{ chip.style }}">{{ chip.label }}</button>
       </sc-for>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
       <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--blue2); box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:7px;">THE DEMOCRATS SAY</div>
-        <div style="font-size:14px; line-height:1.6;">{{ demSays }}</div>
+        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:7px;">FLANAGAN SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ dSays }}</div>
       </div>
       <div style="background:var(--card); border-radius:20px; padding:18px 20px; border-left:5px solid var(--red2); box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:7px;">THE REPUBLICANS SAY</div>
-        <div style="font-size:14px; line-height:1.6;">{{ gopSays }}</div>
+        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:7px;">TAFOYA SAYS</div>
+        <div style="font-size:14px; line-height:1.6;">{{ rSays }}</div>
       </div>
     </div>
   </div>
 
   <div data-screen-label="Money check" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
     <div style="background:var(--greenbg); border-radius:22px; padding:20px 22px;">
-      <div style="font-size:15px; font-weight:800; color:var(--green);">✓ Money &amp; integrity check</div>
-      <p style="font-size:12.5px; color:var(--soft); margin:4px 0 12px;">How each side handles money in politics.</p>
-      <div style="display:grid; grid-template-columns:88px 1fr 88px; align-items:center; gap:10px; padding-bottom:8px; margin-top:12px;">
-        <div style="font-size:10.5px; font-weight:800; letter-spacing:.04em; color:var(--blue); text-align:center;">DEMS</div>
-        <div></div>
-        <div style="font-size:10.5px; font-weight:800; letter-spacing:.04em; color:var(--red); text-align:center;">GOP</div>
-      </div>
-      <div style="display:grid; grid-template-columns:88px 1fr 88px; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line);">
-        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--green); background:var(--card); padding:5px 12px; border-radius:999px;">✓ Yes</span>
-        <span style="font-size:13px; text-align:center; line-height:1.45;">Ban Congress from trading stocks</span>
-        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--faint); background:var(--card); padding:5px 12px; border-radius:999px;">Unclear</span>
-      </div>
-      <div style="display:grid; grid-template-columns:88px 1fr 88px; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line);">
-        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--green); background:var(--card); padding:5px 12px; border-radius:999px;">✓ No</span>
-        <span style="font-size:13px; text-align:center; line-height:1.45;">Takes corporate PAC money</span>
-        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--bad); background:var(--card); padding:5px 12px; border-radius:999px;">✗ Yes</span>
-      </div>
-      <div style="display:grid; grid-template-columns:88px 1fr 88px; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line);">
-        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--green); background:var(--card); padding:5px 12px; border-radius:999px;">✓ Yes</span>
-        <span style="font-size:13px; text-align:center; line-height:1.45;">Wants to overturn Citizens United</span>
-        <span style="justify-self:center; font-size:11.5px; font-weight:800; color:var(--faint); background:var(--card); padding:5px 12px; border-radius:999px;">Unclear</span>
-      </div>
-      <p style="font-size:12px; line-height:1.6; color:var(--soft); margin:12px 0 0;">Follow the money: Craig leads all fundraising, backed by corporate PACs and roughly $10M in outside super-PAC spending; Flanagan runs on small donors and refuses corporate PAC money. The Republican field has raised far less, mostly from individuals. <span style="color:var(--faint);">— FEC filings, 2026</span></p>
-    </div>
-  </div>
-
-  <div data-screen-label="What they'd do" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
-    <h2 style="font-weight:800; font-size:21px; margin:0 0 14px;">Their big promises</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
-      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:12px;">THE DEMOCRATS' PITCHES</div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Flanagan: an uncompromising fighter</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Stand up to ICE raids, reject corporate money, and deliver for working families.</div></div>
-          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Craig: experienced and pragmatic</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">A proven winner in purple districts focused on results over political theater.</div></div>
+      <div style="font-size:15px; font-weight:800; color:var(--green);">Money &amp; campaign finance</div>
+      <div data-fec="1" style="margin:12px 0 4px;">
+        <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; padding:0 0 6px; font-size:10.5px; font-weight:800; letter-spacing:.05em; color:var(--faint);"><span>RAISED</span><span>CASH ON HAND</span><span>UNDER-$200 DONORS</span></div>
+        <div style="display:flex; flex-direction:column; gap:6px; padding:11px 0; border-top:1px solid var(--line);">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap;"><span style="font-size:13.5px; font-weight:700; color:var(--blue);">Peggy Flanagan</span></div>
+          <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; font-size:13px; font-variant-numeric:tabular-nums;"><span>$6.5M</span><span>$1.1M</span><span>45% of receipts</span></div>
         </div>
-      </div>
-      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">THE REPUBLICANS' PITCHES</div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Schwarze: a new mission</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">21-year veteran running on the fraud scandal and restoring trust in government.</div></div>
-          <div><div style="font-weight:700; font-size:14px; margin-bottom:3px;">Tafoya: end one-party rule</div><div style="font-size:12.5px; line-height:1.55; color:var(--soft);">A well-known outsider promising accountability after decades of DFL dominance.</div></div>
+        <div style="display:flex; flex-direction:column; gap:6px; padding:11px 0; border-top:1px solid var(--line);">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap;"><span style="font-size:13.5px; font-weight:700; color:var(--red);">Michele Tafoya</span></div>
+          <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; font-size:13px; font-variant-numeric:tabular-nums;"><span>$5.3M</span><span>$1.4M</span><span>46% of receipts</span></div>
         </div>
+        <p style="font-size:11.5px; line-height:1.55; color:var(--soft); margin:10px 0 0;">Campaign committee totals for the 2025–26 cycle, through July 22, 2026. Under-$200 share is unitemized individual contributions divided by total receipts. <a href="https://www.fec.gov/data/elections/senate/MN/2026/" target="_blank" rel="noopener noreferrer" style="color:var(--soft); font-weight:700;">FEC filings →</a></p>
       </div>
-    </div>
-  </div>
 
-  <div data-screen-label="Agree or differ" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
-      <h2 style="font-weight:800; font-size:21px; margin:0;">Agree or differ?</h2>
-      <div style="display:flex; gap:6px;">
-        <button type="button" onClick="{{ setAll }}" style="{{ chipAll }}">All</button>
-        <button type="button" onClick="{{ setAgree }}" style="{{ chipAgree }}">Agree</button>
-        <button type="button" onClick="{{ setDiffer }}" style="{{ chipDiffer }}">Differ</button>
-      </div>
     </div>
-    <div data-vf="{{ voteFilter }}" style="background:var(--card); border-radius:22px; padding:6px 20px; box-shadow:var(--shadow);">
-      <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">No cuts to Social Security or Medicare</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Everyone in this race says the programs are off the table — they differ on who threatens them</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
-      </div>
-      <div class="voteRow" data-cat="agree" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">Support Minnesota farmers</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">All candidates back a strong farm safety net and new markets for corn, soy, and dairy</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--green); background:var(--greenbg); padding:4px 10px; border-radius:999px;">AGREE</span>
-      </div>
-      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">Abortion</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Flanagan and Craig: codify abortion rights federally · Schwarze and Tafoya: leave it to the states</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
-      </div>
-      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">Copper-nickel mining near the Boundary Waters</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Republicans: approve the mines and the jobs · Flanagan: protect the wilderness · Craig: has sided with mining unions</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
-      </div>
-      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--line);">
-        <div><div style="font-size:14px; font-weight:600;">Trump's tariffs</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Republicans: leverage for American industry · Democrats: a tax on Minnesota farmers and consumers</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
-      </div>
-      <div class="voteRow" data-cat="differ" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 0;">
-        <div><div style="font-size:14px; font-weight:600;">Reform the Senate filibuster</div><div style="font-size:12px; color:var(--soft); margin-top:2px;">Democrats: open to reform for key bills · Republicans: keep the 60-vote rule</div></div>
-        <span style="flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">DIFFER</span>
-      </div>
-    </div>
-  </div>
-
-  <div data-screen-label="Their stories" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
-    <h2 style="font-weight:800; font-size:21px; margin:0 0 14px;">Their stories</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
-      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--blue); letter-spacing:.04em; margin-bottom:12px;">THE DFL PRIMARY</div>
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">2025</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Tina Smith announces her retirement in February; Flanagan files within hours, Craig follows in April.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">2025</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">The race becomes a national proxy war: progressives back Flanagan, centrists back Craig.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">May</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Flanagan wins the DFL endorsement by acclamation after Craig skips the convention.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--blue);">Aug 11</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Primary day — recent polls show Flanagan ahead by mid-single digits.</span></div>
-        </div>
-      </div>
-      <div style="background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
-        <div style="font-size:11px; font-weight:800; color:var(--red); letter-spacing:.04em; margin-bottom:12px;">THE REPUBLICAN PRIMARY</div>
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">2025</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Schwarze, a retired Navy SEAL, launches his run the day after Smith bows out.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">2025</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Big GOP names — Emmer, Pawlenty, Demuth — all pass on the race.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">2026</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Tafoya jumps in late; Schwarze wins the party endorsement at the state convention.</span></div>
-          <div style="display:flex; gap:12px;"><span style="flex:0 0 44px; font-size:12px; font-weight:800; color:var(--red);">Aug 11</span><span style="font-size:12.5px; line-height:1.55; color:var(--soft);">Primary day — Tafoya, Schwarze, and Royce White face off.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div data-screen-label="The narrative" style="max-width:720px; margin:0 auto; padding:28px 20px 0;">
-    <h2 ref="{{ narrativeRef }}" style="{{ narrativeHeadingStyle }}">The backstory</h2>
-    <div style="background:var(--card); border-radius:22px; padding:22px; box-shadow:var(--shadow); min-height:140px;"></div>
   </div>
 
   <div style="max-width:720px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; color:var(--faint); line-height:1.6;">
-    Positions summarized from campaign websites, voting records, and news reports · July 2026<br>
+    Positions summarized from MPR News, FOX 9, PBS News and Wikipedia · September 2026<br>
     electy.org is in beta. Some races will be missing or incomplete.<br>
     <a href="../../contact/" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
   </div>
@@ -274,46 +159,24 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { theme: (function(){ try { return localStorage.getItem('electy-theme') || 'light'; } catch(e){ return 'light'; } })(), topic: 'Cost of Living', voteFilter: 'all', pulse: false };
-  narrativeRef = React.createRef();
-
-  componentWillUnmount(){
-    if (this._pulseStart) clearTimeout(this._pulseStart);
-    if (this._pulseEnd) clearTimeout(this._pulseEnd);
-  }
-
-  scrollToNarrative = () => {
-    const el = this.narrativeRef.current;
-    if (!el) return;
-    const y = el.getBoundingClientRect().top + window.scrollY - 24;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-    if (this._pulseStart) clearTimeout(this._pulseStart);
-    if (this._pulseEnd) clearTimeout(this._pulseEnd);
-    this._pulseStart = setTimeout(() => {
-      this.setState({ pulse: true });
-      this._pulseEnd = setTimeout(() => this.setState({ pulse: false }), 1300);
-    }, 550);
-  };
+  state = { theme: (function(){ try { return localStorage.getItem('electy-theme') || 'light'; } catch(e){ return 'light'; } })(), topic: 'Corporate influence', voteFilter: 'all' };
 
   static TOPICS = [
-    { label: 'Cost of Living',
-      a: 'Lower drug, housing, and grocery costs and crack down on corporate price gouging; Craig pitches tax cuts for working families.',
-      b: 'Blame DFL spending and Washington regulation for high prices — cut taxes, cut red tape, and let the economy breathe.' },
-    { label: 'Iran War',
-      a: 'Flanagan opposes the war and wants troops home; Craig says Congress must vote before any further escalation.',
-      b: 'Back the administration\u2019s hard line on Tehran; Schwarze points to his nine combat deployments.' },
-    { label: 'Healthcare',
-      a: 'Extend ACA insurance subsidies and lower drug prices; Flanagan goes further, backing universal coverage.',
-      b: 'Market-based reform: more competition and price transparency instead of new federal programs.' },
-    { label: 'Housing',
-      a: 'Federal incentives to build more homes and a crackdown on rent-setting algorithms and corporate landlords.',
-      b: 'Housing is a supply problem — cut the regulations and permitting delays that make building slow and costly.' },
-    { label: 'Immigration',
-      a: 'Divided: Flanagan has led protests against ICE raids; Craig voted for the Laken Riley Act and tougher enforcement.',
-      b: 'Secure the border first; both fully support the administration\u2019s enforcement push.' },
-    { label: 'The Fraud Scandal',
-      a: 'Prosecute every dollar of Minnesota\u2019s program fraud; Flanagan says she\u2019ll fight fraud "without demonizing" aid programs.',
-      b: 'The centerpiece of their case: tie the billion-dollar scandal to DFL rule and demand federal accountability.' },
+    { label: 'Corporate influence',
+      d: 'Ran on a pledge to fight the influence of corporations, framing the race as “the many versus the money.”',
+      r: 'Campaigns on government accountability.' },
+    { label: 'Fraud',
+      d: 'We haven\u2019t found a public statement from Flanagan on this yet.',
+      r: 'Promises to tackle fraud in Minnesota’s state programs.' },
+    { label: 'Economy',
+      d: 'We haven\u2019t found a public statement from Flanagan on this yet.',
+      r: 'Focuses on inflation.' },
+    { label: 'Crime & border',
+      d: 'We haven\u2019t found a public statement from Flanagan on this yet.',
+      r: 'Crime and border security are central to her platform, which aligns with Trump’s policies.' },
+    { label: 'Trump',
+      d: 'Says Trump has cost Minnesota “far too much” and calls Tafoya a “loyal soldier.”',
+      r: 'We haven\u2019t found a public statement from Tafoya on this yet.' },
   ];
 
   renderVals(){
@@ -339,8 +202,8 @@ class Component extends DCLogic {
       toggleTheme: () => this.setState(s => { const t = s.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('electy-theme', t); } catch(e){} return { theme: t }; }),
 
       topicChips,
-      demSays: active.a,
-      gopSays: active.b,
+      dSays: active.d,
+      rSays: active.r,
 
       voteFilter: f,
       chipAll: vChip(f === 'all'),
@@ -349,10 +212,6 @@ class Component extends DCLogic {
       setAll: () => this.setState({ voteFilter: 'all' }),
       setAgree: () => this.setState({ voteFilter: 'agree' }),
       setDiffer: () => this.setState({ voteFilter: 'differ' }),
-
-      scrollToNarrative: this.scrollToNarrative,
-      narrativeRef: this.narrativeRef,
-      narrativeHeadingStyle: "font-weight:800; font-size:21px; margin:0 0 14px; display:inline-block; padding:4px 10px; margin-left:-10px; border-radius:10px;" + (this.state.pulse ? " animation:narrativePulse 1.3s ease;" : ""),
     };
   }
 }

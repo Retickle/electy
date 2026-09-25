@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026 U.S. House races by state · electy.org</title>
-<meta name="description" content="All 435 U.S. House districts on the 2026 ballot. Pick a state, then a district, for candidates, ratings and fundraising.">
+<title>2026 U.S. House races · electy.org</title>
+<meta name="description" content="All 435 U.S. House districts on the ballot November 3, 2026: candidates, ratings, fundraising and endorsements.">
 <link rel="canonical" href="https://electy.org/house/">
-<meta property="og:title" content="2026 U.S. House races by state · electy.org">
-<meta property="og:description" content="All 435 U.S. House districts on the 2026 ballot. Pick a state, then a district, for candidates, ratings and fundraising.">
+<meta property="og:title" content="2026 U.S. House races · electy.org">
+<meta property="og:description" content="All 435 U.S. House districts on the ballot November 3, 2026: candidates, ratings, fundraising and endorsements.">
 <meta property="og:url" content="https://electy.org/house/">
 <meta property="og:site_name" content="electy.org">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://electy.org/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <script src="../support.js"></script>
 </head>
 <body>
@@ -109,7 +112,7 @@
         <span style="font-weight:800; font-size:16px;">Republicans narrowly control the House today.</span>
         <span style="font-size:11px; font-weight:700; color:var(--gold); background:var(--goldbg); padding:5px 12px; border-radius:999px;">All 435 seats up</span>
       </div>
-      <p style="font-size:12.5px; color:var(--soft); margin:0 0 18px;">Democrats are the heavy favorites to win House control this year.</p>
+      <p style="font-size:12.5px; color:var(--soft); margin:0 0 18px;"><a href="https://votes.decisiondeskhq.com/forecast/2026/house" target="_blank" rel="noopener noreferrer" style="color:inherit;">Decision Desk HQ's forecast</a> gives Democrats a 72% chance of winning House control (as of September 23).</p>
       <div style="position:relative; padding-top:18px;">
         <div style="position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--ink); border-radius:2px; z-index:2;"></div>
         <div style="position:absolute; left:50%; top:-4px; transform:translate(-50%,-100%); font-size:10px; font-weight:800; color:var(--soft); white-space:nowrap;">218 = MAJORITY</div>
@@ -144,7 +147,7 @@
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:6px;">
             <sc-for list="{{ districtTiles }}" as="d" hint-placeholder-count="8">
-              <button type="button" class="dtile" onClick="{{ d.click }}" title="{{ d.tip }}" style="{{ d.style }}">{{ d.label }}</button>
+              <a class="dtile" href="{{ d.href }}" title="{{ d.tip }}" style="{{ d.style }}">{{ d.label }}</a>
             </sc-for>
           </div>
           <p style="font-size:11.5px; color:var(--faint); margin:12px 0 0;">Not sure which number is yours? District lines cut across cities and counties — <a href="../" style="color:var(--gold); font-weight:700; text-decoration:none;">find it by address on the home page</a>.</p>
@@ -263,7 +266,7 @@ class Component extends DCLogic {
         label: n === 1 ? 'At-large' : String(num),
         tip: label + ' — view the race',
         style: dBase + ' background:var(--track); color:var(--ink);',
-        click: () => { window.location.href = page; },
+        href: page,
       };
     });
 

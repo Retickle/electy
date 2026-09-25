@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026 governor races · electy.org</title>
-<meta name="description" content="Every 2026 race for governor, with candidates and ratings.">
+<meta name="description" content="All 36 governor races on the ballot November 3, 2026, and the most competitive ones to watch.">
 <link rel="canonical" href="https://electy.org/governor/">
 <meta property="og:title" content="2026 governor races · electy.org">
-<meta property="og:description" content="Every 2026 race for governor, with candidates and ratings.">
+<meta property="og:description" content="All 36 governor races on the ballot November 3, 2026, and the most competitive ones to watch.">
 <meta property="og:url" content="https://electy.org/governor/">
 <meta property="og:site_name" content="electy.org">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://electy.org/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <script src="../support.js"></script>
 </head>
 <body>
@@ -103,9 +106,9 @@
     <div style="background:var(--card); border-radius:22px; padding:20px 22px 22px; box-shadow:var(--shadow);">
       <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
         <span style="font-weight:800; font-size:16px;">Who holds the governorships now</span>
-        <span style="font-size:11px; font-weight:700; color:var(--gold); background:var(--goldbg); padding:5px 12px; border-radius:999px;">36 seats up for grabs</span>
+        <span style="font-size:11px; font-weight:700; color:var(--gold); background:var(--goldbg); padding:5px 12px; border-radius:999px;">36 races in 2026</span>
       </div>
-      <p style="font-size:12.5px; color:var(--soft); margin:0 0 18px;">Striped = up for election in 2026. Each party is defending exactly 18 of the 36 seats on the ballot.</p>
+      <p style="font-size:12.5px; color:var(--soft); margin:0 0 18px;">Striped = up for election in 2026. Each party is defending exactly 18 of the 36 governorships on the ballot.</p>
       <div style="display:flex; height:28px; border-radius:999px; overflow:hidden;">
         <div title="6 Democratic-held governorships not up in 2026" style="width:12%; background:var(--blue2);"></div>
         <div title="18 Democratic-held governorships on the ballot" style="width:36%; background:repeating-linear-gradient(135deg, rgba(255,255,255,.45) 0 3px, transparent 3px 8px), var(--blue2);"></div>
@@ -126,9 +129,9 @@
     <div class="mapcard" style="background:var(--card); border-radius:22px; padding:20px; box-shadow:var(--shadow);">
       <div class="mapgrid" style="display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); gap:6px;">
         <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="50">
-          <button type="button" class="tile" onClick="{{ t.click }}" title="{{ t.tip }}" style="{{ t.style }}">
+          <a class="tile" href="{{ t.href }}" onClick="{{ t.click }}" title="{{ t.tip }}" style="{{ t.style }}">
             {{ t.abbr }}
-          </button>
+          </a>
         </sc-for>
       </div>
       <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:18px; font-size:11px; font-weight:600; color:var(--soft);">
@@ -145,15 +148,15 @@
     <p style="font-size:13px; color:var(--soft); margin:0 0 18px; text-align:center;">Open seats and vulnerable incumbents make these the most likely governorships to flip.</p>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:14px;">
 
-      <div style="display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+      <a href="../governor/arizona/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
           <span style="font-weight:800; font-size:18px;">Arizona</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
         <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Katie Hobbs (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Andy Biggs (R)</span></div>
         <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Hobbs seeks a second term in a state Trump won in 2024. Congressman Andy Biggs won the Republican primary to challenge her.</div>
-        <div style="margin-top:auto; font-size:12px; font-weight:700; color:var(--faint);">Race page coming soon</div>
-      </div>
+        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
+      </a>
 
       <a href="../governor/nevada/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
@@ -165,45 +168,55 @@
         <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
       </a>
 
-      <div style="display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+      <a href="../governor/ohio/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <span style="font-weight:800; font-size:18px;">Ohio</span>
+          <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
+        </div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Amy Acton (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Vivek Ramaswamy (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open seat with Gov. DeWine term-limited. The former state health director faces the Trump-endorsed 2024 presidential candidate.</div>
+        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
+      </a>
+
+      <a href="../governor/wisconsin/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
           <span style="font-weight:800; font-size:18px;">Wisconsin</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Democratic nominee</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Tom Tiffany (R)</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open seat after Gov. Evers declined a third term. Democrats choose among a crowded field August 11.</div>
-        <div style="margin-top:auto; font-size:12px; font-weight:700; color:var(--faint);">Race page coming soon</div>
-      </div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">David Crowley (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Tom Tiffany (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open seat after Gov. Evers declined a third term. The Milwaukee County executive won the August 11 Democratic primary over Rep. Francesca Hong.</div>
+        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
+      </a>
 
-      <div style="display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+      <a href="../governor/georgia/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
           <span style="font-weight:800; font-size:18px;">Georgia</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Democratic nominee</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Kemp is term-limited, and Democrats see their best shot at a governorship they haven't won since 1998.</div>
-        <div style="margin-top:auto; font-size:12px; font-weight:700; color:var(--faint);">Race page coming soon</div>
-      </div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Keisha Lance Bottoms (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Rick Jackson (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Kemp is term-limited. The former Atlanta mayor faces a health care executive who beat Lt. Gov. Burt Jones in a June runoff. Democrats last won in 1998.</div>
+        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
+      </a>
 
-      <div style="display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+      <a href="../governor/iowa/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
           <span style="font-weight:800; font-size:18px;">Iowa</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--gold); background:var(--goldbg); padding:4px 10px; border-radius:999px;">TOSS-UP</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Rob Sand (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Reynolds is retiring, and the state auditor — Iowa's only statewide Democrat — is polling close in a state trending red.</div>
-        <div style="margin-top:auto; font-size:12px; font-weight:700; color:var(--faint);">Race page coming soon</div>
-      </div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Rob Sand (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Zach Lahn (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Gov. Reynolds is retiring. The state auditor, Iowa's only statewide Democrat, faces a businessman who upset Trump-endorsed Rep. Randy Feenstra in the June primary.</div>
+        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
+      </a>
 
-      <div style="display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
+      <a href="../governor/michigan/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:10px; background:var(--card); border-radius:20px; padding:20px; box-shadow:var(--shadow);">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
           <span style="font-weight:800; font-size:18px;">Michigan</span>
           <span style="font-size:10.5px; font-weight:800; color:var(--blue); background:var(--bluebg); padding:4px 10px; border-radius:999px;">LEAN D</span>
         </div>
-        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Jocelyn Benson (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">Republican nominee</span></div>
-        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open seat with Gov. Whitmer term-limited. The secretary of state leads every polled matchup ahead of the August 4 primaries.</div>
-        <div style="margin-top:auto; font-size:12px; font-weight:700; color:var(--faint);">Race page coming soon</div>
-      </div>
+        <div style="font-size:13.5px; font-weight:700;"><span style="color:var(--blue);">Jocelyn Benson (D)</span> <span style="color:var(--faint); font-weight:500;">vs</span> <span style="color:var(--red);">John James (R)</span></div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--soft);">Open seat with Gov. Whitmer term-limited. The secretary of state faces the Trump-endorsed congressman, who edged Perry Johnson in the August 4 primary.</div>
+        <div style="margin-top:auto; font-size:12px; font-weight:800; color:var(--gold);">Compare the candidates →</div>
+      </a>
 
     </div>
   </div>
@@ -213,7 +226,7 @@
   </sc-if>
 
   <div style="max-width:840px; margin:0 auto; padding:28px 20px 44px; text-align:center; font-size:11.5px; color:var(--faint); line-height:1.6;">
-    Seat counts and ratings as of July 2026 · <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="color:var(--gold); font-weight:700; text-decoration:none;">See how to vote →</a><br>
+    Race counts and ratings as of July 2026 · <a href="https://vote.org" target="_blank" rel="noopener noreferrer" style="color:var(--gold); font-weight:700; text-decoration:none;">See how to vote →</a><br>
     electy.org is in beta. Some races will be missing or incomplete.<br>
     <a href="../contact/" style="display:inline-block; margin-top:10px; font-size:11.5px; font-weight:800; color:var(--soft); background:var(--card); padding:8px 16px; border-radius:999px; box-shadow:var(--shadow); text-decoration:none;">Contact us</a>
   </div>
@@ -228,7 +241,7 @@ class Component extends DCLogic {
   // race: party currently holding the governorship that is up in 2026 ('D'|'R') or null.
   // hot: among the most competitive races.
   // States with a governor race page built. Everything else toasts instead of 404ing.
-  static GOV_PAGES = new Set(['nevada', 'ohio']);
+  static GOV_PAGES = new Set(['alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 'connecticut', 'florida', 'georgia', 'hawaii', 'idaho', 'illinois', 'iowa', 'kansas', 'maine', 'maryland', 'massachusetts', 'michigan', 'minnesota', 'nebraska', 'nevada', 'new-hampshire', 'new-mexico', 'new-york', 'ohio', 'oklahoma', 'oregon', 'pennsylvania', 'rhode-island', 'south-carolina', 'south-dakota', 'tennessee', 'texas', 'vermont', 'wisconsin', 'wyoming']);
 
   static STATES = [
     { abbr:'AK', name:'Alaska',        col:0,  row:0, race:'R', hot:false },
@@ -294,10 +307,10 @@ class Component extends DCLogic {
   renderVals(){
     const theme = this.state.theme;
 
-    const base = "position:relative; aspect-ratio:1/1; width:100%; padding:0; border-radius:9px; font-family:'Plus Jakarta Sans',sans-serif; font-size:11.5px; font-weight:800; display:flex; align-items:center; justify-content:center; border:none; transition:filter .15s ease;";
+    const base = "position:relative; aspect-ratio:1/1; width:100%; padding:0; border-radius:9px; font-family:'Plus Jakarta Sans',sans-serif; font-size:11.5px; font-weight:800; display:flex; align-items:center; justify-content:center; border:none; text-decoration:none; transition:filter .15s ease;";
 
     const tiles = Component.STATES.map(s => {
-      let style, tip, click;
+      let style, tip, click, link;
       if (!s.race) {
         style = base + ' background:var(--track); color:var(--faint); cursor:default;';
         tip = s.name + ' — no governor\u2019s race in 2026';
@@ -311,8 +324,9 @@ class Component extends DCLogic {
         const slug = s.name.toLowerCase().replace(/ /g, '-');
         if (Component.GOV_PAGES.has(slug)) {
           const href = '../governor/' + slug + '/';
+          link = href;
           tip = s.name + ' — view the race';
-          click = () => { window.location.href = href; };
+          click = undefined;
         } else {
           tip = s.name + ' — race page coming soon';
           click = () => this.showToast(s.name + ' race page coming soon');
@@ -321,7 +335,7 @@ class Component extends DCLogic {
       return {
         abbr: s.abbr,
         style: style + ' grid-column:' + (s.col + 1) + '; grid-row:' + (s.row + 1) + ';',
-        tip, click,
+        tip, click, href: link,
       };
     });
 
